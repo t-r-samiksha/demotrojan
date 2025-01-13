@@ -1,0 +1,81 @@
+.about{
+    height: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    
+}
+.trojans-about,.College-about{
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    width: 80%;
+    gap:50px;
+    flex-direction: row;
+   
+}
+.College-about{
+    flex-direction: row-reverse;
+    border-radius: 100px;
+    /* box-shadow: 0px 4px 20px 0px  #FF073A, 0px -4px 20px 0px #007BFF;   */
+    animation: roll 5s ease-in-out infinite;
+}
+.about_logos{
+    
+    height: 300px;
+    width: 300px;
+
+}
+.about_para{
+    width: 80%;
+}
+@keyframes roll {
+    0%{
+        box-shadow: 0px 4px 20px 0px  #FF073A, 0px -4px 20px 0px #007BFF;  
+    }
+    50%{
+        box-shadow: 0px 4px 20px 0px  #007BFF, 0px -4px 20px 0px #FF073A;
+    }
+    100%{
+        box-shadow: 0px 4px 20px 0px  #FF073A, 0px -4px 20px 0px #007BFF;  
+    }
+}
+@media screen and (max-width:720px) {
+    .about{
+        padding: 1rem;
+    }
+    .trojans-about,.College-about{
+        width:90%;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .about_logos{
+        height: 150px;
+        width: 150px;
+    
+    }
+    .about_para{
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px) {
+    .about{
+        padding: 0.2rem;
+    }
+    .trojans-about,.College-about{
+        width:90%;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .about_logos{
+        height: 80px;
+        width: 80px;
+    
+    }
+    .about_para{
+        width: 100%;
+    }
+}

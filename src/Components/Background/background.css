@@ -1,0 +1,16 @@
+.background-app{
+    position: fixed;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: first baseline;
+    overflow: hidden;
+}
+.logologo{
+    height: 779px;
+    width: 762px;
+   margin-top: 200px;
+   margin-left: -193px;
+   filter: blur(5px);
+}

@@ -1,0 +1,75 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+
+}
+.contact-down{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+}
+.contact-img{
+   
+    background-repeat: no-repeat;
+    
+    height: 400px;
+    width: 50%;
+}
+.inner-contact-name-number{
+    font-size: 20px;
+}
+.inner-contact-name-number>a{
+    color: white;
+}
+.inner-contact-name-number>a:hover{
+    color: #007BFF;
+}
+.contact-per-role{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding-bottom: 2em;
+}
+.contact-per-role-full{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    gap: 10px;
+}
+.contact-each{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.contact-per-role-full > div {
+    flex-basis: calc(50% - 10px); /* Adjust width of each item */
+    box-sizing: border-box; /* Ensure padding and margins are included in the width */
+}
+@media screen and (max-width:720px) {
+    .contact-down{
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-img,.contact-per-role-full{
+        width: 100%;
+    }
+    .contact-per-role-full{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:480px) {
+  
+    .contact-img{
+        display: none;
+    }
+   
+}
