@@ -1,0 +1,222 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+ 
+}
+
+#time {
+  display: flex;
+  gap: 30px;
+}
+
+#time .circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time .circle svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+#time .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 8;
+  stroke: #282828;
+  transform: translate(5px, 5px);
+}
+
+#time .circle svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+#time div {
+  position: absolute;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+#time div span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+#time .dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 99;
+  transform-origin: center; /* Ensure proper rotation */
+}
+
+#time .dots::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 15px;
+  height: 15px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+.newYear {
+  font-size: 4rem; /* Slightly reduced for better responsiveness */
+  font-weight: 700;
+  color: #04fc43; /* Bright green for celebration */
+  text-align: center;
+  line-height: 1.5;
+  animation: glow 2s infinite alternate ease-in-out, fadeIn 1.5s ease-in-out;
+  text-shadow: 0 0 20px #04fc43, 0 0 40px #04fc43, 0 0 60px #04fc43;
+}
+
+/* Keyframe for glowing effect */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px #04fc43, 0 0 40px #04fc43, 0 0 60px #04fc43;
+  }
+  100% {
+    text-shadow: 0 0 30px #04fc43, 0 0 60px #04fc43, 0 0 90px #04fc43;
+  }
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Tablet Design (max-width: 1024px) */
+@media (max-width: 768px) {
+  .body {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #time {
+    
+    gap: 20px;
+  }
+
+  /* #time .circle { */
+    /* width: 20vw; Adjust circle size for tablets */
+    /* height: 20vw; Adjust circle size for tablets */
+  /* } */
+
+  #time div {
+    font-size: 1.75rem;
+  }
+
+  .newYear {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body {
+    padding: 10px;
+  }
+
+  #time {
+    gap: 0px;
+  }
+
+  #time .circle {
+    height: 24vw; /* Adjust circle size for mobile */
+    width: 24vw; /* Ensure width adjusts accordingly */
+    max-width: 150px; /* Add max-width to avoid it becoming too large */
+    max-height: 150px; /* Add max-height to keep circles within reasonable size */
+    position: relative; /* Added to help with positioning */
+  }
+
+  #time div {
+    font-size: 1.2rem; /* Make text inside the circle smaller */
+  }
+
+  #time div span {
+    font-size: 0.5rem; /* Smaller font size for unit labels */
+  }
+
+  .newYear {
+    font-size: 2rem;
+  }
+
+  #time .dots::before {
+    width: 8px; /* Adjusted size of the dot */
+    height: 8px; /* Adjusted size of the dot */
+    top: -3px; /* Adjusted position for the dot */
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr); /* Adjust the glow effect */
+    position: absolute; /* Make the dot position relative to the circle */
+  }
+
+  #time .circle svg {
+    width: 100%; /* Ensure the SVG scales with the circle size */
+    height: 100%; /* Ensure the SVG scales with the circle size */
+    position: absolute; /* Makes the SVG responsive */
+    top: 0;
+    left: 0;
+  }
+
+  #time .circle svg circle {
+    r: 40%; /* Adjust radius as a percentage of circle size */
+    cx: 50%; /* Center the circle horizontally */
+    cy: 50%; /* Center the circle vertically */
+    stroke-width: 3; /* Reduced border width */
+    transition: stroke-dashoffset 0.3s ease; /* Smooth transition for stroke offset */
+  }
+
+  #time .dots {
+    position: absolute; /* Ensure the dots are positioned inside the circle */
+    width: 100%; /* Make sure the dots scale with the circle */
+    height: 100%; /* Make sure the dots scale with the circle */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 50;
+    transform-origin: center; /* Ensure dots rotate around the center */
+    top: 0;
+    left: 0;
+  }
+
+  /* Adjust dot rotation based on time (unit progress) */
+  #time .dots {
+    transform: rotate(
+      calc(360deg * (var(--dot-progress) / 100))
+    ); /* Sync dot with circle */
+  }
+
+  #time .dots::before {
+    width: 8px; /* Adjusted size of the dot */
+    height: 8px; /* Adjusted size of the dot */
+    top: -3px; /* Adjusted position for the dot */
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr); /* Adjust the glow effect */
+    position: absolute; /* Ensure the dot follows the circle’s path */
+  }
+}
+
