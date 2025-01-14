@@ -59,9 +59,9 @@
 }
 /* Hamburger menu style */
 .menu-wrap{
-
-    z-index: 999;
     
+    z-index: -100;
+    pointer-events: none;
     display: none;
 }
 .menu-wrap .toggler{
@@ -70,6 +70,7 @@
     top: 0;
     right: 0;
    cursor: pointer;
+   pointer-events: auto;
     width: 50px;
     height: 50px;
     opacity: 0;
@@ -128,8 +129,15 @@
     transform: rotate(225deg);
 }
 /* Show menu */
-.menu-wrap .toggler:checked ~ .menu{
+/* .menu-wrap .toggler:checked ~ .menu{
     visibility: visible;
+    pointer-events: auto;
+    z-index: 999;
+} */
+.menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction when menu is active */
+    z-index: 998; /* Bring the menu forward */
 }
 .menu-wrap .toggler:checked ~ .menu > div{
     transform: scale(1);
@@ -142,7 +150,7 @@
 .menu-wrap .menu{
     position: sticky;
     z-index: 998;
-    margin-top: 450px;
+    margin-top: 500px;
     margin-left:-125px ;
     width: 100vw;
     height: 100vh;

@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import { Heading } from "../../StyledComponents/styledcomponents";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const navtitle = "TROJANS ` 25";
   const navLinks = [
@@ -9,12 +10,12 @@ const Navbar = () => {
       link: "#",
     },
     {
-      name: "Home",
-      link: "#",
+      name: "Events",
+      link: "/events-page",
     },
     {
-      name: "Home",
-      link: "#",
+      name: "Sponser",
+      link: "/sponser-page",
     },
     {
       name: "Home",
@@ -32,9 +33,9 @@ const Navbar = () => {
       </div>
       <div className="navlinks">
         {navLinks.map((item, index) => (
-          <a href={item.link} key={index} className="navlink">
+          <Link to={item.link} key={index} className="navlink">
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
       {/* <------------------------------HAM BURGER MENU -------------------------------------->*/}
@@ -49,9 +50,9 @@ const Navbar = () => {
               <ul>
                 {navLinks.map((item, index) => (
                   <li key={index}>
-                    <a href={item.link} className="navlink">
+                    <Link to={item.link} className="navlink">
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
