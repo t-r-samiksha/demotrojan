@@ -3,6 +3,8 @@ import { CardContainer, CardBody, CardItem } from "./3d-card";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Heading } from "../../StyledComponents/styledcomponents";
 import "./events.css";
+import { Link } from 'react-router-dom';
+
 export function ThreeDCardDemo() {
   const details = [
     {
@@ -33,57 +35,57 @@ export function ThreeDCardDemo() {
 
   return (
     <div className="events">
-          <div className="events-title">
-            <Heading title="Events" />
-          </div>
-    <div className="flex flex-wrap justify-center gap-8 p-8">
-      {details.map((event, index) => (
-        <CardContainer key={index} className="inter-var">
-          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
-            <CardItem
-              translateZ="50"
-              className="text-3xl font-extrabold text-center text-neutral-700 dark:text-white leading-tight tracking-wide"
-            >
-              {event.Title}
-            </CardItem>
-            <CardItem
-              as="p"
-              translateZ="60"
-              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-            >
-              {event.Description}
-            </CardItem>
-            <CardItem translateZ="100" className="w-full mt-4">
-              <img
-                src={event.Image}
-                height="1000"
-                width="1000"
-                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt={event.Title}
-              />
-            </CardItem>
-            <div className="flex justify-between items-center mt-10">
+      <div className="events-title">
+        <Heading title="Events" />
+      </div>
+      <div className="flex flex-wrap justify-center gap-8 p-8">
+        {details.map((event, index) => (
+          <CardContainer key={index} className="inter-var">
+            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
               <CardItem
-                translateZ={20}
-                as="a"
-                href="#"
-                target="__blank"
-                className="flex items-center px-4 py-2 rounded-xl text-xs font-normal dark:text-white text-black"
+                translateZ="50"
+                className="text-3xl font-extrabold text-center text-neutral-700 dark:text-white leading-tight tracking-wide"
               >
-                {event.Navigate} <ArrowRightAltIcon className="ml-1" />
+                {event.Title}
               </CardItem>
               <CardItem
-                translateZ={20}
-                as="button"
-                className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                as="p"
+                translateZ="60"
+                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                More Info
+                {event.Description}
               </CardItem>
-            </div>
-          </CardBody>
-        </CardContainer>
-      ))}
-    </div>
+              <CardItem translateZ="100" className="w-full mt-4">
+                <img
+                  src={event.Image}
+                  height="1000"
+                  width="1000"
+                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  alt={event.Title}
+                />
+              </CardItem>
+              <div className="flex justify-between items-center mt-10">
+                <CardItem
+                  translateZ={20}
+                  as="a"
+                  className="flex items-center px-4 py-2 rounded-xl text-xs font-normal dark:text-white text-black"
+                >
+                  <Link to="/events-page" className="w-full">
+                    {event.Navigate} <ArrowRightAltIcon className="ml-1" />
+                  </Link>
+                </CardItem>
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                >
+                  More Info
+                </CardItem>
+              </div>
+            </CardBody>
+          </CardContainer>
+        ))}
+      </div>
     </div>
   );
 }

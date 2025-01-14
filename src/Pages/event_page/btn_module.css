@@ -1,0 +1,22 @@
+.btn {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  justify-content: center;
+  border: none;
+  outline: none;
+  font-size: 1.0rem;
+  border-radius: 1000px;
+  padding: 7px 0rem;
+  /* margin: 0 0.5rem ; */
+  width: 7.5rem;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}

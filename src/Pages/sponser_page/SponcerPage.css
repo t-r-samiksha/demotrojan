@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sponcers{
+  background: black !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top:50px ;
+} 
+
+.titleSponcer{
+  margin:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.titleSponcer h1 {
+  font-size: 50px;
+  font-weight: 600;
+  color: transparent;
+  position: relative;
+  -webkit-text-stroke: 0.1vw #007BFF;
+}
+
+.titleSponcer h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: #024ff4;
+  overflow: hidden;
+  border-right: 3px solid #007BFF;
+  border-radius: 4px;
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+  0%,10%,100%{
+    width:0%;
+  }
+  70%,90%{
+    width:100%;
+  }
+  
+}
+
+.title{
+  border-radius: 10px;
+  position: relative;
+  z-index: 100;
+  border: 2px solid #007BFF;
+  overflow: hidden; 
+}
+
+/* background: linear-gradient(90deg, #FF073A, #007BFF); */
+
+.title::before{
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top:15% !important;
+  left:-50% !important;
+  inset: 5px;
+  width: 200%;
+  height:300px ;
+  background:#FF073A;
+  animation:rotating 4s linear infinite;
+}
+
+.title::after{
+  content: "";
+  position: absolute;
+  background:rgb(20, 20, 20);
+  inset: 5px;
+}
+@keyframes rotating{
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+  
+}
+
+
+.content{
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.content h2{
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.675);
+}
+p{
+  text-align: justify;
+  font-size: 18px;
+  line-height: 20px;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+  color:white;
+  padding: 20px 0;
+  padding-left: 20px;
+  border-left: 2.5px solid white;
+  border-radius: 5px;
+}
+.image{
+  z-index: 100;
+}
+.sponcers a{
+  border: 2px solid white;
+  text-decoration: none;
+  color: white;
+  padding: 5px 15px;
+  width: fit-content;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.sponcers a:hover{
+  box-shadow: inset 200px 0 0 0 white;
+  color: black;
+  transition: 1s;
+  font-weight: 600;
+}
+
+
+.cosponcers{
+  justify-content: center;
+}
+
+.cosponcers img {
+  height: 400px;
+  z-index: 100;
+}
+.cosponcers .antway img{
+  width:100%;
+}
+
+.cosponcers>div{
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  width: 570px;
+  margin:30px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  overflow: hidden !important; 
+}
+
+
+.cosponcers>div::before{
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top:15% !important;
+  left: -50% !important;
+  inset: 5px;
+  width: 200%;
+  height:300px ;
+  background:#FF073A;
+  /* z-index: 1000; */
+  animation:rotating 4s linear infinite;
+}
+
+.cosponcers>div::after{
+  content: "";
+  position: absolute;
+  background:rgb(20, 20, 20);
+  inset: 5px;
+  cursor: pointer;
+}
+
+
+
+@media (max-width:768px) {
+  .cosponcers>div{
+    padding: 20px;
+  }
+  .cosponcers img{
+    width: 60%;
+    height: 60%;
+  }
+  .cosponcers .antway img{
+    width:50%;
+    height: 50%;
+  }
+  .cosponcers>div::before{
+    top:20% !important;
+    width: 200%;
+  }
+  .title{
+    padding: 20px;
+  }
+  .title::before{
+    width: 200%;
+    top:15% !important;
+    left:-50% !important;
+  }
+
+}
+
+@media (max-width:350px) {
+  .cosponcers>div::before{
+    top:-25% !important;
+    width: 50%;
+    height: 150%;
+    left: 15% !important;
+  }
+  .title::before{
+    width: 50%;
+    height: 150%;
+    top:-18% !important;
+    left:18% !important;
+  }
+  .cosponcers .antway img{
+    width:70%;
+    height: 50%;
+  }
+  .title{
+    margin: 20px !important;
+    width: 90%;
+    padding: 20px  10px;
+  }
+  p{
+    font-size: 15px;
+  }
+  .titleSponcer h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: transparent;
+    position: relative;
+    -webkit-text-stroke: 0.1vw blue;
+  }
+}
