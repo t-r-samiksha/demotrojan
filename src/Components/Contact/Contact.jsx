@@ -5,28 +5,37 @@ import { Heading, Heading1 } from "../../StyledComponents/styledcomponents";
 const Contact = () => {
   const Staff_coordinator = [
     {
-      name: "LoremIpsum",
-      phone: "1234567890",
+      name: "Mrs. T. N. Charanya",
+      phone: "",
+    },
+    {
+      name: "Mrs. D. Lita Pansy",
+      phone: "",
     },
   ];
   const president = [
     {
-      name: "LoremIpsum",
-      phone: "1234567890",
+      name: "V. S. Kanna",
+      phone: "+91 9677044486",
     },
   ];
   const vice_president = [
     {
-      name: "LoremIpsum",
-      phone: "1234567890",
+      name: "N.E. Sitharth",
+      phone: "+91 7305493313",
     },
-  ];
-  const Event_coordinators = [
     {
-      name: "LoremIpsum",
-      phone: "1234567890",
+      name: "R. Sugash",
+      phone: "+91 9150957616",
     },
   ];
+  const hod=[
+    {
+      name: "Dr. A.R. Kavitha",
+      phone: "",
+    }
+  ]
+
   return (
     <div className="contact">
       <div className="">
@@ -44,12 +53,12 @@ const Contact = () => {
         <div className="contact-per-role-full">
           <div className="contact-each">
             <div>
-              <Heading1 title="Staff Co-ordinator" />
+              <Heading1 title="HOD" />
             </div>
-            {Staff_coordinator.map((item, index) => (
+            {hod.map((item, index) => (
               <div key={index} className="contact-per-role">
                 <div className="inner-contact-name-number">
-                  {item.name} : <a href={`tel:${item.phone}`}>{item.phone}</a>
+                  {item.name} 
                 </div>
               </div>
             ))}
@@ -68,7 +77,7 @@ const Contact = () => {
           </div>
           <div className="contact-each">
             <div>
-              <Heading1 title="Vice President" />
+              <Heading1 title="Student Co-ordinator" />
             </div>
             {vice_president.map((item, index) => (
               <div key={index} className="contact-per-role">
@@ -80,16 +89,17 @@ const Contact = () => {
           </div>
           <div className="contact-each">
             <div>
-              <Heading1 title="Event Co-ordinator" />
+              <Heading1 title="Staff Co-ordinator" />
             </div>
-            {Event_coordinators.map((item, index) => (
+            {Staff_coordinator.map((item, index) => (
               <div key={index} className="contact-per-role">
                 <div className="inner-contact-name-number">
-                  {item.name} : <a href={`tel:${item.phone}`}>{item.phone}</a>
+                  {item.name} 
                 </div>
               </div>
             ))}
           </div>
+          
         </div>
       </div>
     </div>

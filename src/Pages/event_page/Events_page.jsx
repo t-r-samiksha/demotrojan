@@ -1,5 +1,5 @@
-
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { v4 as uuidv4 } from "uuid";
 import Card from "./card";
 import Carroussel from "./carousel";
@@ -14,6 +14,91 @@ import IMG7 from "../../assets/dn.png";
 
 
 const Events_page = () => {
+  const { isAuthenticated, loginWithRedirect, user } = useAuth0();
+  const [newUser, setNewUser] = useState(false);
+  const [eventsRegistered, setEventsRegistered] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const fetchRegisteredEvents = async () => {
+      if (isAuthenticated && user) {
+        try {
+          const res=await fetch(
+            `${process.env.REACT_APP_BACKEND_URL}/api/users/signin`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                userId: user.sub,
+                name: user.name,
+                email: user.email,
+                profile: user.picture,
+              }),
+            }
+          );
+          if (!res.ok) {
+            console.error("Failed to sign in user");
+            return;
+          }
+  
+          const resData = await res.json();
+          const user_id = resData._id; 
+          const response = await fetch(
+            `${process.env.REACT_APP_BACKEND_URL}/api/registered/registered-events?user_id=${user_id}`
+          );
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data.events.length === 0) {
+              setNewUser(true);
+              setEventsRegistered([]);
+            } else {
+              setNewUser(false);
+              setEventsRegistered(data.events);
+            }
+          } else {
+            console.error("Failed to fetch registered events");
+          }
+        } catch (error) {
+          console.error("Error fetching registered events:", error);
+        }
+      }
+    };
+
+    fetchRegisteredEvents();
+  }, [isAuthenticated, user]);
+
+  const handleRegisterClick = (eventId) => {
+    if (!isAuthenticated) {
+      alert("Please login to register for events.");
+      loginWithRedirect();
+      return;
+    }
+
+    if (newUser) {
+      setShowModal(true); // Show registration modal
+    }
+  };
+
+  const handleRegisterSubmit = async (eventData) => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/registered/register-events`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user_id: user.sub, events: eventData }),
+      });
+
+      if (response.ok) {
+        setNewUser(false);
+        setEventsRegistered(eventData);
+        setShowModal(false);
+      } else {
+        console.error("Failed to register for events.");
+      }
+    } catch (error) {
+      console.error("Error registering for events:", error);
+    }
+  };
   const carouselData = [
     {
       title: "Technical Events",
@@ -25,7 +110,7 @@ const Events_page = () => {
           fee: "FREE",
           category: "SOLO-PLAY",
           buttons: [
-            { text: "REGISTER", href: "/register-tech1" },
+            { text: "REGISTER"},
             { text: "RULES", href: "/rules-tech1" },
           ],
         },

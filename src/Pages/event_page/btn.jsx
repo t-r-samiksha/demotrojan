@@ -1,10 +1,15 @@
 import "./btn_module.css";
 
-function Button({ text, href }) {
+function Button({ text, href,onClick, disabled}) {
   return (
-    <a href={href} className="btn" target="_blank" rel="noopener noreferrer">
+
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`btn ${disabled ? "bg-gray-400" : "bg-blue-500 text-white"}`}
+    >
       {text}
-    </a>
+    </button>
   );
 }
 

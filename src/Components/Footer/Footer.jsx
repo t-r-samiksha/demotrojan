@@ -9,17 +9,17 @@ const Footer = () => {
             link:"#"
         },
         {
-            name:"Instagram",
+            name:"Youtube",
             Icon:YouTube,
             link:"#"
         },
         {
-            name:"Instagram",
+            name:"Facebook",
             Icon:Facebook,
             link:"#"
         },
         {
-            name:"Instagram",
+            name:"LinkedIn",
             Icon:LinkedIn,
             link:"#"
         },
