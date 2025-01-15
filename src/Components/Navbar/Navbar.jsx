@@ -1,30 +1,33 @@
 import React from "react";
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
 import "./navbar.css";
 import { Heading } from "../../StyledComponents/styledcomponents";
+
 const Navbar = () => {
   const navtitle = "TROJANS ` 25";
   const navLinks = [
     {
       name: "Home",
-      link: "#",
+      link: "/",
     },
     {
-      name: "Home",
-      link: "#",
+      name: "Events",
+      link: "/events-page",  // Update with the correct route
     },
     {
-      name: "Home",
-      link: "#",
+      name: "Sponsor",
+      link: "/sponser-page",  // Update with the correct route
     },
     {
-      name: "Home",
-      link: "#",
+      name: "About",
+      link: "#",  // Add the correct route if needed
     },
     {
-      name: "Home",
-      link: "#",
+      name: "Contact",
+      link: "#",  // Add the correct route if needed
     },
   ];
+
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -32,11 +35,12 @@ const Navbar = () => {
       </div>
       <div className="navlinks">
         {navLinks.map((item, index) => (
-          <a href={item.link} key={index} className="navlink">
+          <Link to={item.link} key={index} className="navlink">  {/* Use Link instead of <a> */}
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
+
       {/* <------------------------------HAM BURGER MENU -------------------------------------->*/}
       <div className="menu-wrap">
         <input type="checkbox" className="toggler" />
@@ -49,9 +53,9 @@ const Navbar = () => {
               <ul>
                 {navLinks.map((item, index) => (
                   <li key={index}>
-                    <a href={item.link} className="navlink">
+                    <Link to={item.link} className="navlink">  {/* Use Link instead of <a> */}
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
