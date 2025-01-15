@@ -102,7 +102,7 @@ const SMButton = styled.div`
 `;
 export const SeeMoreButton = ({ text,link }) => {
   return (
-    <a href={link} target="_blank">
+    <a href={link} >
     <SMButton>
       {text}
       <ArrowForwardIcon sx={{fill:"white"}}/>

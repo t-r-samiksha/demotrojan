@@ -53,6 +53,16 @@ const Events_page = () => {
             { text: "RULES", href: "/rules-tech1" },
           ],
         },
+        {
+          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg",
+          title: "Tech Event 1",
+          description: "Explore the latest in technology at Tech Event 1.",
+          buttons: [
+            { text: "REGISTER", href: "/register-tech1" },
+            { text: "RULES", href: "/rules-tech1" },
+          ],
+        },
+        
       ],
     },
     {

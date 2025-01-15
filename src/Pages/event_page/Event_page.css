@@ -13,6 +13,7 @@ body {
     gap: 1rem;
     
   }
+  
   .carousel-container {
     width: 100%;
     height: 100%;
@@ -21,6 +22,7 @@ body {
     align-items: center;
     margin-bottom: 2rem;
   }
+  
   .topic-heading {
     text-align: center;
     font-size: 1.8rem;

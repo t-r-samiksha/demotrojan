@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+} */
+.titleMain{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
 }
-
 .sponcers{
   background: black !important;
   min-height: 100vh;
@@ -59,7 +64,11 @@
   position: relative;
   z-index: 100;
   border: 2px solid #007BFF;
-  overflow: hidden; 
+  overflow: hidden;
+  display:flex !important;
+  flex-direction: row; 
+  padding: 10px;
+  width: 90%;
 }
 
 /* background: linear-gradient(90deg, #FF073A, #007BFF); */
@@ -100,6 +109,7 @@
   line-height: 20px;
   justify-content: center;
   align-items: center;
+  padding: 25px !important;
 }
 .content h2{
   text-align: center;
@@ -108,7 +118,7 @@
   font-size: 40px;
   color: rgba(255, 255, 255, 0.675);
 }
-p{
+.sponcers p{
   text-align: justify;
   font-size: 18px;
   line-height: 20px;
@@ -122,6 +132,7 @@ p{
 }
 .image{
   z-index: 100;
+  padding: 30px 20px;
 }
 .sponcers a{
   border: 2px solid white;
@@ -144,26 +155,32 @@ p{
 
 
 .cosponcers{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
 
 .cosponcers img {
   height: 400px;
   z-index: 100;
+  padding: 30px;
 }
-.cosponcers .antway img{
+
+/* .cosponcers .antway img{
   width:100%;
-}
+} */
 
 .cosponcers>div{
   border: 2px solid #007BFF;
   border-radius: 10px;
   width: 570px;
-  margin:30px;
+  margin: 30px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 100;
   overflow: hidden !important; 
@@ -201,7 +218,9 @@ p{
   .cosponcers img{
     width: 60%;
     height: 60%;
+    padding:0;
   }
+  
   .cosponcers .antway img{
     width:50%;
     height: 50%;
@@ -209,9 +228,18 @@ p{
   .cosponcers>div::before{
     top:20% !important;
     width: 200%;
+
+  }
+  .cosponcers>div{
+    width: 90%;
   }
   .title{
     padding: 20px;
+    flex-direction: column;
+    width: 90%;
+  }
+  .cosponcers{
+    flex-direction: column;
   }
   .title::before{
     width: 200%;
@@ -243,7 +271,7 @@ p{
     width: 90%;
     padding: 20px  10px;
   }
-  p{
+  .sponcers p{
     font-size: 15px;
   }
   .titleSponcer h1 {
