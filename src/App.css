@@ -11,4 +11,5 @@
   background:linear-gradient(135deg, #1e1e2f, #121212);
   backdrop-filter: blur(2px);
   color: white;
+  /* overflow-x: hidden; */
 }

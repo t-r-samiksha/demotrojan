@@ -1,0 +1,55 @@
+.loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    justify-content: center;
+    gap:50px;
+    padding-top: 100px;
+    opacity: 1;
+    transform: opacity 1s ease;
+    background: black;
+}
+.loading_1{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    justify-content: center;
+    gap:50px;
+    opacity: 1;
+    transform: opacity 1s ease;
+    background: black;
+}
+.logo>video{
+    height: 110vh;
+}
+.fade-out{
+    opacity: 0;
+    pointer-events: none;
+}
+.days_text{
+    font-family: 'Metal Mania';
+    font-size: 50px;
+    font-weight: 500;
+}
+@media  screen and (max-width:720px) {
+    .logo>video{
+        height: 70vh;
+    }
+    .days_text{
+        font-size: 30px;
+    }
+}
+@media  screen and (max-width:480px) {
+    .logo>video{
+        height: 40vh;
+    }
+    .days_text{
+        font-size: 20px;
+    }
+}

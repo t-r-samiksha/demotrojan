@@ -74,7 +74,7 @@ export default function SponcerPage() {
             key={index}
             className={` ${cosponsor.name.toLowerCase()}`}
             data-aos={cosponsor.aosEffect}
-            data-aos-duration="500"
+            data-aos-duration='500'
           >
             <img
               src={cosponsor.imgSrc}

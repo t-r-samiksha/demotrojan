@@ -1,5 +1,5 @@
 .navbar{
-    width: 100%;
+    width: 100vw;
     height:100px;
     
     padding: 2rem;
@@ -11,7 +11,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: inherit;     
+    background: inherit;   
+    overflow:hidden;  
 }
 .nav-logo{
     padding-left: 5rem;

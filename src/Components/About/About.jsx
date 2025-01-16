@@ -15,13 +15,13 @@ const About = () => {
             <Heading title='About Us'/>
         </div>
         <div className='trojans-about'>
-            <div className='about_logos'  style={{background:`url(${Sympo_logo})`,backgroundSize: 'cover',
-        backgroundPosition: 'center',}}/>
+            <div className='about_logos'  style={{background:`url(${Sympo_logo})`,backgroundSize: 'contain',
+        backgroundPosition: 'center',backgroundRepeat:'no-repeat'}}/>
             <div className='about_para'><AboutPara para={Sympo_About} /></div>
         </div>
         <div className='College-about'>
-            <div className='about_logos' style={{background:`url(${College_logo})`,backgroundSize: 'cover',
-        backgroundPosition: 'center',}}/>
+            <div className='about_logos' style={{background:`url(${College_logo})`,backgroundSize: 'contain',
+        backgroundPosition: 'center',backgroundRepeat:'no-repeat'}}/>
             <div className='about_para'><AboutPara para={College_about} /></div>
         </div>
     </div>

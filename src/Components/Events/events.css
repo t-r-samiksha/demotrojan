@@ -41,3 +41,8 @@
     color: red;
 
 }
+@media screen and (max-width:480px) {
+    .events{
+        padding: 0.2em;
+    }
+}

@@ -2,7 +2,7 @@
 
 .home{
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,6 +25,26 @@
 .sympoDesc{
     font-size: 20px;
 }
+.logo {
+    width: 181px;
+    height: 196px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden;
+    position: relative;
+    /* background: black; Optional: fallback background */
+  }
+  
+  .logo video {
+    width: 100%; /* Ensures video fully fills the width */
+    height: 100%; /* Ensures video fully fills the height */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+    position: absolute; /* Ensures it stays inside the container */
+     /* Align to top */
+    left: 0; /* Align to left */
+  }
 @media screen and (max-width:720px) {
     .logoText{
         font-size: 100px;

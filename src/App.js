@@ -13,13 +13,30 @@ import Navbar from "./Components/Navbar/Navbar";
 import EventsPage from "./Pages/event_page/Events_page";
 import SponserPage from "./Pages/sponser_page/SponcerPage";
 import SignInPage from './Pages/login_page/SignupFormDemo'
+import { useEffect, useState } from "react";
+import Loading from "./Components/Loading_and_landing/Loading";
 
 
 function App() {
+  const[showLandingPage,setShowLandingPage]=useState(true);
+  useEffect(()=>{
+    const timer=setTimeout(()=>{
+      setShowLandingPage(false);
+    },[7000]);
+  })
   return (
     <Router>
+
       <div className="App">
-        {/* Routing Setup */}
+        {/* {Landing Page} */}
+        {showLandingPage &&
+        <Loading/>
+        }
+
+
+        {/* {Routing setup} */}
+        {!showLandingPage &&
+        
         <Routes>
           <Route
             path="/events-page"
@@ -65,6 +82,7 @@ function App() {
             }
           />
         </Routes>
+}
       </div>
     </Router>
   );

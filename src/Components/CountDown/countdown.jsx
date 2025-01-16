@@ -90,7 +90,7 @@ const Countdown = () => {
                       strokeDasharray: circleCircumference,
                       strokeDashoffset: circleCircumference - circleDashArray(
                         time[unit],
-                        unit === "days" ? 365 : unit === "hours" ? 24 : 65
+                        unit === "days" ? 30 : unit === "hours" ? 24 : 65
                       ),
                       stroke: ["#ffffff", "#ff0909", "#fee800", "#04fc43"][index], // Color based on unit
                       filter: [
@@ -136,7 +136,7 @@ const Countdown = () => {
                 style={{
                   transform: `rotate(${dotRotation(
                     time[unit],
-                    unit === "days" ? 365 : 60
+                    unit === "days" ? 30 : 60
                   )}deg)`,
                 }}
               ></div>
@@ -151,7 +151,7 @@ const Countdown = () => {
                     strokeDasharray: 440,
                     strokeDashoffset: 440 - circleDashArray(
                       time[unit],
-                      unit === "days" ? 365 : 60
+                      unit === "days" ? 30 : 60
                     ),
                   }}
                 ></circle>
