@@ -8,6 +8,7 @@ import "./btn_module.css";
 import { ToastContainer, toast } from "react-toastify"; // Import Toastify
 import 'react-toastify/dist/ReactToastify.css';
 import zIndex from "@mui/material/styles/zIndex";
+import Rules from "./Rules/Rules";
 
 const customStyles = {
   content: {
@@ -65,10 +66,13 @@ const buttonStyles = {
 
 Modal.setAppElement("#root");
 
-export function Card({ imagen, title, description }) {
+export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission }) {
   const [show, setShown] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [isFirstSubmission, setIsFirstSubmission] = useState(true);
+  const [showPopup, setShowPopup] = useState(false); //Rules page setupp...
+  const handleRules=()=>{
+    setShowPopup(prevState => !prevState);
+  }
 
   const showToast = (message) => {
     const toastId = toast.success(message, {
@@ -95,7 +99,7 @@ export function Card({ imagen, title, description }) {
   });
 
   function openModal() {
-    if(isFirstSubmission){
+    if(isFirstSubmissionMain){
     setIsOpen(true);
     }
   }
@@ -107,7 +111,9 @@ export function Card({ imagen, title, description }) {
   function handleFormSubmit(isFirstTime) {
     if (isFirstTime) {
       openModal();
-      setIsFirstSubmission(false);
+      
+      handleIsFirstSubmission(false);
+      
     } else {
       toast.success("You have registered the event successfully !"); 
       console.log("secont time")
@@ -124,16 +130,20 @@ export function Card({ imagen, title, description }) {
       >
         <img src={imagen} alt={title} className="card-image" />
         <h2 className="card-title">{title}</h2>
-        <p className="card-description">{description}</p>
+        <div className="event-details"> 
+        <p><strong/>Time: {time}</p>
+        <p><strong/>Entry Fee: {fee}</p>
+        <p><strong/>Category: {category}</p>
+      </div>
 
         <div className="btnn">
           <button className="btn" onClick={openModal}>
             Register
           </button>
-          <button className="btn">Info</button>
+          <button className="btn" onClick={()=>{handleRules()}}>Info</button>
         </div>
       </animated.div>
-
+      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -155,7 +165,18 @@ export function Card({ imagen, title, description }) {
           </button>
         </div>
       </Modal>
-      <ToastContainer />
+      <Modal isOpen={showPopup}  onRequestClose={handleRules} style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dimmed background
+          pointerEvents:'none'
+          
+        },
+        content: {
+          background: 'transparent', // Transparent content background
+          border: 'none', // Optional: Remove border if needed
+          pointerEvents:'auto'
+        }
+      }}><Rules title={title} showPopup={showPopup} handleRules={handleRules}/></Modal>
     </>
   );
 }

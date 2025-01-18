@@ -15,6 +15,7 @@ import SponserPage from "./Pages/sponser_page/SponcerPage";
 import SignInPage from './Pages/login_page/SignupFormDemo'
 import { useEffect, useState } from "react";
 import Loading from "./Components/Loading_and_landing/Loading";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
               <>
               <Navbar />
               <EventsPage />
+              <ToastContainer />
               </>
             }
           />

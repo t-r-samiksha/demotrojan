@@ -42,7 +42,7 @@ const RegistrationForm = ({closeModal,showToast,handleFormSubmit}) => {
     e.preventDefault();
     if (validate()) {
       console.log("Form submitted", formData);
-      showToast("Event Registeration Successfull !");
+      showToast("User Registeration Successfull !");
       handleFormSubmit(true);
     } else {
       console.log("Validation errors", errors);

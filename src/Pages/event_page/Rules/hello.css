@@ -1,0 +1,411 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* 
+/* Back Icon */
+.back-icon {
+    font-size: 30px;
+    color: #0ef;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.back-icon:hover {
+    text-shadow: 0 0 20px #0ef, 0 0 40px #0ef, 0 0 60px #0ef;
+}
+
+/* Title */
+.title {
+    font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke: 1px #0ef;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    color: #0ef;
+    overflow: hidden;
+    border-right: 2px solid #0ef;
+    animation: typing 5s steps(20) infinite;
+}
+
+@keyframes typing {
+    0%, 100% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+}
+
+h3 {
+    color: aqua;
+}
+
+/* Neon Container */
+.neon-container {
+    border: 4px solid transparent;
+    margin: 30px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 2000px;
+    margin-top: 50px;
+    padding: 30px;
+    color: white;
+    background: transparent;
+    position: relative;
+    animation: border-animation 4s linear infinite;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 10px;
+    border: 2px solid #00FFFF;
+    position: relative;
+    padding: 20px;
+    max-height: 650px;
+}
+
+/* Glare effect added using background */
+.neon-container {
+    background: transparent;
+    background-size: cover;
+    background-attachment: local;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Running Border Animation for All 4 Borders of Neon Container */
+.neon-container::before,
+.neon-container .border-top,
+.neon-container .border-right,
+.neon-container .border-bottom,
+.neon-container .border-left {
+    content: '';
+    position: absolute;
+    height: 3px;
+    z-index: -1;
+}
+
+/* Top Border */
+.neon-container::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: running-border 5s linear infinite;
+}
+
+/* Right Border */
+.neon-container .border-right {
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    animation: running-border-vertical 5s linear infinite;
+}
+
+/* Bottom Border */
+.neon-container .border-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation: running-border 5s linear infinite reverse;
+}
+
+/* Left Border */
+.neon-container .border-left {
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    animation: running-border-vertical 5s linear infinite reverse;
+}
+
+/* Add a custom scrollbar (Optional, for better aesthetics) */
+.neon-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.neon-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.neon-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ef;
+}
+
+.neon-container::-webkit-scrollbar-thumb:hover {
+    background: #0cf;
+}
+
+@keyframes shine-move {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 40px;
+}
+
+.rule {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: aqua;
+}
+
+ul li {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+p {
+    font-size: 24px;
+}
+
+/* Neon Button */
+.neon-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: aqua;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    
+}
+
+.button-container {
+  margin-top: 20px; /* Add spacing between the popup and the button */
+}
+.neon-button:hover {
+    background: #0ef;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .neon-container {
+        padding: 25px;
+    }
+
+    .neon-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .neon-container {
+        padding: 20px;
+    }
+
+    .neon-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .back-icon {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+   
+
+    .title {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .neon-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .neon-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+.neon-button:hover {
+    color: black;
+}
+
+.neon-button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.neon-button:hover::before {
+    left: 0;
+}
+
+.neon-button::before {
+    transform: scaleX(0);
+}
+
+.neon-button:hover::before {
+    transform: scaleX(1);
+}
+
+/* Running Border Animation */
+@keyframes border-animation {
+    0% {
+        border-width: 4px;
+        border-image: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00) 1;
+    }
+    50% {
+        border-width: 4px;
+        border-image: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00) 1;
+    }
+    100% {
+        border-width: 4px;
+        border-image: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00) 1;
+    }
+}
+
+.rules {
+  padding: 20px;
+  transition: filter 0.3s ease;
+}
+
+
+
+
+/* Apply blur effect only to background content */
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* semi-transparent background */
+  backdrop-filter: blur(5px);
+  z-index: 999; /* Ensure it appears behind the popup */
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* semi-transparent background */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Keep the popup overlay above other content */
+}
+
+.popup {
+  background:linear-gradient(135deg, #1e1e2f, #121212);;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1001; /* Popup content above overlay */
+}
+
+.click-me-button {
+  margin-top: 20px; /* Adds space between the content and the button */
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  
+}
+
+.click-me-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+
+  
+}
+
+.click-me-button:hover {
+  
+  color: black;
+}
+
+/* .neon-button {
+  background: black;
+  color: aqua;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.neon-button:hover {
+  background: aqua;
+} */
+
+.blur-background {
+  filter: blur(5px);}
+
+

@@ -1,98 +1,143 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import Card from "./card";
 import Carroussel from "./carousel";
-import "./Event_page.css"
+import "./Event_page.css";
+import IMG1 from "../../assets/1.png";
+import IMG2 from "../../assets/CC_PAGE_1.png";
+import IMG3 from "../../assets/PAPERNZA.png";
+import IMG4 from "../../assets/TECHNO 1.png";
+import IMG5 from "../../assets/Artboard 1.jpg";
+import IMG6 from "../../assets/frank.png";
+import IMG7 from "../../assets/dn.png";
+
+
 const Events_page = () => {
   const carouselData = [
     {
       title: "Technical Events",
       cards: [
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg",
-          title: "Tech Event 1",
-          description: "Explore the latest in technology at Tech Event 1.",
+          imagen: IMG1,
+          title: "CODE A THON",
+          time: "TO BE ANNOUNCED",
+          fee: "FREE",
+          category: "SOLO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech1" },
             { text: "RULES", href: "/rules-tech1" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/acf_pro.png",
-          title: "Tech Event 2",
-          description: "Join us for an exciting Tech Event 2.",
+          imagen: IMG2,
+          title: "CODERS CHEMISTRY",
+          time: "TO BE ANNOUNCED",
+          fee: "FREE",
+          category: "DUO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech2" },
             { text: "RULES", href: "/rules-tech2" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg",
-          title: "Tech Event 3",
-          description: "Explore the latest in technology at Tech Event 3.",
+          imagen: IMG3,
+          title: "PAPERENZA",
+          time: "TO BE ANNOUNCED",    
+          fee: "FREE",
+          category: "Cloud Computing",
           buttons: [
-            { text: "REGISTER", href: "/register-tech1" },
-            { text: "RULES", href: "/rules-tech1" },
+            { text: "REGISTER", href: "/register-tech3" },
+            { text: "RULES", href: "/rules-tech3" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png",
-          title: "Workshop 1",
-          description: "Learn new skills at Workshop 1.",
+          imagen: IMG4,
+          title: "TECHNO RYTHM",
+          time: "TO BE ANNOUNCED",
+          fee: "FREE",
+          category: "SQUAD-PLAY(3 PLAYERS)",
           buttons: [
-            { text: "REGISTER", href: "/register-workshop1" },
-            { text: "DETAILS", href: "/details-workshop1" },
+            { text: "REGISTER", href: "/register-tech3" },
+            { text: "RULES", href: "/rules-tech3" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg",
-          title: "Tech Event 1",
-          description: "Explore the latest in technology at Tech Event 1.",
+          imagen: IMG5,
+          title: "TECH TRIVIA",
+          time: "TO BE ANNOUNCED",
+          fee: "FREE",
+          category: "SOLO-PLAY",
           buttons: [
-            { text: "REGISTER", href: "/register-tech1" },
-            { text: "RULES", href: "/rules-tech1" },
+            { text: "REGISTER", href: "/register-tech3" },
+            { text: "RULES", href: "/rules-tech3" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg",
-          title: "Tech Event 1",
-          description: "Explore the latest in technology at Tech Event 1.",
+          imagen: IMG6,
+          title: "FRANKESTEIN",
+          time: "TO BE ANNOUNCED",
+          fee: "FREE",
+          category: "DUO-PLAY",
           buttons: [
-            { text: "REGISTER", href: "/register-tech1" },
-            { text: "RULES", href: "/rules-tech1" },
+            { text: "REGISTER", href: "/register-tech3" },
+            { text: "RULES", href: "/rules-tech3" },
+          ],
+        },
+        {
+          imagen: IMG7,
+          title: "DEVELOPER'S NIGHTMARE",
+          time: "TO BE ANNOUNCED",
+          fee: "FREE",
+          category:"SOLO-PLAY",
+          buttons: [
+            { text: "REGISTER", href: "/register-tech3" },
+            { text: "RULES", href: "/rules-tech3" },
           ],
         },
         
       ],
     },
     {
-      title: "NON-Technical Events",
+      title: "Non-Technical Events",
       cards: [
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2017/12/layer_slider_plugin_thumb.png",
-          title: "Non-Tech Event 1",
-          description: "Enjoy a creative experience at Non-Tech Event 1.",
+          imagen: IMG1,
+          title: "Art Competition",
+          description: "Showcase your creativity in our Art Competition.",
+          time: "10:00 AM - 12:00 PM",
+          date: "2025-01-28",
+          fee: "$5",
+          category: "Art & Design",
           buttons: [
-            { text: "REGISTER", href: "/register-nontech1" },
-            { text: "RULES", href: "/rules-nontech1" },
+            { text: "REGISTER", href: "/register-art" },
+            { text: "RULES", href: "/rules-art" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png",
-          title: "Non-Tech Event 2",
-          description: "Participate in Non-Tech Event 2.",
+          imagen: IMG2,
+          title: "Dance Battle",
+          description: "Get ready to groove and compete in our Dance Battle.",
+          time: "4:00 PM - 7:00 PM",
+          date: "2025-01-29",
+          fee: "$8",
+          category: "Performing Arts",
           buttons: [
-            { text: "REGISTER", href: "/register-nontech2" },
-            { text: "RULES", href: "/rules-nontech2" },
+            { text: "REGISTER", href: "/register-dance" },
+            { text: "RULES", href: "/rules-dance" },
           ],
         },
         {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png",
-          title: "Non-Tech Event 3",
-          description: "Participate in Non-Tech Event 3.",
+          imagen: IMG5,
+          title: "Quiz Competition",
+          description: "Put your knowledge to the test in our Quiz Competition.",
+          time: "1:00 PM - 3:00 PM",
+          date: "2025-01-30",
+          fee: "$5",
+          category: "Trivia",
           buttons: [
-            { text: "REGISTER", href: "/register-nontech2" },
-            { text: "RULES", href: "/rules-nontech2" },
+            { text: "REGISTER", href: "/register-quiz" },
+            { text: "RULES", href: "/rules-quiz" },
           ],
         },
       ],
@@ -101,60 +146,81 @@ const Events_page = () => {
       title: "Workshops",
       cards: [
         {
+          imagen: IMG1,
+          title: "Graphic Design Workshop",
+          description: "Explore the art of graphic design in this interactive workshop.",
+          time: "9:00 AM - 1:00 PM",
+          date: "2025-02-01",
+          fee: "$12",
+          category: "Graphic Design",
+          buttons: [
+            { text: "REGISTER", href: "/register-graphicdesign" },
+            { text: "DETAILS", href: "/details-graphicdesign" },
+          ],
+        },
+        {
+          imagen: IMG2,
+          title: "Web Development Workshop",
+          description: "Learn the basics of web development in this beginner-friendly workshop.",
+          time: "2:00 PM - 6:00 PM",
+          date: "2025-02-02",
+          fee: "$15",
+          category: "Web Development",
+          buttons: [
+            { text: "REGISTER", href: "/register-webdev" },
+            { text: "DETAILS", href: "/details-webdev" },
+          ],
+        },
+        {
           imagen: "https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png",
-          title: "Workshop 1",
-          description: "Learn new skills at Workshop 1.",
+          title: "Data Science Workshop",
+          description: "Dive into the world of data analysis and visualization.",
+          time: "3:00 PM - 6:00 PM",
+          date: "2025-02-03",
+          fee: "$18",
+          category: "Data Science",
           buttons: [
-            { text: "REGISTER", href: "/register-workshop1" },
-            { text: "DETAILS", href: "/details-workshop1" },
+            { text: "REGISTER", href: "/register-datascience" },
+            { text: "DETAILS", href: "/details-datascience" },
           ],
         },
-        {
-          imagen: "https://updates.theme-fusion.com/wp-content/uploads/2019/01/pwa_880_660.jpg",
-          title: "Workshop 2",
-          description: "Advance your knowledge at Workshop 2.",
-          buttons: [
-            { text: "REGISTER", href: "/register-workshop2" },
-            { text: "DETAILS", href: "/details-workshop2" },
-          ],
-        },
-        {
-          imagen:"https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png",
-          title: "Workshop 3",
-          description: "Advance your knowledge at Workshop 3.",
-          buttons: [
-            { text: "REGISTER", href: "/register-workshop2" },
-            { text: "DETAILS", href: "/details-workshop2" },
-          ],
-        },
-  
       ],
     },
-  ];  
+  ];
+  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(true);
+  const handleIsFirstSubmission=(val)=>{
+    setIsFirstSubmissionMain(val);
+  }
       return (
-        <div className="container">
-        {carouselData.map((carousel, index) => (
-          <div className="carousel-container" key={index}>
-            <h2 className="topic-heading">{carousel.title}</h2>
-            <Carroussel
-              cards={carousel.cards.map((card) => ({
-                key: uuidv4(),
-                content: (
-                  <Card
-                    imagen={card.imagen}
-                    title={card.title}
-                    description={card.description}
-                    buttons={card.buttons}
-                  />
-                ),
-              }))}
-              showArrows={true}
-              height="500px"
-            />
-          </div>
-        ))}
-      </div>
-    );
-    }  
+    <div className="container">
+      {carouselData.map((carousel, index) => (
+        <div className="carousel-container" key={index}>
+          <h2 className="topic-heading">{carousel.title}</h2>
+          <Carroussel
+            cards={carousel.cards.map((card, cardIndex) => ({
+              key: cardIndex,  // Use card.title or another unique property
+              content: (
+                <Card
+                  imagen={card.imagen}
+                  title={card.title}
+                  description={card.description}
+                  date={card.date}
+                  time={card.time}
+                  fee={card.fee}
+                  category={card.category}
+                  buttons={card.buttons}
+                  isFirstSubmissionMain={isFirstSubmissionMain}
+                    handleIsFirstSubmission={handleIsFirstSubmission}
+                />
+              ),
+            }))}
+            showArrows={true}
+            height="500px"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default Events_page
+export default Events_page;

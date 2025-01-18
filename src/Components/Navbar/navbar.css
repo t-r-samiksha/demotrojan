@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     background: inherit;   
-    overflow:hidden;  
+      
 }
 .nav-logo{
     padding-left: 5rem;
@@ -139,6 +139,7 @@
     visibility: visible;
     pointer-events: auto; /* Enable interaction when menu is active */
     z-index: 998; /* Bring the menu forward */
+    height: 100vh;
 }
 .menu-wrap .toggler:checked ~ .menu > div{
     transform: scale(1);
@@ -243,6 +244,12 @@
     }
     .nav-logo{
         padding-left: 1rem;
+    }
+    .menu-wrap .toggler:checked ~ .menu {
+        visibility: visible;
+        pointer-events: auto; /* Enable interaction when menu is active */
+        z-index: 998; /* Bring the menu forward */
+        height: 100vh;
     }
     .login-btn-container {
         margin-right: 1rem;
