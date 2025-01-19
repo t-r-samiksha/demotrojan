@@ -20,3 +20,8 @@
   background-color: black;
   color: white;
 }
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5; 
+}

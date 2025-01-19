@@ -6,10 +6,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  console.log(user);
   useEffect(() => {
     const sendUserDataToBackend = async () => {
-      console.log(process.env.REACT_APP_BACKEND_URL);
+
 
       if (user) {
         try {

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import "./RegistrationForm.scss"; // Importing the CSS file
 
-const RegistrationForm = ({closeModal,showToast,handleFormSubmit}) => {
+const RegistrationForm = ({
+  closeModal,
+  showToast,
+
+  userId,
+  setEventsRegistered,
+  event,
+  setIsFirstSubmissionMain,
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     year: "",
@@ -10,7 +18,6 @@ const RegistrationForm = ({closeModal,showToast,handleFormSubmit}) => {
     collegename: "",
     mobilenumber: "",
   });
-
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -37,18 +44,44 @@ const RegistrationForm = ({closeModal,showToast,handleFormSubmit}) => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+  const handleRegisterSubmit = async (eventData) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/registered/register-event`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            user_id: userId,
+            event_name: event,
+            college_name: formData.collegename,
+            year: formData.year,
+            department: formData.department,
+            phone_number: formData.mobilenumber,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setIsFirstSubmissionMain(false);
+        setEventsRegistered(eventData);
+      } else {
+        console.error("Failed to register for events.");
+      }
+    } catch (error) {
+      console.error("Error registering for events:", error);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted", formData);
+      closeModal();
+      handleRegisterSubmit(formData);
       showToast("User Registeration Successfull !");
-      handleFormSubmit(true);
     } else {
       console.log("Validation errors", errors);
     }
-    closeModal();
-
   };
 
   return (
@@ -62,12 +95,14 @@ const RegistrationForm = ({closeModal,showToast,handleFormSubmit}) => {
       <input className="c-checkbox" type="checkbox" id="finish" />
       <div className="c-form__progress" />
       <div className="c-formContainer">
-
         <div className="c-welcome">
-         <div> Secure Your Spot Today - Complete Your Event Registration Below!{" "} </div>
+          <div>
+            {" "}
+            Secure Your Spot Today - Complete Your Event Registration Below!{" "}
+          </div>
           <button className="agree-btn" onClick={handleSubmit}>
-          Submit
-        </button>
+            Submit
+          </button>
         </div>
 
         <form className="c-form" onSubmit={handleSubmit}>

@@ -15,9 +15,10 @@ import IMG7 from "../../assets/dn.png";
 
 const Events_page = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
-  const [newUser, setNewUser] = useState(false);
+  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(true);
   const [eventsRegistered, setEventsRegistered] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
     const fetchRegisteredEvents = async () => {
@@ -42,7 +43,8 @@ const Events_page = () => {
           }
   
           const resData = await res.json();
-          const user_id = resData._id; 
+          const user_id = resData.user._id;  
+          setUserId(user_id);
           const response = await fetch(
             `${process.env.REACT_APP_BACKEND_URL}/api/registered/registered-events?user_id=${user_id}`
           );
@@ -50,10 +52,10 @@ const Events_page = () => {
           if (response.ok) {
             const data = await response.json();
             if (data.events.length === 0) {
-              setNewUser(true);
+              setIsFirstSubmissionMain(true);
               setEventsRegistered([]);
             } else {
-              setNewUser(false);
+              setIsFirstSubmissionMain(false);
               setEventsRegistered(data.events);
             }
           } else {
@@ -75,7 +77,7 @@ const Events_page = () => {
       return;
     }
 
-    if (newUser) {
+    if (isFirstSubmissionMain) {
       setShowModal(true); // Show registration modal
     }
   };
@@ -89,7 +91,7 @@ const Events_page = () => {
       });
 
       if (response.ok) {
-        setNewUser(false);
+        setIsFirstSubmissionMain(false);
         setEventsRegistered(eventData);
         setShowModal(false);
       } else {
@@ -272,7 +274,7 @@ const Events_page = () => {
       ],
     },
   ];
-  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(true);
+
   const handleIsFirstSubmission=(val)=>{
     setIsFirstSubmissionMain(val);
   }
@@ -296,6 +298,10 @@ const Events_page = () => {
                   buttons={card.buttons}
                   isFirstSubmissionMain={isFirstSubmissionMain}
                     handleIsFirstSubmission={handleIsFirstSubmission}
+                  setIsFirstSubmissionMain={setIsFirstSubmissionMain}
+                  userId={userId}
+                  eventsRegistered={eventsRegistered}
+                  setEventsRegistered={setEventsRegistered}
                 />
               ),
             }))}

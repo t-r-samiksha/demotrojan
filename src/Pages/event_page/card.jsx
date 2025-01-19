@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Modal from "react-modal";
 import RegisterEvent from "../../Pages/event_register/RegistrationForm";
@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify"; // Import Toastify
 import 'react-toastify/dist/ReactToastify.css';
 import zIndex from "@mui/material/styles/zIndex";
 import Rules from "./Rules/Rules";
+
 
 const customStyles = {
   content: {
@@ -66,10 +67,11 @@ const buttonStyles = {
 
 Modal.setAppElement("#root");
 
-export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission }) {
+export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered }) {
   const [show, setShown] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false); //Rules page setupp...
+  
   const handleRules=()=>{
     setShowPopup(prevState => !prevState);
   }
@@ -98,12 +100,44 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
       : "0 2px 10px rgba(0, 0, 0, 0.08)",
   });
 
-  function openModal() {
-    if(isFirstSubmissionMain){
-    setIsOpen(true);
+  function openModal({ title }) {
+     console.log(userId);
+    if(userId === " " || userId === null || userId===""){
+      toast.error("Please login to register for the event.");
+      return;
+    }
+    console.log(title);
+    if (isFirstSubmissionMain) {
+      setIsOpen(true); // Open the modal for first-time submission
+    } else {
+      // Submit registration directly
+      try {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/registered/register-event`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user_id: userId, event_name: title  }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              setIsFirstSubmissionMain(false);
+              setEventsRegistered([...eventsRegistered, { title }]);
+              toast.success("Registered for the event successfully!");
+            } else {
+              console.error("Failed to register for events.");
+              toast.error("Failed to register for the event. Please try again.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error registering for events:", error);
+            toast.error("An error occurred while registering. Please try again.");
+          });
+      } catch (error) {
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred.");
+      }
     }
   }
-
+  
   function closeModal() {
     setIsOpen(false);
   }
@@ -116,7 +150,6 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
       
     } else {
       toast.success("You have registered the event successfully !"); 
-      console.log("secont time")
     }
   }
 
@@ -137,7 +170,10 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
       </div>
 
         <div className="btnn">
-          <button className="btn" onClick={openModal}>
+          <button className="btn" onClick={() => openModal({ title })}
+            disabled={eventsRegistered.includes(title)}
+            
+            >
             Register
           </button>
           <button className="btn" onClick={()=>{handleRules()}}>Info</button>
@@ -151,7 +187,10 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
         overlayClassName={overlayStyles.overlay}
         contentLabel="Register Modal"
       >
-        <RegisterEvent closeModal={closeModal} showToast={showToast} handleFormSubmit={handleFormSubmit}/>
+        <RegisterEvent closeModal={closeModal} showToast={showToast} 
+                      userId={userId}  setEventsRegistered={setEventsRegistered}
+                      event={title} isFirstSubmissionMain={isFirstSubmissionMain}
+        />
         <div
           style={{
             display: "flex",
