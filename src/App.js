@@ -23,7 +23,7 @@ function App() {
   useEffect(()=>{
     const timer=setTimeout(()=>{
       setShowLandingPage(false);
-    },[7000]);
+    },[5000]);
   })
   return (
     <Router>

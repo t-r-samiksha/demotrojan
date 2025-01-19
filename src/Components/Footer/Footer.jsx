@@ -1,62 +1,67 @@
-import { CopyrightOutlined, Facebook, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
-import React from 'react'
-import './footer.css'
+import {
+  CopyrightOutlined,
+  Facebook,
+  Instagram,
+  LinkedIn,
+  YouTube,
+} from "@mui/icons-material";
+import React from "react";
+//import "./footer.css";
 const Footer = () => {
-    const socialLinks=[
-        {
-            name:"Instagram",
-            Icon:Instagram,
-            link:"#"
-        },
-        {
-            name:"Youtube",
-            Icon:YouTube,
-            link:"#"
-        },
-        {
-            name:"Facebook",
-            Icon:Facebook,
-            link:"#"
-        },
-        {
-            name:"LinkedIn",
-            Icon:LinkedIn,
-            link:"#"
-        },
-    ];
-    const Events=[
-        {
-            name:"Technical",
-            link:"#"
-        },
-        {
-            name:"Technical",
-            link:"#"
-        },
-        {
-            name:"Technical",
-            link:"#"
-        },
-        {
-            name:"Technical",
-            link:"#"
-        }
-    ];
-    const About=[
-        {
-            name:"Symposium",
-            link:""
-        },
-        {
-            name:"College",
-            link:""
-        }
-
-    ];
-    const Year=2025;
+  //   const socialLinks = [
+  //     {
+  //       name: "Instagram",
+  //       Icon: Instagram,
+  //       link: "#",
+  //     },
+  //     {
+  //       name: "Youtube",
+  //       Icon: YouTube,
+  //       link: "#",
+  //     },
+  //     {
+  //       name: "Facebook",
+  //       Icon: Facebook,
+  //       link: "#",
+  //     },
+  //     {
+  //       name: "LinkedIn",
+  //       Icon: LinkedIn,
+  //       link: "#",
+  //     },
+  //   ];
+  //   const Events = [
+  //     {
+  //       name: "Technical",
+  //       link: "#",
+  //     },
+  //     {
+  //       name: "Technical",
+  //       link: "#",
+  //     },
+  //     {
+  //       name: "Technical",
+  //       link: "#",
+  //     },
+  //     {
+  //       name: "Technical",
+  //       link: "#",
+  //     },
+  //   ];
+  //   const About = [
+  //     {
+  //       name: "Symposium",
+  //       link: "",
+  //     },
+  //     {
+  //       name: "College",
+  //       link: "",
+  //     },
+  //   ];
+  //   const Year = 2025;
   return (
-    <div className='footer'>
-        <div className='footer-up'>
+    <div className="footer">
+      {/* <div className='footer-up'>
         <div className='footer-up-in'>
             <h1>Connect</h1>
             {socialLinks.map((item,index)=>(
@@ -85,9 +90,134 @@ const Footer = () => {
         <div className='footer-down'>
             <p className='copyright'>Copyright <CopyrightOutlined/> {Year} All Rights Reserved</p>
             <p>Innovatively Designed by the Trojans Web Development Team</p>
-        </div>
-    </div>
-  )
-}
+        </div> */}
 
-export default Footer
+      <footer class="bg-gray-100 dark:bg-gray-900">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+              <a href="" class="flex items-center">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ21IOivBubXq0wWoHhEHD87kkIz9uQl8pW8A&s"
+                  class="h-30 me-3"
+                  alt="CIT Logo"
+                />
+              </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                <h2 class="mb-6 text-base font-semibold text-gray-900 uppercase dark:text-white ">
+                  Events
+                </h2>
+                <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                  <li class="mb-4">
+                    <a href="" class="hover:underline">
+                      Technical
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="hover:underline">
+                      Non-Technical
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="hover:underline">
+                      Workshop
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="mb-6 text-base font-semibold text-gray-900 uppercase dark:text-white">
+                  Follow us
+                </h2>
+                <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                  <li class="mb-4">
+                    <a href="" class="hover:underline ">
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="hover:underline">
+                      Linked-In
+                    </a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="" class="hover:underline ">
+                      You-tube
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="mb-6 text-base font-semibold text-gray-900 uppercase dark:text-white">
+                  About us
+                </h2>
+                <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                  <li class="mb-4">
+                    <a href="#" class="hover:underline">
+                      College
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">
+                      Department
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">
+                      Sponsors
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+              © 2025{" "}
+              <a href="https://www.citchennai.edu.in/" class="hover:underline">
+                Trojans™
+              </a>
+              . All Rights Reserved.
+            </span>
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <Facebook />
+                <span class="sr-only">Facebook page</span>
+              </a>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              >
+                <Instagram />
+                <span class="sr-only">Instagram community</span>
+              </a>
+
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              >
+                <LinkedIn />
+                <span class="sr-only">Linked-In account</span>
+              </a>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              >
+                <YouTube />
+                <span class="sr-only">Youtube account</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Footer;
