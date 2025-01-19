@@ -100,7 +100,7 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
       : "0 2px 10px rgba(0, 0, 0, 0.08)",
   });
 
-  function openModal({ title }) {
+    function openModal({ title }) {
      console.log(userId);
     if(userId === " " || userId === null || userId===""){
       toast.error("Please login to register for the event.");
@@ -108,19 +108,20 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
     }
     console.log(title);
     if (isFirstSubmissionMain) {
-      setIsOpen(true); // Open the modal for first-time submission
+      setIsOpen(true); 
     } else {
-      // Submit registration directly
       try {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/api/registered/register-event`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ user_id: userId, event_name: title  }),
         })
-          .then((response) => {
+          .then(async (response) => {
             if (response.ok) {
+              const res= await response.json();
               setIsFirstSubmissionMain(false);
-              setEventsRegistered([...eventsRegistered, { title }]);
+              setEventsRegistered(res.user.events);
+              console.log(eventsRegistered)
               toast.success("Registered for the event successfully!");
             } else {
               console.error("Failed to register for events.");

@@ -54,6 +54,8 @@ const RegistrationForm = ({
           body: JSON.stringify({
             user_id: userId,
             event_name: event,
+            name: formData.name,
+            gender: formData.gender,
             college_name: formData.collegename,
             year: formData.year,
             department: formData.department,
@@ -63,8 +65,9 @@ const RegistrationForm = ({
       );
 
       if (response.ok) {
+        const res= await response.json();
         setIsFirstSubmissionMain(false);
-        setEventsRegistered(eventData);
+        setEventsRegistered(res.user.events);
       } else {
         console.error("Failed to register for events.");
       }
