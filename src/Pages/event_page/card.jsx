@@ -106,9 +106,9 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
       toast.error("Please login to register for the event.");
       return;
     }
-    console.log(title);
     if (isFirstSubmissionMain) {
-      setIsOpen(true); 
+      setIsOpen(true);
+      handleIsFirstSubmission(false);
     } else {
       try {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/api/registered/register-event`, {

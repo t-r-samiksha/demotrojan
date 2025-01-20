@@ -68,6 +68,7 @@ const RegistrationForm = ({
         const res= await response.json();
         setIsFirstSubmissionMain(false);
         setEventsRegistered(res.user.events);
+        
       } else {
         console.error("Failed to register for events.");
       }
