@@ -45,8 +45,8 @@ const Navbar = () => {
     { name: "Home", link: "/" },
     { name: "Events", link: "/events-page" },
     { name: "Sponsor", link: "/sponser-page" },
-    { name: "About", link: "#" },
-    { name: "Contact", link: "#" },
+    { name: "About", link: "#about" },
+    { name: "Contact", link: "#contact" },
   ];
 
   return (

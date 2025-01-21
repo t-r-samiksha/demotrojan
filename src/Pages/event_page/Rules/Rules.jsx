@@ -106,7 +106,7 @@ function Rules({title,showPopup,handleRules}) {
         ],
       },
       {
-        title: "Cyber Trail",
+        title: "Cyber Trial",
         generalRules: [
                       "•	Each team consists of 2-3 members",
                       "•	The competition will have 3 rounds",
@@ -149,7 +149,7 @@ function Rules({title,showPopup,handleRules}) {
         ],
       },
       {
-        title: "BRAINAHOLIC",
+        title: "BRAIN A HOLIC",
         generalRules: [
                     "•	Each team consists of 2-3 members.",
                     "There will be 3 rounds in total.",
@@ -184,7 +184,7 @@ function Rules({title,showPopup,handleRules}) {
         ]
       },
       {
-        title: "BRAND O PLOOZA",
+        title: "BRAND O PALOOZA",
         generalRules: [
                       "1. Individual participation or group participation is allowed.",
                       "2. Groups should consist of 2-3 members.",

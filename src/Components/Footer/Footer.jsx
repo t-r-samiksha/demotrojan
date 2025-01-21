@@ -112,17 +112,17 @@ const Footer = () => {
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="" class="hover:underline">
+                    <a href="#events" class="hover:underline">
                       Technical
                     </a>
                   </li>
                   <li>
-                    <a href="" class="hover:underline">
+                    <a href="#events" class="hover:underline">
                       Non-Technical
                     </a>
                   </li>
                   <li>
-                    <a href="" class="hover:underline">
+                    <a href="#events" class="hover:underline">
                       Workshop
                     </a>
                   </li>
@@ -156,17 +156,17 @@ const Footer = () => {
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="#" class="hover:underline">
+                    <a href="#about" class="hover:underline">
                       College
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="hover:underline">
+                    <a href="#about" class="hover:underline">
                       Department
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="hover:underline">
+                    <a href="/sponcer-page" class="hover:underline">
                       Sponsors
                     </a>
                   </li>

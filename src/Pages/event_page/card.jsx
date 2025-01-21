@@ -67,7 +67,7 @@ const buttonStyles = {
 
 Modal.setAppElement("#root");
 
-export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered }) {
+export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered ,bgcolor}) {
   const [show, setShown] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false); //Rules page setupp...
@@ -98,6 +98,8 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
     boxShadow: show
       ? "0 20px 30px rgba(0, 0, 0, 0.25)"
       : "0 2px 10px rgba(0, 0, 0, 0.08)",
+      
+
   });
 
     function openModal({ title }) {
@@ -158,7 +160,10 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
     <>
       <animated.div
         className="card"
-        style={cardAnimation}
+        style={{...cardAnimation,
+          background:bgcolor}
+
+        }
         onMouseEnter={() => setShown(true)}
         onMouseLeave={() => setShown(false)}
       >
