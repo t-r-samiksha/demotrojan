@@ -75,7 +75,6 @@ function App() {
                 <Background />
                 <Navbar />
                 <Home />
-                <Countdown />
                 <ThreeDCardDemo />
                 <About />
                 <Contact />

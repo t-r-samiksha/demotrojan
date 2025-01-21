@@ -60,7 +60,7 @@ const Navbar = () => {
             {item.name}
           </Link>
         ))}
-      </div>
+      
       <div className="login-btn-container">
         {isAuthenticated ? (
           <div
@@ -85,7 +85,7 @@ const Navbar = () => {
           </button>
         )}
       </div>
-
+      </div>
       {/* HAM BURGER MENU */}
       <div className="menu-wrap">
         <input type="checkbox" className="toggler" />

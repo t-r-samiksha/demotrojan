@@ -11,8 +11,9 @@
 }
 .contact-down{
     display: flex;
-    flex-direction: row-reverse;
-    width: 90%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .contact-img{
    
@@ -34,19 +35,21 @@
     display: flex;
     flex-direction: column;
     gap:10px;
-    padding-bottom: 2em;
+    
 }
 .contact-per-role-full{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 50%;
+    align-items: first baseline;
+   width: 100%;
+    
     gap: 10px;
 }
 .contact-each{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: fit-content;
     align-items: center;
     justify-content: center;
 }

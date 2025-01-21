@@ -1,67 +1,63 @@
-.footer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    
-    gap: 20px;
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
 
-    box-shadow: 0px 4px 20px 0px  #ffffff;
+  gap: 20px;
 
+  box-shadow: 0px 4px 20px 0px #ffffff;
 }
-.footer-up{
-    display: flex;
-    flex-direction: row;
-    background: rgba(0, 0, 0, 0.433);
-    justify-content: center;
-    gap: 20%;
-    padding: 1rem;
-    font-size: 16px;
+.footer-up {
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.433);
+  justify-content: center;
+  gap: 20%;
+  padding: 1rem;
+  font-size: 16px;
 }
-.footer-up-in>h1{
-    font-size: 30px;
+.footer-up-in > h1 {
+  font-size: 30px;
 }
-.footer-up-in{
-    display: flex;
-    gap:10px;
-    flex-direction: column;
+.footer-up-in {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
-.footer-link{
-    color: white;
-    text-decoration: none;
+.footer-link {
+  color: white;
+  text-decoration: none;
 }
-.footer-link:hover{
-    color: #007BFF;
+.footer-link:hover {
+  color: #007bff;
 }
-.links >a{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+.links > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
-.footer-down{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding:1rem;
-    height: fit-content;
-   
+.footer-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: fit-content;
 }
 
-.copyright{
-    display: flex;
-    padding: 0;
-    margin-top: -20px;
-    flex-direction: row;
-    align-items: center;
-    padding-top: 10px;
+.copyright {
+  display: flex;
+  padding: 0;
+  margin-top: -20px;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
 }
-@media screen and (max-width:480px) {
-
-
-    .footer-up{
-        flex-wrap: wrap;
-    }
+@media screen and (max-width: 480px) {
+  .footer-up {
+    flex-wrap: wrap;
+  }
 }

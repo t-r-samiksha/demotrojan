@@ -15,11 +15,15 @@ const Contact = () => {
   ];
   const president = [
     {
-      name: "V. S. Kanna",
-      phone: "+91 9677044486",
+      name: "Mokesh K",
+      phone: "+91 9629154156",
     },
   ];
   const vice_president = [
+    {
+          name: "V. S. Kanna",
+          phone: "+91 9677044486",
+        },
     {
       name: "N.E. Sitharth",
       phone: "+91 7305493313",
@@ -42,14 +46,7 @@ const Contact = () => {
         <Heading title="Contact Us" />
       </div>
       <div className="contact-down">
-        <div
-          className="contact-img"
-          style={{
-            background: `url(${ContactUs})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        
         <div className="contact-per-role-full">
           <div className="contact-each">
             <div>
@@ -65,7 +62,7 @@ const Contact = () => {
           </div>
           <div className="contact-each">
             <div>
-              <Heading1 title="President" />
+              <Heading1 title="Registration & Help Desk" />
             </div>
             {president.map((item, index) => (
               <div key={index} className="contact-per-role">

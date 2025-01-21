@@ -14,7 +14,7 @@ const Home = () => {
     <div className='home' id='home'>
         
         <div className='logoText' >TR<img src={logo} className='logo'/>JANS</div>
-        <div className='sympoDesc' >A Lorem Ipsum A Lorem Ipsum</div>
+        <div className='sympoDesc' >The Destination where Curiosity Ignites Creation</div>
         {/* <div className=''><SeeMoreButton link="/login-page" text='LOGIN'/></div> */}
         
     </div>

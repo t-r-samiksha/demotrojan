@@ -1,40 +1,61 @@
 import React, { useEffect } from "react";
 import './SponcerPage.css';
-
 import Aos from "aos";
 import "aos/dist/aos.css";
-
+import Ctcl from '../../assets/cpcl1.png';
+import Green from '../../assets/green.jpg';
+import Nat from '../../assets/naturals.jpg';
+import Poo from '../../assets/poorvika.jpg';
 export default function SponcerPage() {
   useEffect(() => {
     Aos.init();
   });
 
   const titleSponsor = {
-    name: "IT Trident",
+    name: "Chennai Petroleum Corporation Limited",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis accusamus ut nulla nemo vel reiciendis soluta, quidem quae repudiandae ipsa! Omnis expedita illo et doloribus quibusdam voluptatibus quia earum esse.",
-    imgSrc: "https://media-hosting.imagekit.io//24a69208feef4367/title.8426dceb87d965548435.png?Expires=1831531422&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=iuf0klmt5uPtjR4CVbqlZPTWbqBIGYp2~TC5Nb7c5ghMMAb3F-mLZr0R-DF~~ZRo-F5wixKEvINY3drdUxCRJuQWSgG6zKG4iOfVCvCD1afjNlKrOCJJeHlRKU0ETByTjvSBvEIV~vTcF580lo0rgvqjrHPP8AU2Vis3L4SQrnxfLPYHd~OaKnGU6s9HbrB~vb6IK6K~7pOAjazYkGc17FqzJeO2Wpf9kF2ZgPehJSq0qx7dV2X89nDYo09wY8T0mnVQmIf7zkbbZt2jdxOLfIeaXhpr1PjXnf7JerRFModHUyiFp44rHNuZ6kX4sajgQWiBu2JL5TIMNmmY2WA9wg__",
-    // imgSrc:"https://via.placeholder.com/150/0000FF/808080 ?Text=PAKAINFO.com",
-    link: "https://ittrident.com/",
+    "We are honored to have Chennai Petroleum Corporation Limited (CPCL), a leading central government organization, as the title sponsor of our symposium. A pioneer in the energy sector, CPCL is renowned for its excellence in refining and commitment to sustainability. Their support aligns seamlessly with our theme, 'Industry 4.0 - Shaping the Future,' and adds immense value to our event.",
+    imgSrc:Ctcl,
+    link: "https://cpcl.co.in/",
   };
 
   const cosponsors = [
     {
-      name: "Maha",
+      name: "poorvika",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores cum, tempora qui laboriosam, inventore eligendi.",
-      imgSrc: "https://media-hosting.imagekit.io//c28872a304734558/co2.4923a942274860eda8a3.png?Expires=1831531422&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aG7nmR~NCYNKO5oqSnv8zNoaqWFuDHYf1SE0OgAa56Jh0AWSxgqQ7sgVc8ockn-~EW34v~2Irev2IoBjXXLfQ~Qza2IqYpkw1j6swmXTcwweDndwj3R3plsG6XNuSWkcUsprXGAbrAibDsKBeSgGeQkgx6yVoUggz25nyyh6I~W1GDVilzZW-R69ypTdvXmCqxk9KaRv0sATq6TTzz-aZJBhozDhM0cb9j~jgv1LlgMOETJ4MMYVhVmxvx8QB6So7G9JaOXQjWQ6CoYOv3hfD4BT7CrhZadhEOoiJGSZMLcVWNAGXSvp-7buCmG3aShhapsdpcoWHuCFWd35GL6pww__",
-      link: "https://ittrident.com/",
+        "We are delighted to have Poorvika Mobiles, India's leading mobile retail chain, as our certificate sponsor. Their dedication to connecting people with cutting-edge technology aligns perfectly with the innovative spirit of our symposium.",
+      imgSrc: Poo,
+      link: "https://www.poorvika.com/",
       aosEffect: "fade-right",
     },
     {
-      name: "Antway",
+      name: "greentrends",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia deleniti at asperiores nihil odit laboriosam quos.",
-      imgSrc: "https://media-hosting.imagekit.io//ac20a9b740b64c84/co1.6570a4f9eef3963ebc51.png?Expires=1831531422&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=myvAuB3uyR9wdGxEkV3TCfHiO7oaCk9C7E4qikPjx7gkm5~EFf0s-OBOxPhsCRcO8wNzTbqjNsvxfBIrl50Lsu1jYKrRXl11aKGSfD32jqXxUQV5moGDZPmBtOv8uMdURCnMMYYqFrlNWyc460Kaxnu1NnQNxyjBOFGiGcIU6PCq0Atxc1lpRjRW1dtfyNDbsrACRNf60PhfLWnm0z2pzZqY6oRVafrGmCEZ6FJvCNFbEOg-fMWeXmQSZ1Bc3R6FLnryhvIngTy~3l-7EyurEPNckTKgcpkUb5wgT4So9IwDxk6GCLe5QaNGGCIUh1WciKTd~fba61iupu~zp2rGVA__",
-      link: "https://ittrident.com/",
+      "We are thrilled to partner with Green Trends, a trusted name in the beauty and styling industry, as our coupon sponsor. Their support adds a touch of style to our event, making it even more special.",
+      imgSrc: Green,
+      link: "https://www.mygreentrends.in/",
       aosEffect: "fade-left",
+    }
+    ,
+
+  ];
+  const goldSponcers = [
+    {
+      name: "Naturals",
+      description:
+      "We are excited to welcome Naturals, India's No. 1 salon chain, as our coupon sponsor. Their commitment to beauty and self-care resonates with the vibrant energy of our symposium.",
+      imgSrc: Nat,
+      link: "https://naturals.in/",
+      aosEffect: "fade-right"
     },
+    {
+    name: "TastyTreats",
+    description:
+    "We are thrilled to partner with Tasty Treat, a beloved name in the world of delightful snacks and desserts, as our food sponsor. Their passion for crafting flavorsome treats perfectly complements the joyful spirit of our event",
+    imgSrc: "https://media-hosting.imagekit.io//c2e897b2dd0b41f5/WhatsApp%20Image%202025-01-20%20at%201.04.21%20PM.jpeg?Expires=1831989022&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=a33tzH4w0KjXuoUdpQOyQE4o-TlFiixpgF7iaRPJR0m-K0TMNHdBX~CEJ5c~j5kywQq~wlAgBmuqLic6U-yWZVrEjDuqB4uIXTbJHwHtsn0YrB9pt5PfMyyxACCTYQa-YnS1yw1ZbfsBMMQH0IPxEAxrPat3E0x4JN7nffbEN~cDyyrfOQeTivNAbKKDw6l-WAUIctduxqDSDSrXVXjEW7tkh-4s3QTUFdLDYB8PUrH~k4mfd8eksU3sVe121iKVprXlakxjVbxZ6syLXrcpoiV7jAudKNTtcLpurh7bnZOSmAYIRL1BX0EqyhlOm6geobCBjcpRE3NkykOCqsTh2g__",
+    link: "https://www.tastytreats.co.in/",
+    aosEffect: "fade-left"
+    }
   ];
 
   return (
@@ -68,7 +89,7 @@ export default function SponcerPage() {
 
   
       <div className="titleSponcer">
-        <h1 data-text="COSPONSORS">COSPONSORS</h1>
+        <h1 >SPONSORS</h1>
       </div>
       <div className="cosponcers">
         {cosponsors.map((cosponsor, index) => (
@@ -85,9 +106,37 @@ export default function SponcerPage() {
             />
             <div className="content">
               <p>{cosponsor.description}</p>
+
               <a href={cosponsor.link} target="_blank" rel="noreferrer">
                 DISCOVER MORE
               </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+
+
+      <div className="cosponcers">
+        {goldSponcers.map((goldSponcer, index) => (
+          <div
+            key={index}
+            className={` ${goldSponcer.name.toLowerCase()}`}
+            data-aos={goldSponcer.aosEffect}
+            data-aos-duration="500"
+          >
+            <img
+              src={goldSponcer.imgSrc}
+              className="img"
+              alt={`${goldSponcer.name} Sponsor Logo`}
+            />
+            <div className="content">
+              <p>{goldSponcer.description}</p>
+            {goldSponcer.link && (
+              <a href={goldSponcer.link} target="_blank" rel="noreferrer">
+              DISCOVER MORE
+            </a>
+            )}
             </div>
           </div>
         ))}
