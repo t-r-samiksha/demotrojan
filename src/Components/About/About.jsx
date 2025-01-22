@@ -10,7 +10,7 @@ const About = () => {
     const College_logo=CollegeLogo;
     const College_about="Starting from humble beginnings, Chennai Institute of Technology  has rapidly grown to become Tamil Nadu's third-ranked college, building a legacy of excellence in just 12 years. CIT’s name is synonymous with success, offering students a broad spectrum of exposure that fosters 360-degree holistic development. With its motto, 'Transforming Lives,' the institution delivers on its promise by providing unparalleled guidance, mentorship, and instilling confidence in its students. Supporting both placement training and diverse career pathways, CIT stands as an open book of opportunities, empowering students to shape their futures effectively."
     return (
-    <div className='about'>
+    <div className='about' id='about'>
         <div className=''>
             <Heading title='About Us'/>
         </div>
