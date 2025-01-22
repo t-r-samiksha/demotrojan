@@ -31,6 +31,14 @@ export function ThreeDCardDemo() {
         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
       Navigate: "Attend Workshops",
     },
+    {
+      Title: "Workshops",
+      Description:
+        "Expand your knowledge and learn from industry experts. Hands-on sessions to master new skills and stay ahead.",
+      Image:
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      Navigate: "Attend Workshops",
+    },
   ];
 
   return (

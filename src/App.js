@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./Components/About/About";
 import Background from "./Components/Background/Background";
 import Contact from "./Components/Contact/Contact";
-import Countdown from "./Components/CountDown/countdown";
-//import Events from "./Components/Events/Events";
+// import Countdown from "./Components/CountDown/countdown";
+// import Events from "./Components/Events/Events";
 import { ThreeDCardDemo } from "./Components/Events/ThreeDCardDemo";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
@@ -16,7 +16,7 @@ import SignInPage from './Pages/login_page/SignupFormDemo'
 import { useEffect, useState } from "react";
 import Loading from "./Components/Loading_and_landing/Loading";
 import { ToastContainer } from "react-toastify";
-
+//import BG from './Components/ui/SparklesPreview';
 
 function App() {
   const[showLandingPage,setShowLandingPage]=useState(true);

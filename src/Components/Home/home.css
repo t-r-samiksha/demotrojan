@@ -8,8 +8,6 @@
     align-items: center;
     background: transparent;
     justify-content: center;
-    gap:50px;
-
 }
 .logoText{
     font-family: 'Metal Mania';
@@ -19,7 +17,6 @@
     gap:10px;
     display: flex;
     flex-direction: row;
-    
     align-items: center;
 }
 .sympoDesc{
