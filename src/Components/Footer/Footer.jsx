@@ -112,17 +112,32 @@ const Footer = () => {
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="#events" class="hover:underline">
+                    <a href="#events" class="hover:underline"  onClick={()=>{
+                      const targetElement = document.getElementById('events');
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+                      }
+                    }}>
                       Technical
                     </a>
                   </li>
                   <li>
-                    <a href="#events" class="hover:underline">
+                    <a href="#events" class="hover:underline"  onClick={()=>{
+                      const targetElement = document.getElementById('events');
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+                      }
+                    }}>
                       Non-Technical
                     </a>
                   </li>
                   <li>
-                    <a href="#events" class="hover:underline">
+                    <a href="#events" class="hover:underline"  onClick={()=>{
+                      const targetElement = document.getElementById('events');
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+                      }
+                    }}>
                       Workshop
                     </a>
                   </li>
@@ -156,12 +171,22 @@ const Footer = () => {
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="#about" class="hover:underline">
+                    <a href="#about" class="hover:underline"  onClick={()=>{
+                      const targetElement = document.getElementById('about');
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+                      }
+                    }}>
                       College
                     </a>
                   </li>
                   <li>
-                    <a href="#about" class="hover:underline">
+                    <a href="#about" class="hover:underline" onClick={()=>{
+                      const targetElement = document.getElementById('about');
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+                      }
+                    }}>
                       Department
                     </a>
                   </li>
@@ -185,14 +210,14 @@ const Footer = () => {
             </span>
             <div class="flex mt-4 sm:justify-center sm:mt-0">
               <a
-                href="#"
+                href="https://www.citchennai.edu.in/"
                 class="text-gray-500 hover:text-white dark:hover:text-white"
               >
                 <Facebook />
                 <span class="sr-only">Facebook page</span>
               </a>
               <a
-                href="#"
+                href="https://trojans_cit/"
                 class="text-gray-500 hover:text-white  ms-5"
               >
                 <Instagram />
@@ -200,14 +225,14 @@ const Footer = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.citchennai.edu.in/"
                 class="text-gray-500 hover:text-white  ms-5"
               >
                 <LinkedIn />
                 <span class="sr-only">Linked-In account</span>
               </a>
               <a
-                href="#"
+                href="https://www.citchennai.edu.in/"
                 class="text-gray-500  hover:text-white ms-5"
               >
                 <YouTube />

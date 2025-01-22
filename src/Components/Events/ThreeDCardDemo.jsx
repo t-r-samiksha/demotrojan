@@ -4,6 +4,9 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Heading } from "../../StyledComponents/styledcomponents";
 import "./events.css";
 import { Link } from 'react-router-dom';
+import tech from '../../assets/technical.jpeg'
+import nont from '../../assets/non-tech.jpeg'
+import game from '../../assets/gaming.jpeg'
 
 export function ThreeDCardDemo() {
   const details = [
@@ -12,7 +15,7 @@ export function ThreeDCardDemo() {
       Description:
         "Dive into the world of innovation and creativity. Showcase your technical prowess and solve real-world challenges in a collaborative environment.",
       Image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+        tech,
       Navigate: "Explore Technical Events",
     },
     {
@@ -20,7 +23,7 @@ export function ThreeDCardDemo() {
       Description:
         "Blending fun with technology, these events let you unleash your creativity in exciting and unconventional ways.",
       Image:
-        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+        nont,
       Navigate: "Join FunTech Events",
     },
     {
@@ -32,17 +35,17 @@ export function ThreeDCardDemo() {
       Navigate: "Attend Workshops",
     },
     {
-      Title: "Workshops",
+      Title: "Gaming",
       Description:
         "Expand your knowledge and learn from industry experts. Hands-on sessions to master new skills and stay ahead.",
       Image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+        game,
       Navigate: "Attend Workshops",
     },
   ];
 
   return (
-    <div className="events">
+    <div className="events" id='events'>
       <div className="events-title">
         <Heading title="Events" />
       </div>
