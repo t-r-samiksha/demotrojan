@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import Loading from "./Components/Loading_and_landing/Loading";
 import { ToastContainer } from "react-toastify";
 //import BG from './Components/ui/SparklesPreview';
+import Nexus from './Components/Nexus/nexusAbout';
 
 function App() {
   const[showLandingPage,setShowLandingPage]=useState(true);
@@ -75,6 +76,7 @@ function App() {
                 <Background />
                 <Navbar />
                 <Home />
+                <Nexus/>
                 <ThreeDCardDemo />
                 <About />
                 <Contact />

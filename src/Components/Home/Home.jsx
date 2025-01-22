@@ -41,14 +41,22 @@ const Home = () => {
       {/* Symposium Description */}
       <div className="text-center mt-8">
   {/* Symposium Description */}
-  <div className="sympoDesc text-2xl md:text-3xl lg:text-4xl font-bold text-indigo-300 tracking-wide">
+  {/* <div className="sympoDesc text-2xl md:text-3xl lg:text-4xl font-bold text-indigo-300 tracking-wide">
     The Destination where Curiosity Ignites Creation
-  </div>
+  </div> */}
 
   {/* Event Name */}
-  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-sky-400 tracking-wide mt-4">
-    Nexus 4.0
-  </div>
+  <div className="nexus">
+  <span className="letter letter-1">N</span>
+  <span className="letter letter-2">E</span>
+  <span className="letter letter-3">X</span>
+  <span className="letter letter-4">U</span>
+  <span className="letter letter-1">S</span>
+  <span className="letter letter-3"> </span>
+  <span className="letter letter-3">4</span>
+  <span className="letter letter-3">.</span>
+  <span className="letter letter-4">0</span>
+</div>
 </div>
     </div>
   );
