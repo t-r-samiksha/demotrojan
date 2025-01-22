@@ -278,7 +278,7 @@ function Rules({title,showPopup,handleRules}) {
       ]
     },
     {
-      name: "CODE A THON",
+      name: "CODE MANIA",
       generalRules: [
                       "1. Participation: The event is open to individual participants only.",
                       "2. Platform: All rounds will be conducted on the Hacker rank platform.",

@@ -4,7 +4,7 @@ import Card from "./card";
 import Carroussel from "./carousel";
 import "./Event_page.css";
 
-import IMG1 from "../../assets/1.png";
+import IMG1 from "../../assets/1-3.png";
 import IMG2 from "../../assets/CC_PAGE_1.png";
 import IMG3 from "../../assets/PAPERNZA.png";
 import IMG4 from "../../assets/TECHNO 1.png";
@@ -128,7 +128,7 @@ const Events_page = () => {
       cards: [
         {
           imagen: IMG1,
-          title: "CODE A THON",
+          title: "CODE MANIA",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
           category: "SOLO-PLAY",
@@ -341,7 +341,7 @@ const Events_page = () => {
           description: "Showcase your creativity in our Art Competition.",
           time: "10:00 AM - 12:00 PM",
           date: "2025-01-28",
-          fee: "Free",
+          fee: "69",
           category: "Battle-Royal",
           buttons: [
             { text: "REGISTER", href: "/register-art" },
@@ -354,7 +354,7 @@ const Events_page = () => {
           description: "Get ready to groove and compete in our Dance Battle.",
           time: "4:00 PM - 7:00 PM",
           date: "2025-01-29",
-          fee: "Free",
+          fee: "149",
           category: "Battle-Royal",
           buttons: [
             { text: "REGISTER", href: "/register-dance" },
@@ -367,7 +367,7 @@ const Events_page = () => {
           description: "Put your knowledge to the test in our Quiz Competition.",
           time: "1:00 PM - 3:00 PM",
           date: "2025-01-30",
-          fee: "Free",
+          fee: "69",
           category: "Battle-Royal",
           buttons: [
             { text: "REGISTER", href: "/register-quiz" },
