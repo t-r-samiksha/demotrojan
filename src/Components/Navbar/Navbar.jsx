@@ -51,21 +51,22 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleNavClick = (item) => {
+    const toggler = document.querySelector(".menu-wrap .toggler");
+  
     if (item.link.startsWith("#")) {
       if (window.location.pathname === "/") {
-        
-        const targetId = item.link.slice(1); 
+        const targetId = item.link.slice(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });
         }
+        if (toggler) toggler.checked = false; 
       } else {
-        
         navigate(`/${item.link}`);
       }
     } else {
-      // For other routes, navigate normally
       navigate(item.link);
+      if (toggler) toggler.checked = false; 
     }
   };
   
