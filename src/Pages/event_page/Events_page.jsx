@@ -248,7 +248,7 @@ const Events_page = () => {
         },
         {
           imagen: IMGn4,
-          title: "BLUE PRINT",
+          title: "DIGITAL BLUE PRINT",
           time: "1:00 PM - 3:00 PM",
           fee: "Free",
           category: "Fun-tech",

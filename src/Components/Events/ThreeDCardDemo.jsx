@@ -19,12 +19,12 @@ export function ThreeDCardDemo() {
       Navigate: "Explore Technical Events",
     },
     {
-      Title: "FunTech Events",
+      Title: "Non-Tech Events",
       Description:
         "Blending fun with technology, these events let you unleash your creativity in exciting and unconventional ways.",
       Image:
         nont,
-      Navigate: "Join FunTech Events",
+      Navigate: "Join NonTech Events",
     },
     {
       Title: "Workshops",

@@ -333,7 +333,7 @@ function Rules({title,showPopup,handleRules}) {
       ]
     },
     {
-        name: "Blue print",
+        name: "Digital Blue print",
         generalRules: [
             "The event is a fast-paced design challenge where participants must create a unique design within a limited time based on a surprise theme revealed at the start. It’s a test of creativity, originality, and design skills, allowing participants to showcase their artistic talent using their preferred design software."
         ],
