@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import trojansLogo from '../../assets/trojans-bg.png';
 import './background.css';
-const Background = () => {
-  return (
-    <div className='background-app'>
-        <div className=''>
-            <img src={trojansLogo} className='logologo'/>
-        </div>
-    </div>
-  )
-}
 
-export default Background
+const Background = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (location.hash) {
+        const targetId = location.hash.slice(1); // Remove '#' to get the ID
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the element
+        }
+      }
+    };
+
+    handleHashScroll();
+  }, [location]); // Re-run when location changes
+
+  return (
+    <div className="background-app">
+      <div>
+        <img src={trojansLogo} className="logologo" alt="Trojans Logo" />
+      </div>
+    </div>
+  );
+};
+
+export default Background;

@@ -18,6 +18,7 @@ import Loading from "./Components/Loading_and_landing/Loading";
 import { ToastContainer } from "react-toastify";
 //import BG from './Components/ui/SparklesPreview';
 import Nexus from './Components/Nexus/nexusAbout';
+import ScrollToTop from "./Components/ScorllToTop"  
 
 function App() {
   const[showLandingPage,setShowLandingPage]=useState(true);
@@ -28,7 +29,7 @@ function App() {
   })
   return (
     <Router>
-
+       <ScrollToTop />
       <div className="App">
         {/* {Landing Page} */}
         {showLandingPage &&
@@ -40,6 +41,7 @@ function App() {
         {!showLandingPage &&
         
         <Routes>
+          
           <Route
             path="/events-page"
             element={

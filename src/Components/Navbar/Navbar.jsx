@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  
   useEffect(() => {
     const sendUserDataToBackend = async () => {
       if (user) {
@@ -50,15 +52,23 @@ const Navbar = () => {
 
   const handleNavClick = (item) => {
     if (item.link.startsWith("#")) {
-      const targetId = item.link.slice(1); // Remove '#' to get the ID
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+      if (window.location.pathname === "/") {
+        
+        const targetId = item.link.slice(1); 
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        
+        navigate(`/${item.link}`);
       }
     } else {
-      navigate(item.link); // Navigate to other routes
+      // For other routes, navigate normally
+      navigate(item.link);
     }
   };
+  
 
   return (
     <div className="navbar">
