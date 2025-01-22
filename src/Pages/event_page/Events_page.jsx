@@ -309,7 +309,7 @@ const Events_page = () => {
         },
         {
           imagen: IMGw3,
-          title: "Video Editing Workhop",
+          title: "Video Editing Workshop",
           time: "3:00 PM - 6:00 PM",
           fee: "Free",
           category: "Workshop",

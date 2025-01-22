@@ -5,11 +5,11 @@ import { Heading, Heading1 } from "../../StyledComponents/styledcomponents";
 const Contact = () => {
   const Staff_coordinator = [
     {
-      name: "Mrs. T. N. Charanya",
+      name: "Mrs. T. N. Charanya. M.E.,",
       phone: "",
     },
     {
-      name: "Mrs. D. Lita Pansy",
+      name: "Mrs. D. Lita Pansy, M.TECH.,",
       phone: "",
     },
   ];
@@ -35,7 +35,7 @@ const Contact = () => {
   ];
   const hod=[
     {
-      name: "Dr. A.R. Kavitha",
+      name: "Dr. A.R. Kavitha, M.E., PhD., ",
       phone: "",
     }
   ]

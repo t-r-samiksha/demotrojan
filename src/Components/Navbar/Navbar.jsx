@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -8,8 +8,6 @@ const Navbar = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   useEffect(() => {
     const sendUserDataToBackend = async () => {
-
-
       if (user) {
         try {
           const response = await fetch(
@@ -48,6 +46,19 @@ const Navbar = () => {
     { name: "About", link: "#about" },
     { name: "Contact", link: "#contact" },
   ];
+  const navigate = useNavigate();
+
+  const handleNavClick = (item) => {
+    if (item.link.startsWith("#")) {
+      const targetId = item.link.slice(1); // Remove '#' to get the ID
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+      }
+    } else {
+      navigate(item.link); // Navigate to other routes
+    }
+  };
 
   return (
     <div className="navbar">
@@ -56,35 +67,40 @@ const Navbar = () => {
       </div>
       <div className="navlinks">
         {navLinks.map((item, index) => (
-          <Link to={item.link} key={index} className="navlink">
-            {item.name}
-          </Link>
-        ))}
-      
-      <div className="login-btn-container">
-        {isAuthenticated ? (
           <div
-            className="profile-btn"
-            onClick={() => setDropdownVisible(!dropdownVisible)}
+            key={index}
+            className="navlink"
+            onClick={() => handleNavClick(item)}
+            style={{ cursor: "pointer" }}
           >
-            <img src={user.picture} alt="Profile" className="profile-img" />
-            <div className={`dropdown ${dropdownVisible ? "show" : ""}`}>
-              <p>{user.name}</p>
-              <p>{user.email}</p>
-              <button
-                className="logout-btn"
-                onClick={() => logout({ returnTo: window.location.origin })}
-              >
-                Logout
-              </button>
-            </div>
+            {item.name}
           </div>
-        ) : (
-          <button className="login-btn" onClick={() => loginWithRedirect()}>
-            Login
-          </button>
-        )}
-      </div>
+        ))}
+
+        <div className="login-btn-container">
+          {isAuthenticated ? (
+            <div
+              className="profile-btn"
+              onClick={() => setDropdownVisible(!dropdownVisible)}
+            >
+              <img src={user.picture} alt="Profile" className="profile-img" />
+              <div className={`dropdown ${dropdownVisible ? "show" : ""}`}>
+                <p>{user.name}</p>
+                <p>{user.email}</p>
+                <button
+                  className="logout-btn"
+                  onClick={() => logout({ returnTo: window.location.origin })}
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button className="login-btn" onClick={() => loginWithRedirect()}>
+              Login
+            </button>
+          )}
+        </div>
       </div>
       {/* HAM BURGER MENU */}
       <div className="menu-wrap">
@@ -98,9 +114,14 @@ const Navbar = () => {
               <ul>
                 {navLinks.map((item, index) => (
                   <li key={index}>
-                    <Link to={item.link} className="navlink">  {/* Use Link instead of <a> */}
+                    <div
+                      key={index}
+                      className="navlink"
+                      onClick={() => handleNavClick(item)}
+                      style={{ cursor: "pointer" }}
+                    >
                       {item.name}
-                    </Link>
+                    </div>
                   </li>
                 ))}
                 <li>
@@ -112,31 +133,30 @@ const Navbar = () => {
                     //   Logout
                     // </button>
                     <div>
-                      <hr>
-                      </hr>
-                    <div
-                      className="profile-btn-hamburger"
-                      onClick={() => setDropdownVisible(!dropdownVisible)}
-                    >
-                      <img
+                      <hr></hr>
+                      <div
+                        className="profile-btn-hamburger"
+                        onClick={() => setDropdownVisible(!dropdownVisible)}
+                      >
+                        <img
                           src={user.picture}
                           alt="Profile"
                           className="profile-img"
                         />
-                      <div className="profile-info">
-                        <p className="user-name">{user.name}</p>
-                        <p className="user-email">{user.email}</p>
-                        
+                        <div className="profile-info">
+                          <p className="user-name">{user.name}</p>
+                          <p className="user-email">{user.email}</p>
+                        </div>
                       </div>
-                      
+                      <button
+                        className="navlink"
+                        onClick={() =>
+                          logout({ returnTo: window.location.origin })
+                        }
+                      >
+                        Logout
+                      </button>
                     </div>
-                    <button
-                    className="navlink"
-                    onClick={() => logout({ returnTo: window.location.origin })}
-                  >
-                    Logout
-                  </button>
-                  </div>
                   ) : (
                     <button
                       className="navlink"
