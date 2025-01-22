@@ -40,7 +40,7 @@ export function ThreeDCardDemo() {
         "Expand your knowledge and learn from industry experts. Hands-on sessions to master new skills and stay ahead.",
       Image:
         game,
-      Navigate: "Attend Workshops",
+      Navigate: "Attend Gaming",
     },
   ];
 
