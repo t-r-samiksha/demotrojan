@@ -37,7 +37,7 @@ export function ThreeDCardDemo() {
     {
       Title: "Gaming",
       Description:
-        "Expand your knowledge and learn from industry experts. Hands-on sessions to master new skills and stay ahead.",
+        "Level up your gaming skills and learn from industry pros. Dive into hands-on sessions to master strategies, improve gameplay, and stay ahead in the competition.",
       Image:
         game,
       Navigate: "Attend Gaming",

@@ -44,6 +44,12 @@ const Event = ({ event }) => {
             {renderDetails(event.round3)}
           </div>
         )}
+        {event.coordinators &&(
+          <div className="details-container">
+            <h2>Event Co-ordinators</h2>
+            {renderDetails(event.coordinators)}
+           </div> 
+        )}
 
         {/* {event.teamMembers && (
         <div className="details-container">
@@ -84,7 +90,7 @@ function Rules({title,showPopup,handleRules}) {
   // Popup state
   const events = [
     {
-      name: "CODERS CHEMISTRY",
+      title: "CODERS CHEMISTRY",
       generalRules: ["Each team consists of 2 members",
                      "The competition will have 3 rounds",
                      "Programming languages allowed: Java, C, C++, and Python.",
@@ -97,104 +103,14 @@ function Rules({title,showPopup,handleRules}) {
       ],
       round2: [
                 " Duration: 20 minutes",
-                "Team will be given 3 programming problems to solve",
-                "Each problem has specific constraints:."
+                "3 problems would be given for 5 minutes each",
+                "-2 points for each wrong attempt"
       ],
       round3: [
                 "Duration: 20 minutes",
                 "Teams will solve 2 correlated problems based on a complex algorithm.",
                 "Synchronization and teamwork will be essential to successfully complete this round."
       ],
-    },
-    {
-      name: "Cyber Trial",
-      generalRules: [
-                    "•	Each team consists of 2-3 members",
-                    "•	The competition will have 3 rounds",
-                    "•	All the 3 rounds will be timer based."
-      ],
-      round1: [
-                    "•	It will be a picture description round.",
-                    "•	Participants will present their ideas orally within the time limit. "
-      ],
-      round2: [
-                    "•	This is a CTF Round.",
-                    "•	Participants must find hidden flags within the given time limit."
-      ],
-      round3: [
-                    "•	It will be a Decrypt the Reward round.",
-                    "•	Decrypt the message hidden by identifying the encryption technique within the given time limit."
-      ]
-    },
-    {
-      name: "GRILL & SKILL",
-      generalRules: [
-                  "•	•	Each team consists of 2-3 members",
-                  "•	The event will consist of 3 rounds.",
-                  "•	All the 3 rounds will be timer based."
-      ],
-      round1: [
-                "•	The round consists of 15 MCQs.",
-                "•	Questions cover Aptitude and Logical Reasoning.",
-                "•	Participants have 20 minutes to complete the round."
-      ],
-      round2: [
-                "•	Solve 2 coding questions using any programming language.",
-                "•	Devices will be provided at the event.",
-                "•	Solutions must pass all test cases within 20 minutes"
-      ],
-      round3: [
-                "•	Includes logical, technical puzzles, and scenario-based questions.",
-                "•	Evaluated on problem-solving, clarity, and confidence.",
-                "•	Feedback will be given for improvement "
-      ],
-    },
-    {
-      name: "BRAIN A HOLIC",
-      generalRules: [
-                  "•	Each team consists of 2-3 members.",
-                  "There will be 3 rounds in total.",
-                  "All rounds will be timer-based."
-      ],
-      round1 :[
-                  "Type: Rapid-Fire Round",
-                  "Questions will be a based on movies",
-                  "Each question will be displayed for 10 seconds"
-      ],
-      round2 :[
-                   "Type: Crossword Puzzle.",
-                   "Paper and pen will be provided"
-      ],
-      round3 :[
-                    "Type: Multiple Choice Questions (MCQs).",
-                    "Questions will be based on general technical knowledge",
-                    "Time to answer each question will be 15 seconds"
-      ]
-    },
-    {
-      name: "ONE SHOT",
-      generalRules: [
-                    "1.	Individual participation only; group participation is not allowed.",
-                    "2. All submissions must be in the form of reels.",
-                    "3.	All footage must be captured within the campus.",
-                    "4.	Participants must bring their own equipment, such as DSLR, mobile phones, or any props as per convenience.",
-                    "5.	Reels must not exceed 1 minute in duration.",
-                    "6.	All captured moments should adhere to appropriate standards and align with event decorum.",
-                    "7.	Original work is mandatory, and plagiarism in any form is strictly prohibited.",
-                    "8.	Any editing platform can be used as per your convenience, but AI video-making applications are strictly prohibited."
-      ]
-    },
-    {
-      name: "BRAND O PALOOZA",
-      generalRules: [
-                    "1. Individual participation or group participation is allowed.",
-                    "2. Groups should consist of 2-3 members.",
-                    "3. Individuals will be given 2 minutes for their presentation.",
-                    "4. Groups will be given 3 minutes for their presentation (time may change)",
-                    "5. The topic for the presentation will be given on the spot.",
-                    "6. Judging criteria will be based on creativity, feasibility, clarity, and marketing approach.",
-                    "7. Prizes will be awarded to participants or teams who demonstrate the best marketing strategies and proper presentation skills."
-      ]
     },
     {
       name: "DEVELOPER'S NIGHTMARE",
@@ -219,6 +135,7 @@ function Rules({title,showPopup,handleRules}) {
     {
       name: "PAPERENZA",
       generalRules: [
+                    "• Theme : The Convergence of Technology and Society",
                     "• An initial Preparation time of 30 min for teams to prepare themselves for the event",
                     "• Round 1: A concise 3-minute presentation followed by a 3-minute Q&A session.",
                     "• Round 2: A detailed 5-minute presentation followed by a 3-minute Q&A session for selected finalists.",
@@ -229,7 +146,7 @@ function Rules({title,showPopup,handleRules}) {
     {
       name: "FRANKENSTEIN",
       generalRules: [
-                      " Each team should consist of 3 members.  There will be 3 rounds",
+                      " There will be 3 rounds",
                       " All 3 rounds will happen simultaneously",
                       " One member from the team will participate in each round."
       ],
@@ -237,7 +154,6 @@ function Rules({title,showPopup,handleRules}) {
                       " This is an UI designing round.",
                       " Participants must design a web page based on the giventopicinFigma/Canva and provide the link to their design.", 
                       " The time duration will be 45 min.",
-                      " The total score for this round will be"
       ],
       round2: [
                       " It will be a decoding round.", 
@@ -252,7 +168,7 @@ function Rules({title,showPopup,handleRules}) {
       ]
     },
     {
-      name: "TECHNO RHYTHM",
+      name: "TECHNO-RHYTHM",
       generalRules: [
                       "•	Each participant competes individually.",
                       "•	There will be 3 rounds in total.",
@@ -278,7 +194,7 @@ function Rules({title,showPopup,handleRules}) {
       ]
     },
     {
-      name: "CODE MANIA",
+      name: "CODE-MANIA",
       generalRules: [
                       "1. Participation: The event is open to individual participants only.",
                       "2. Platform: All rounds will be conducted on the Hacker rank platform.",
@@ -288,20 +204,20 @@ function Rules({title,showPopup,handleRules}) {
                       "6. Time Management: Participants must adhere to the time limits of each round."
       ],
       round1: [
-                      "A 15-minute round that tests participants' theoretical knowledge of programming concepts, logical reasoning, and debugging.",
+                      "A 20-minute round that tests participants' theoretical knowledge of programming concepts, logical reasoning, and debugging.",
                       "• Type: Multiple-choice questions (MCQs) or small code snippet analysis.",
                       "• Focus: Programming basics, logical puzzles, and error identification.",
                       "• Outcome: Top 50% of participants progress to Round 2."
       ],
       round2: [
-                      "A 60-minute round designed to evaluate participants' coding and problem-solving abilities.",
+                      "A 40-minute round designed to evaluate participants' coding and problem-solving abilities.",
                       "•type: Solve two coding problems",
                       "o One easy problem (basic implementation).",
                       "o One medium problem (involving data structures or algorithms).",
                       "• Outcome: Top 5-10 participants progress to Round 3."
       ],
       round3: [
-                      "A 30-minute round where participants tackle a single, challenging problem or real-world scenario to showcase their creativity and coding expertise.",
+                      "A 40-minute round where participants tackle a single, challenging problem or real-world scenario to showcase their creativity and coding expertise.",
                       "• Type:",
                       "o Advanced algorithmic problem.",
                       "o Real-world simulation or open-ended task.",
@@ -309,9 +225,9 @@ function Rules({title,showPopup,handleRules}) {
       ]
     },
     {
-      name: "TECH TRIVIA",
+      name: "TECH-TRIVIA",
       generalRules: [
-                        "• EACH TEAM SHOULD CONSIST OF 2 MEMBERS.",
+                        "• EACH TEAM SHOULD CONSIST OF 2 PLAYERS.",
                         "• THERE WILL BE 3 ROUNDS.",
                         "• ALL THE 3 ROUNDS WILL BE TIMER BASED"
       ],
@@ -326,14 +242,13 @@ function Rules({title,showPopup,handleRules}) {
                         "•	PARTICIPANTS SHOULD ANSWER THROUGH THE CROSSWORD PATTERN WHICH IS PROVIDED IN A PAPER."
       ],
       round3: [
-                        "•	A BOWL WILL CONTAIN MANY PIECES OF PAPER, EACH FOLDED AND INSCRIBED WITH A TECH TERM",
-                        "•	ONE PARTICIPANT FROM A TEAM WILL BE ALLOWED TO PICK ONE AND CAN TAKE UPTO ONE MINUTE TO THINK OF 4 TO 5 CLUE WORDS RELATED TO THE TERM.",
-                        "•	THE OTHER TEAM MEMBER WILL THEN BE GIVEN ONE MINUTE TO IDENTIFY THE CORRECT TERM USING THOSE CLUE WORDS.",
-                        "•	IF HE/SHE FAILS TO FIND THE CORRECT TERM, CLUE WORDS WILL BE PASSED TO OTHER TEAMS AND IF ANOTHER TEAM SUCCESSFULLY IDENTIFIES THE TERM, BONUS POINTS WILL BE PROVIDED."
+                        "•	One member from a team will randomly pick a piece of paper and will have up to one minute to come up with 4 to 5 clue words related to the term.",
+                        "•	The other team member will then have one minute to guess the correct term using the given clues.",
+                        "•	If the term is not correctly identified within the time limit, the turn ends, and no points are awarded.",
       ]
     },
     {
-        name: "Digital Blue print",
+        name: "Blue print",
         generalRules: [
             "The event is a fast-paced design challenge where participants must create a unique design within a limited time based on a surprise theme revealed at the start. It’s a test of creativity, originality, and design skills, allowing participants to showcase their artistic talent using their preferred design software."
         ],
@@ -404,7 +319,151 @@ function Rules({title,showPopup,handleRules}) {
             "5. Map tool: Bind, Haven, Split, Ascent, Icebox, Breeze,Lotus, Pearl",
             "6. Tournament admin will make a decision based upon regional latency"
         ]
-    }
+    },
+    {
+      title: "ONE SHOT EVENT",
+      description: "This is an event where the objective is to capture the best moments of the symposium, like exciting events, guest talks, or people having fun. You can take pictures, shoot short videos. Show everyone what made the day special in your own creative way by making a reel lasting under one minute. At the end of the event, the best ones will win prizes.",
+      generalRules: [
+                    "1.	Individual participation only; group participation is not allowed.",
+                    "2. All submissions must be in the form of reels.",
+                    "3.	All footage must be captured within the campus.",
+                    "4.	Participants must bring their own equipment, such as DSLR, mobile phones, or any props as per convenience.",
+                    "5.	Reels must not exceed 1 minute in duration.",
+                    "6.	All captured moments should adhere to appropriate standards and align with event decorum.",
+                    "7.	Original work is mandatory, and plagiarism in any form is strictly prohibited.",
+                    "8.	Any editing platform can be used as per your convenience, but AI video-making applications are strictly prohibited."
+      ],
+      coordinators: [
+                    "•	Aarthi - +91 7338775537",
+                    "•	Avinash Venkatraman- +91 9043694205",
+                    "•	Gokul V- +91 8248316522"
+      ]
+    },
+    {
+      title: "Cyber Trail",
+      description: "Cyber Trail is an exciting and intellectually stimulating event designed to challenge participants in critical thinking, cybersecurity, and problem-solving. This three-round competition will test your ability to analyze, decode, and uncover hidden clues under time constraints.",
+      generalRules: [
+        "Each team consists of 2-3 members",
+        "The competition will have 3 rounds",
+        "All the 3 rounds will be timer based.",
+      ],
+      round1: [
+        "It will be a picture description round.",
+        "Participants will present their ideas orally within the time limit.",
+      ],
+      round2: [
+        "This is a CTF Round.",
+        "Participants must find hidden flags within the given time limit.",
+      ],
+      round3: [
+        "It will be a Decrypt the Reward round.",
+        "Decrypt the message hidden by identifying the encryption technique within the given time limit.",
+      ],
+      coordinators: [
+        "•	Prasath -+91 6381430314",
+        "•	Sahul Hameed N- +91 9442453107",
+        "•	Sandra Maria Princy - +91 7845860167"
+      ]
+    },
+    {
+      title: "GRILL AND SKILL",
+      description: "The Grill & Skill event is a fun and challenging competition designed to test your aptitude, coding skills, and personal strengths. With three exciting rounds, it offers a great opportunity to showcase your talents and improve through expert feedback",
+      generalRules: [ 
+                  "Each team consists of 2-3 members",
+                  "The event will consist of 3 rounds.",
+                  "All the 3 rounds will be timer based."
+      ],
+      round1: [
+                "The round consists of 15 MCQs.",
+                "Questions cover Aptitude and Logical Reasoning.",
+                "Participants have 20 minutes to complete the round."
+      ],
+      round2: [
+                "Solve 2 coding questions using any programming language.",
+                "Devices will be provided at the event.",
+                "Solutions must pass all test cases within 20 minutes"
+      ],
+      round3: [
+                "Includes logical, technical puzzles, and scenario-based questions.",
+                "Evaluated on problem-solving, clarity, and confidence.",
+                "Feedback will be given for improvement "
+      ],
+      coordinators: [
+                "•	U.K.Dhetchana- +91 8754483562",
+                "•	Hariharan C- +91 7845725713",
+                "•	Dhivakar- +91 6380372872"
+      ]
+    },
+    {
+      title: "BRAND-O-PLOOZA",
+      Description:"This event is designed to challenge participants to showcase their presentation and marketing skills. Each team or individual will be given a topic on the spot, and the goal is to deliver an effective presentation that demonstrates creativity, feasibility, clarity, and marketing strategies.",
+      generalRules: [
+                    "1. Individual participation or group participation is allowed.",
+                    "2. Groups should consist of 2-3 members.",
+                    "3. Individuals will be given 2 minutes for their presentation.",
+                    "4. Groups will be given 3 minutes for their presentation (time may change)",
+                    "5. The topic for the presentation will be given on the spot.",
+                    "6. Judging criteria will be based on creativity, feasibility, clarity, and marketing approach.",
+                    "7. Prizes will be awarded to participants or teams who demonstrate the best marketing strategies and proper presentation skills."
+      ],
+      coordinators:[
+        "Evelyn Beatrice - +91 9500191848",
+        "Priyadharshini  - +91 8807791065",
+        "Yohalakshmi- +91 7845844529"
+      ]
+    },{
+      title: "BRAINAHOLIC",
+      Description:"Brainaholic is a thrilling and interactive competition designed to challenge participants' knowledge, problem-solving abilities, and teamwork through a series of engaging and diverse rounds. Combining elements of movie trivia and tech-based questions, this event offers a perfect blend of fun and intellect, making it an exciting experience for all participants.",
+      generalRules: [
+        "•	This event will feature questions based on movies, general knowledge (GK), technology and other exciting fun topics.",
+                  "Each team consists of 2-3 members.",
+                  "There will be 3 rounds in total.",
+                  "All rounds will be timer-based."
+      ],
+      round1 :[
+                  "Rapid-fire questions will be asked, and the team that answers first within the given time will earn a point."
+      ],
+      round2 :[
+                   " Crossword Puzzle.",
+                   "Paper and pen will be provided"
+      ],
+      round3 :[
+                    "Type: Multiple Choice Questions (MCQs).",
+                    "Questions will be based on general technical knowledge",
+                    "Time to answer each question will be 15 seconds"
+      ],
+      coordinators:[
+        "Roshika P - +91 8667518384 ",
+        "Nivendhan- +91 8248561253",
+        "Monica- +91 6374977828"
+      ],
+    },
+    {
+      title: "digital Blueprint",
+      description:"The event is a fast-paced design challenge where participants must create a unique design within a limited time based on a surprise theme revealed at the start. It’s a test of creativity, originality, and design skills, allowing participants to showcase their artistic talent using their preferred design software.",
+      
+      generalRules: [
+          "1.	Participation is strictly individual; collaboration or group work is not allowed.",
+          "2.	The theme will be revealed at the start of the event.",
+          "3.	Participants have 1 hour to design.",
+          "4.	Participants must bring their laptops with the required software installed.",
+          "5.	Any design software can be used (e.g., Photoshop, Canva, Figma).",
+          "6.	Only one design can be submitted in JPEG/PNG format (maximum 5MB).",
+          "7.	Only original work created during the event will be accepted.",
+          "8.	AI-generated references are strictly prohibited.",
+          "9.	Pre-made Canva templates are not allowed.",
+          "10.	Late submissions will lead to disqualification."
+      ],
+      judgingCriteria:[
+        "Creativity: 30%",
+        "Design Aesthetics: 30%",
+        "Design Aesthetics: 30%"
+      ],coordinators:[
+        "Harshitha K - +91 9840165112",
+        "Srivatsan R - +91 7395972827",
+        "Hari Mahith M - +91 9043894881"
+      ]
+  }
   ];
 
   const path = title;
@@ -439,7 +498,9 @@ function Rules({title,showPopup,handleRules}) {
     <div className="popup-overlay">
       <div className="popup">
         <i className="fa fa-times close-icon" ></i>
-        {filteredEvent ? <Event event={event1} /> : <p>Rules will be Updated shortly!!!</p>}
+        {filteredEvent ? <><Event event={event1} /><div className="button-container click-me-button">
+          <button className="btn" onClick={()=>{handleRules()}}>Close</button>
+        </div></> : <p>Rules will be Updated shortly!!!</p>}
 
         {/* Click Me button inside the container */}
         <div className="button-container click-me-button">
