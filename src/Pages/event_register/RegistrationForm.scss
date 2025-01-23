@@ -502,3 +502,33 @@ $white: #ffffff;
     width: 300px;
   }
 }
+
+
+.error-message {
+  font-size: 14px; 
+  color: #e75247; 
+  margin-top: 12px; 
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: fadeIn 0.3s ease-in; 
+}
+
+.error-message::before {
+  content: "⚠️";
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

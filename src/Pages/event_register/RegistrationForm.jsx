@@ -23,6 +23,7 @@ const RegistrationForm = ({
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
+    
   };
 
   const validate = () => {
@@ -44,6 +45,78 @@ const RegistrationForm = ({
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+  const validateField = (fieldId) => {
+    const newErrors = { ...errors };
+  
+    switch (fieldId) {
+      case "name":
+        if (!formData.name.trim()) {
+          newErrors.name = "Name is required.";
+        } else {
+          delete newErrors.name;
+        }
+        break;
+  
+      case "year":
+        if (!formData.year.trim()) {
+          newErrors.year = "Year is required.";
+        } else {
+          delete newErrors.year;
+        }
+        break;
+  
+      case "department":
+        if (!formData.department.trim()) {
+          newErrors.department = "Department is required.";
+        } else {
+          delete newErrors.department;
+        }
+        break;
+  
+      case "gender":
+        if (!formData.gender.trim()) {
+          newErrors.gender = "Gender is required.";
+        } else {
+          delete newErrors.gender;
+        }
+        break;
+  
+      case "collegename":
+        if (!formData.collegename.trim()) {
+          newErrors.collegename = "College name is required.";
+        } else {
+          delete newErrors.collegename;
+        }
+        break;
+  
+      case "mobilenumber":
+        if (!formData.mobilenumber.trim()) {
+          newErrors.mobilenumber = "Mobile number is required.";
+        } else if (!/^\d{10}$/.test(formData.mobilenumber)) {
+          newErrors.mobilenumber = "Invalid mobile number.";
+        } else {
+          delete newErrors.mobilenumber;
+        }
+        break;
+  
+      default:
+        break;
+    }
+  
+    setErrors(newErrors);
+    return !newErrors[fieldId]; 
+  };
+  
+  const handleNextClick = (e, fieldId, nextCheckboxId) => {
+    e.preventDefault();
+    const isValid = validateField(fieldId); 
+    if (isValid) {
+      document.getElementById(nextCheckboxId).checked = true; 
+    }
+  };
+  
+  
+  
   const handleRegisterSubmit = async (eventData) => {
     try {
       const response = await fetch(
@@ -76,6 +149,7 @@ const RegistrationForm = ({
       console.error("Error registering for events:", error);
     }
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -121,14 +195,14 @@ const RegistrationForm = ({
                 value={formData.name}
                 onChange={handleChange}
               />
-              <label className="c-form__next" htmlFor="progress2" role="button">
+              <label className="c-form__next" htmlFor="progress2" role="button" onClick={(e) => handleNextClick(e, "name", "progress2")}>
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Enter your name</span>
               <b className="c-form__border" />
             </label>
             {errors.name && (
-              <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+              <p className="error-message">{errors.name}</p>
             )}
           </div>
 
@@ -153,14 +227,14 @@ const RegistrationForm = ({
                 <option value="CSBS">CSBS</option>
                 {/* Add more departments as needed */}
               </select>
-              <label className="c-form__next" htmlFor="progress3" role="button">
-                <span className="c-form__nextIcon" />
+              <label className="c-form__next" htmlFor="progress3" role="button" onClick={(e) => handleNextClick(e, "department", "progress3")}>
+                <span className="c-form__nextIcon"  />
               </label>
               <span className="c-form__groupLabel">Select Department</span>
               <b className="c-form__border" />
             </label>
             {errors.department && (
-              <p className="text-red-500 text-xs mt-1">{errors.department}</p>
+              <p className="error-message">{errors.department}</p>
             )}
           </div>
 
@@ -178,14 +252,14 @@ const RegistrationForm = ({
                 <option value="Female">Female</option>
                 <option value="Other">Prefer not to say</option>
               </select>
-              <label className="c-form__next" htmlFor="progress4" role="button">
+              <label className="c-form__next" htmlFor="progress4" role="button" onClick={(e) => handleNextClick(e, "gender", "progress4")}>
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Select Gender</span>
               <b className="c-form__border" />
             </label>
             {errors.gender && (
-              <p className="text-red-500 text-xs mt-1">{errors.gender}</p>
+              <p className="error-message">{errors.gender}</p>
             )}
           </div>
 
@@ -204,14 +278,14 @@ const RegistrationForm = ({
                 <option value="3rd Year">3rd Year</option>
                 <option value="4th Year">4th Year</option>
               </select>
-              <label className="c-form__next" htmlFor="progress5" role="button">
+              <label className="c-form__next" htmlFor="progress5" role="button" onClick={(e) => handleNextClick(e, "year", "progress5")}>
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Select Year</span>
               <b className="c-form__border" />
             </label>
             {errors.year && (
-              <p className="text-red-500 text-xs mt-1">{errors.year}</p>
+              <p className="error-message">{errors.year}</p>
             )}
           </div>
 
@@ -226,7 +300,7 @@ const RegistrationForm = ({
                 value={formData.collegename}
                 onChange={handleChange}
               />
-              <label className="c-form__next" htmlFor="progress6" role="button">
+              <label className="c-form__next" htmlFor="progress6" role="button" onClick={(e) => handleNextClick(e, "collegename", "progress6")}>
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">
@@ -235,7 +309,7 @@ const RegistrationForm = ({
               <b className="c-form__border" />
             </label>
             {errors.collegename && (
-              <p className="text-red-500 text-xs mt-1">{errors.collegename}</p>
+              <p className="error-message">{errors.collegename}</p>
             )}
           </div>
 
@@ -250,7 +324,7 @@ const RegistrationForm = ({
                 value={formData.mobilenumber}
                 onChange={handleChange}
               />
-              <label className="c-form__next" htmlFor="finish" role="button">
+              <label className="c-form__next" htmlFor="finish" role="button" onClick={(e) => handleNextClick(e, "mobilenumber", "finish")}>
                 <span className="c-form__nextIcon" />
               </label>
 
@@ -260,7 +334,7 @@ const RegistrationForm = ({
               <b className="c-form__border" />
             </label>
             {errors.mobilenumber && (
-              <p className="text-red-500 text-xs mt-1">{errors.mobilenumber}</p>
+              <p className="error-message">{errors.mobilenumber}</p>
             )}
           </div>
 

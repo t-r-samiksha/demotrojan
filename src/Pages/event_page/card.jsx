@@ -209,7 +209,11 @@ export function Card({ imagen, title,link,date, time,category,fee,isFirstSubmiss
             marginBottom: "20px",
           }}
         >
-          <button className="btn" onClick={closeModal} style={buttonStyles}>
+          <button className="btn" onClick={()=>{
+          closeModal();
+          setIsFirstSubmissionMain(true);
+
+           }} style={buttonStyles}>
             Close
           </button>
         </div>
