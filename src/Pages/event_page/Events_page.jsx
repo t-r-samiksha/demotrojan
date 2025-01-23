@@ -30,6 +30,7 @@ import IMGg1 from "../../assets/freefire.jpg";
 import IMGg2 from "../../assets/Valo main.jpg";
 import IMGg3 from "../../assets/bgmi main.png";
 import { useAuth0 } from '@auth0/auth0-react';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -39,7 +40,21 @@ const Events_page = () => {
   const [eventsRegistered, setEventsRegistered] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [userId, setUserId] = useState("");
+  const location = useLocation();
 
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (location.hash) {
+        const targetId = location.hash.slice(1); // Remove '#' to get the ID
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the element
+        }
+      }
+    };
+
+    handleHashScroll();
+  }, [location]); // Re-run when location changes
   useEffect(() => {
     const fetchRegisteredEvents = async () => {
       if (isAuthenticated && user) {
@@ -122,7 +137,7 @@ const Events_page = () => {
     }
   };
   const carouselData = [
-    {
+    { id:"tech",
       title: "Technical Events",
       bgColor:  "linear-gradient(135deg, #2A0845, #6441A5)",
       cards: [
@@ -207,7 +222,7 @@ const Events_page = () => {
         
       ],
     },
-    {
+    { id:"nontech",
       title: "Non-Technical Events",
       bgColor: "linear-gradient(135deg, #43cea2, #185a9d)",
       cards: [
@@ -282,7 +297,7 @@ const Events_page = () => {
         },
       ],
     },
-    {
+    { id:"workshop",
       title: "Workshops",
       bgColor: "linear-gradient(135deg, #F7971E, #FFD200)", 
       cards: [
@@ -332,7 +347,7 @@ const Events_page = () => {
         },
       ],
     },
-    {
+    { id:"game",
       title: "Gaming Events",
       bgColor: "linear-gradient(135deg, #8E2DE2, #FF0080)",
       cards: [
@@ -388,7 +403,7 @@ const Events_page = () => {
       return (
     <div className="container">
       {carouselData.map((carousel, index) => (
-        <div className="carousel-container" key={index}>
+        <div className="carousel-container" key={index} id={carousel.id}>
           <h2 className="topic-heading">{carousel.title}</h2>
           <Carroussel
             cards={carousel.cards.map((card, cardIndex) => ({

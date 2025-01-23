@@ -17,12 +17,18 @@ const About = () => {
         <div className='trojans-about'>
             <div className='about_logos'  style={{background:`url(${Sympo_logo})`,backgroundSize: 'contain',
         backgroundPosition: 'center',backgroundRepeat:'no-repeat'}}/>
-            <div className='about_para'><AboutPara para={Sympo_About} /></div>
+            <div className='about_para'>
+                {/* <AboutPara para={Sympo_About} /> */}
+                <p>{Sympo_About}</p>
+                </div>
         </div>
         <div className='College-about'>
             <div className='about_logos' style={{background:`url(${College_logo})`,backgroundSize: 'contain',
         backgroundPosition: 'center',backgroundRepeat:'no-repeat'}}/>
-            <div className='about_para'><AboutPara para={College_about} /></div>
+            <div className='about_para'>
+                {/* <AboutPara para={College_about} /> */}
+                <p>{College_about}</p>
+                </div>
         </div>
     </div>
   )

@@ -112,7 +112,7 @@ const Footer = () => {
                 </h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                   <li class="mb-4">
-                    <a href="/events-page" class="hover:underline"  onClick={()=>{
+                    <a href="/events-page#tech" class="hover:underline"  onClick={()=>{
                       const targetElement = document.getElementById('events');
                       if (targetElement) {
                         targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
@@ -122,7 +122,7 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/events-page" class="hover:underline"  onClick={()=>{
+                    <a href="/events-page#nontech" class="hover:underline"  onClick={()=>{
                       const targetElement = document.getElementById('events');
                       if (targetElement) {
                         targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
@@ -132,13 +132,24 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/events-page" class="hover:underline"  onClick={()=>{
+                    <a href="/events-page#workshop" class="hover:underline"  onClick={()=>{
                       const targetElement = document.getElementById('events');
                       if (targetElement) {
                         targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
                       }
                     }}>
                       Workshop
+                    </a>
+                    
+                  </li>
+                  <li>
+                  <a href="/events-page#game" class="hover:underline"  onClick={()=>{
+                      const targetElement = document.getElementById('events');
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+                      }
+                    }}>
+                      Gaming
                     </a>
                   </li>
                 </ul>

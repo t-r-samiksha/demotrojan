@@ -10,7 +10,7 @@ import game from '../../assets/gaming.jpeg'
 
 export function ThreeDCardDemo() {
   const details = [
-    {
+    { id:"tech",
       Title: "Technical Events",
       Description:
         "Dive into the world of innovation and creativity. Showcase your technical prowess and solve real-world challenges in a collaborative environment.",
@@ -18,7 +18,7 @@ export function ThreeDCardDemo() {
         tech,
       Navigate: "Explore Technical Events",
     },
-    {
+    { id:"nontech",
       Title: "Non-Tech Events",
       Description:
         "Blending fun with technology, these events let you unleash your creativity in exciting and unconventional ways.",
@@ -26,7 +26,7 @@ export function ThreeDCardDemo() {
         nont,
       Navigate: "Join NonTech Events",
     },
-    {
+    { id:"workshop",
       Title: "Workshops",
       Description:
         "Expand your knowledge and learn from industry experts. Hands-on sessions to master new skills and stay ahead.",
@@ -34,7 +34,7 @@ export function ThreeDCardDemo() {
         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
       Navigate: "Attend Workshops",
     },
-    {
+    { id:"game",
       Title: "Gaming",
       Description:
         "Level up your gaming skills and learn from industry pros. Dive into hands-on sessions to master strategies, improve gameplay, and stay ahead in the competition.",
@@ -81,7 +81,7 @@ export function ThreeDCardDemo() {
                   as="a"
                   className="flex items-center px-4 py-2 rounded-xl text-xs font-normal dark:text-white text-black"
                 >
-                  <Link to="/events-page" className="w-full">
+                  <Link to={`/events-page#${event.id}`} className="w-full">
                     {event.Navigate} <ArrowRightAltIcon className="ml-1" />
                   </Link>
                 </CardItem>
@@ -89,7 +89,7 @@ export function ThreeDCardDemo() {
                   translateZ={20}
                   as="button"
                   className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                > <Link to='/events-page'>More Info</Link>
+                > <Link to={`/events-page#${event.id}`}>More Info</Link>
                   
                 </CardItem>
               </div>

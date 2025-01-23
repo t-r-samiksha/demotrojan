@@ -29,7 +29,7 @@ function App() {
   })
   return (
     <Router>
-       <ScrollToTop />
+       {/* <ScrollToTop /> */}
       <div className="App">
         {/* {Landing Page} */}
         {showLandingPage &&
