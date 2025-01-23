@@ -62,7 +62,7 @@ export default function SponcerPage() {
     <div className="sponcers">
         <div className="titleMain">
         <div className="titleSponcer">
-        <h1 data-text="TITLESPONSOR">TITLESPONSOR</h1>
+        <h1 data-text="TITLESPONSOR">TITLE SPONSOR</h1>
       </div>
       <div className=" title_1 ">
         <div className="image">

@@ -67,7 +67,7 @@ const buttonStyles = {
 
 Modal.setAppElement("#root");
 
-export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered ,bgcolor}) {
+export function Card({ imagen, title,link,date, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered ,bgcolor}) {
   const [show, setShown] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false); //Rules page setupp...
@@ -170,18 +170,22 @@ export function Card({ imagen, title, time,category,fee,isFirstSubmissionMain,ha
         <img src={imagen} alt={title} className="card-image" />
         <h2 className="card-title">{title}</h2>
         <div className="event-details"> 
+          {date && (<p><strong>Date: {date}</strong></p>)}
         <p><strong/>Time: {time}</p>
         <p><strong/>Entry Fee: {fee}</p>
-        <p><strong/>Category: {category}</p>
+        {category && (<p><strong/>Category: {category}</p>)}
       </div>
 
         <div className="btnn">
+          {link ?(
+           <a href={link} target="_blank"> <button className="btn">Register</button></a>
+          ):(
           <button className="btn" onClick={() => openModal({ title })}
             disabled={eventsRegistered.includes(title)}
             
             >
             Register
-          </button>
+          </button>)}
           <button className="btn" onClick={()=>{handleRules()}}>Info</button>
         </div>
       </animated.div>

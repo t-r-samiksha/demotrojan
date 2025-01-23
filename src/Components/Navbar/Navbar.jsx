@@ -44,7 +44,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", link: "/" },
     { name: "Events", link: "/events-page" },
-    { name: "Sponsor", link: "/sponser-page" },
+    { name: "Sponsors", link: "/sponser-page" },
     { name: "About", link: "#about" },
     { name: "Contact", link: "#contact" },
   ];

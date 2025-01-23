@@ -131,7 +131,7 @@ const Events_page = () => {
           title: "CODE MANIA",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
-          category: "SOLO-PLAY",
+          // category: "SOLO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech1" },
             { text: "RULES", href: "/rules-tech1" },
@@ -142,7 +142,7 @@ const Events_page = () => {
           title: "CODERS CHEMISTRY",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
-          category: "DUO-PLAY",
+          // category: "DUO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech2" },
             { text: "RULES", href: "/rules-tech2" },
@@ -153,18 +153,19 @@ const Events_page = () => {
           title: "PAPERENZA",
           time: "TO BE ANNOUNCED",    
           fee: "FREE",
-          category: "Cloud Computing",
+          // category: "Cloud Computing",
           buttons: [
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
+          link:"https://forms.gle/YcA1uzebGcUyLCNbA"
         },
         {
           imagen: IMG4,
           title: "TECHNO RHYTHM",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
-          category: "SQUAD-PLAY(3 PLAYERS)",
+          // category: "SQUAD-PLAY(3 PLAYERS)",
           buttons: [
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
@@ -175,7 +176,7 @@ const Events_page = () => {
           title: "TECH TRIVIA",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
-          category: "SOLO-PLAY",
+          // category: "SOLO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
@@ -186,7 +187,7 @@ const Events_page = () => {
           title: "FRANKENSTEIN",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
-          category: "DUO-PLAY",
+          // category: "DUO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
@@ -197,7 +198,7 @@ const Events_page = () => {
           title: "DEVELOPER'S NIGHTMARE",
           time: "TO BE ANNOUNCED",
           fee: "FREE",
-          category:"SOLO-PLAY",
+          // category:"SOLO-PLAY",
           buttons: [
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
@@ -214,9 +215,9 @@ const Events_page = () => {
           imagen: IMGn1,
          
           title: "Brain A Holic",
-          time: "10:00 AM - 12:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Fun Tech",
+          // category: "Fun Tech",
           buttons: [
             { text: "REGISTER", href: "/register-art" },
             { text: "RULES", href: "/rules-art" },
@@ -226,10 +227,10 @@ const Events_page = () => {
           imagen: IMGn2,
           title: "BRAND O PALOOZA",
           description: "Get ready to groove and compete in our Dance Battle.",
-          time: "4:00 PM - 7:00 PM",
-          date: "2025-01-29",
+          time: "TO BE ANNOUNCED",
+          
           fee: "Free",
-          category: "Fun-Tech",
+          // category: "Fun-Tech",
           buttons: [
             { text: "REGISTER", href: "/register-dance" },
             { text: "RULES", href: "/rules-dance" },
@@ -238,9 +239,9 @@ const Events_page = () => {
         {
           imagen: IMGn3,
           title: "CYBER TRIAL",
-          time: "1:00 PM - 3:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Fun-tech",
+          // category: "Fun-tech",
           buttons: [
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
@@ -249,9 +250,9 @@ const Events_page = () => {
         {
           imagen: IMGn4,
           title: "DIGITAL BLUE PRINT",
-          time: "1:00 PM - 3:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Fun-tech",
+          // category: "Fun-tech",
           buttons: [
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
@@ -260,9 +261,9 @@ const Events_page = () => {
         {
           imagen: IMGn5,
           title: "GRILL & SKILL",
-          time: "1:00 PM - 3:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Fun-tech",
+          // category: "Fun-tech",
           buttons: [
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
@@ -271,9 +272,9 @@ const Events_page = () => {
         {
           imagen: IMGn6,
           title: "ONE SHOT",
-          time: "1:00 PM - 3:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Fun-Tech",
+          // category: "Fun-Tech",
           buttons: [
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
@@ -288,9 +289,9 @@ const Events_page = () => {
         {
           imagen: IMGw1,
           title: "Linux Workshop",
-          time: "to be",
+          time: "to be Announced",
           fee: "Free",
-          category: "Workshop",
+          // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-graphicdesign" },
             { text: "DETAILS", href: "/details-graphicdesign" },
@@ -299,9 +300,9 @@ const Events_page = () => {
         {
           imagen: IMGw2,
           title: "Networking and CyberSecurity",
-          time: "2:00 PM - 6:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Workshop",
+          // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-webdev" },
             { text: "DETAILS", href: "/details-webdev" },
@@ -310,9 +311,9 @@ const Events_page = () => {
         {
           imagen: IMGw3,
           title: "Video Editing Workshop",
-          time: "3:00 PM - 6:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Workshop",
+          // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-datascience" },
             { text: "DETAILS", href: "/details-datascience" },
@@ -321,9 +322,9 @@ const Events_page = () => {
         {
           imagen: IMGw4,
           title: "Web Development Workshop",
-          time: "3:00 PM - 6:00 PM",
+          time: "TO BE ANNOUNCED",
           fee: "Free",
-          category: "Workshop",
+          // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-datascience" },
             { text: "DETAILS", href: "/details-datascience" },
@@ -338,41 +339,44 @@ const Events_page = () => {
         {
           imagen: IMGg1,
           title: "FREE FIRE",
-          description: "Showcase your creativity in our Art Competition.",
-          time: "10:00 AM - 12:00 PM",
-          date: "2025-01-28",
+          description: "Showcase your clashes with battles",
+          time: "10:00 AM - 2:00 PM",
+          date: "05/02/2025",
           fee: "69",
-          category: "Battle-Royal",
+          category: "Offline",
           buttons: [
             { text: "REGISTER", href: "/register-art" },
             { text: "RULES", href: "/rules-art" },
           ],
+          link:"https://forms.gle/hJj9BqtF92FbRRp59"
         },
         {
           imagen: IMGg2,
           title: "VALORANT",
           description: "Get ready to groove and compete in our Dance Battle.",
-          time: "4:00 PM - 7:00 PM",
-          date: "2025-01-29",
+          time: "6:00 PM - 11:00 PM",
+          date: "04/02/2025",
           fee: "149",
-          category: "Battle-Royal",
+          category: "Online",
           buttons: [
             { text: "REGISTER", href: "/register-dance" },
             { text: "RULES", href: "/rules-dance" },
           ],
+          link:"https://forms.gle/fKoPQ4MLwCUGeaj48"
         },
         {
           imagen: IMGg3,
           title: "BGMI",
           description: "Put your knowledge to the test in our Quiz Competition.",
-          time: "1:00 PM - 3:00 PM",
-          date: "2025-01-30",
+          time: "10:00 AM - 2:00 PM",
+          date: "05/02/2025",
           fee: "69",
-          category: "Battle-Royal",
+          category: "Offline",
           buttons: [
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
           ],
+          link:"https://forms.gle/Ab8bWHUTws4rb2ft7"
         },
       ],
     },
@@ -398,6 +402,8 @@ const Events_page = () => {
                   date={card.date}
                   time={card.time}
                   fee={card.fee}
+                  link={card.link}
+                  
                   category={card.category}
                   buttons={card.buttons}
                   isFirstSubmissionMain={isFirstSubmissionMain}
