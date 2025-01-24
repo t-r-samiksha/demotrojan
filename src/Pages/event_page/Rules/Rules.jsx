@@ -400,7 +400,7 @@ function Rules({title,showPopup,handleRules}) {
       ]
     },
     {
-      name: "Cyber Trial",
+      name: "Cyber Trail",
       description: "Cyber Trail is an exciting and intellectually stimulating event designed to challenge participants in critical thinking, cybersecurity, and problem-solving. This three-round competition will test your ability to analyze, decode, and uncover hidden clues under time constraints.",
       generalRules: [
         "●	Each team consists of 2-3 members",
@@ -493,9 +493,9 @@ function Rules({title,showPopup,handleRules}) {
                     "●	Time to answer each question will be 15 seconds"
       ],
       coordinators:[
-        "Roshika P - +91 86675 18384 ",
-        "Nivendhan- +91 82485 61253",
-        "Monica- +91 63749 77828"
+        "● Lakshanyaa Deepan - +91 98404 37631",
+"● Nivendhan- +91 82485 61253",
+"● Monica- +91 63749 77828"
       ],
     },
     {

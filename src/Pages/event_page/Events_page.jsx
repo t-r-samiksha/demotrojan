@@ -5,16 +5,16 @@ import Carroussel from "./carousel";
 import "./Event_page.css";
 
 import IMG1 from "../../assets/1-3.png";
-import IMG2 from "../../assets/CC_PAGE_1.png";
-import IMG3 from "../../assets/PAPERNZA.png";
-import IMG4 from "../../assets/TECHNO 1.png";
+import IMG2 from "../../assets/CC-1.png";
+import IMG3 from "../../assets/PAPERENZA_P01.png";
+import IMG4 from "../../assets/techno.png";
 import IMG5 from "../../assets/Artboard 1.jpg";
 import IMG6 from "../../assets/frank.png";
 import IMG7 from "../../assets/dn.png";
 //image for non tech
 import IMGn1 from "../../assets/brain a holic (1).png";
 import IMGn2 from "../../assets/brando palooza (1).png";
-import IMGn3 from "../../assets/Cyber Trial 01.png";
+import IMGn3 from "../../assets/Cyber Trial_01.png";
 import IMGn4 from "../../assets/digital_blueprint1.png";
 import IMGn5 from "../../assets/grill and skill.png";
 import IMGn6 from "../../assets/one shot.png";
@@ -253,7 +253,7 @@ const Events_page = () => {
         },
         {
           imagen: IMGn3,
-          title: "CYBER TRIAL",
+          title: "CYBER TRAIL",
           time: "TO BE ANNOUNCED",
           fee: "Free",
           // category: "Fun-tech",
