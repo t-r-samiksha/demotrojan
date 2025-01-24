@@ -112,8 +112,8 @@ function Rules({title,showPopup,handleRules}) {
                 "●	Synchronization and teamwork will be essential to successfully complete this round."
       ],
       coordinators:[
-        "M.sowmiya-8015442451",
-"Sharan yaswant -8903295484"
+        "M.sowmiya-+91 80154 42451",
+"Sharan yaswant -+91 89032 95484"
       ]
     },
     {
@@ -135,8 +135,8 @@ function Rules({title,showPopup,handleRules}) {
                     "●	Time Duration: 25mins"
       ],
       coordinators:[
-       " Vishwa prasanth-7871202909",
-"Rakesh R-86818 84559"
+       " Vishwa prasanth-+91 78712 02909",
+"Rakesh R- +91 86818 84559"
       ]
       
     },
@@ -151,8 +151,8 @@ function Rules({title,showPopup,handleRules}) {
                     "• The results will contribute a small percentage to the final score, encouraging presenters to engage with the audience effectively."
       ],
       coordinators:[
-        "Srinithi- 76038 07975",
-"Raviganesh -91507 67054"
+        "Srinithi- +91 76038 07975",
+"Raviganesh - +91 91507 67054"
       ]
     },
     {
@@ -164,7 +164,7 @@ function Rules({title,showPopup,handleRules}) {
       ],
       round1 :[
                       "●	This is an UI designing round.",
-                      "●	Participants must design a web page based on the giventopicinFigma/Canva and provide the link to their design.", 
+                      "●	Participants must design a web page based on the given topic in Figma/Canva and provide the link to their design.", 
                       "●	The time duration will be 45 min.",
       ],
       round2: [
@@ -179,8 +179,8 @@ function Rules({title,showPopup,handleRules}) {
                       "●	The time duration will be 45 mins."
       ],
       coordinators:[
-        "Harshithaa RG - 6379059924",
-"Greata Jansi Rani  P- 9840250127"
+        "Harshithaa RG -+91 63790 59924",
+"Greata Jansi Rani  P- +91 98402 50127"
       ]
     },
     {
@@ -209,8 +209,8 @@ function Rules({title,showPopup,handleRules}) {
                       "•	The total time for this round is 20 minutes."
       ],
       coordinators:[
-       " Poojaharini K [6383503203]",
-"Yuvansri D [8072039244]"
+       " Poojaharini K - +91 63835 03203",
+"Yuvansri D - +91 80720 39244"
       ]
     },
     {
@@ -230,7 +230,7 @@ function Rules({title,showPopup,handleRules}) {
                       "●	Outcome: Top 50% of participants progress to Round 2."
       ],
       round2: [
-                      "●	A 40-minute round designed to evaluate participants' coding and problem-solving abilities.",
+                      "●	A total of 20 questions will be given to solve in 40 minutes. Participants solving the **maximum number of problems will move to Round 3.",
                       "●	type: Solve two coding problems",
                       "●	One easy problem (basic implementation).",
                       "●	One medium problem (involving data structures or algorithms).",
@@ -244,38 +244,38 @@ function Rules({title,showPopup,handleRules}) {
                       "●	Focus: Judged on accuracy, efficiency, and innovation."    
       ],
       coordinators:[
-        "Ilakkiya - 9342649717",
-        "Sri ram - 91 63831 43386"
+        "Ilakkiya - +91 93426 49717",
+        "Sri ram - +91 63831 43386"
       ]
     },
     {
-      name: "TECH TRIVIA",
-      generalRules: [
-                        "• EACH TEAM SHOULD CONSIST OF 2 PLAYERS.",
-                        "• THERE WILL BE 3 ROUNDS.",
-                        "• ALL THE 3 ROUNDS WILL BE TIMER BASED"
+      "name": "TECH TRIVIA",
+      "generalRules": [
+        "• each team should consist of 2 players.",
+        "• there will be 3 rounds.",
+        "• all the 3 rounds will be timer based"
       ],
-      round1: [
-                        "• IT WILL BE A MCQ ROUND.",
-                        "• QUESTIONS WILL BE BASED ON PYTHON, C, C++, JAVA.",
-                        "• THE TIME DURATION FOR EACH QUESTION WILL BE 20 SECONDS."
+      "round1": [
+        "• it will be a mcq round.",
+        "• questions will be based on python, c, c++, java.",
+        "• the time duration for each question will be 20 seconds."
       ],
-      round2: [
-                        "•	CONNECTION PICS AND CLUES WILL BE DISPLAYED THROUGH PROJECTOR.",
-                        "•	QUESTIONS WILL BE BASED ON ALGORITHMS AND TECHNICAL TERMS.",
-                        "•	PARTICIPANTS SHOULD ANSWER THROUGH THE CROSSWORD PATTERN WHICH IS PROVIDED IN A PAPER."
+      "round2": [
+        "• connection pics and clues will be displayed through projector.",
+        "• questions will be based on algorithms and technical terms.",
+        "• participants should answer through the crossword pattern which is provided in a paper."
       ],
-      round3: [
-                        "•	One member from a team will randomly pick a piece of paper and will have up to one minute to come up with 4 to 5 clue words related to the term.",
-                        "•	The other team member will then have one minute to guess the correct term using the given clues.",
-                        "•	If the term is not correctly identified within the time limit, the turn ends, and no points are awarded.",
+      "round3": [
+        "• One member from a team will randomly pick a piece of paper and will have up to one minute to come up with 4 to 5 clue words related to the term.",
+        "• The other team member will then have one minute to guess the correct term using the given clues.",
+        "• If the term is not correctly identified within the time limit, the turn ends, and no points are awarded."
       ],
-      coordinators:[
-        "Subitha S - (6381878958)",
-"HarinipriyadarshiniG - (8939603937)"
+      "coordinators": [
+        "Subitha S - +91 63818 78958",
+        "HarinipriyadarshiniG - +91 89396 03937"
       ]
-
     },
+    
     {
         name: "Digital Blue print",
         generalRules: [
@@ -292,6 +292,12 @@ function Rules({title,showPopup,handleRules}) {
             "●		AI-generated references are strictly prohibited.",
             "●		Pre-made Canva templates are not allowed.",
             "●	  Late submissions will lead to disqualification."
+        ],
+        coordinators:[
+          
+"● Harshitha K - +91 98401 65112",
+"● Srivatsan R - +91 73959 72827",
+"● Hari Mahith M - +91 90438 94881"
         ]
     },
     {
@@ -301,6 +307,7 @@ function Rules({title,showPopup,handleRules}) {
         ],
         coordinators:[
 
+          "Shalini Shrnivasan- +91 63817 03623"
         ]
     },
     {
@@ -309,7 +316,7 @@ function Rules({title,showPopup,handleRules}) {
             "●	Understand the fundamentals of network architecture, protocols, and security measures. Learn how to protect systems from cyber threats through practical demonstrations of encryption, firewalls, and penetration testing."
         ],
         coordinators:[
-          "Jawagal Srinath"
+          "Jawagal Srinath - +91 73393 06143"
         ]
     },
     {
@@ -318,7 +325,7 @@ function Rules({title,showPopup,handleRules}) {
             "●	Master the art of precise video editing with frame-by-frame techniques. Learn how to enhance storytelling by applying effects, transitions, and color corrections to create professional-quality videos."
         ],
         coordinators:[
-          "Vikram"
+          "Vikram - +91 82488 17760"
         ]
     },
     {
@@ -327,7 +334,7 @@ function Rules({title,showPopup,handleRules}) {
             "●	Explore the power of Linux with hands-on exercises covering system administration, shell scripting, and open-source tools. Understand how to leverage Linux for development, security, and automation tasks."
         ],
         coordinators:[
-          "Devisri"
+          "Devisri - +91 93842 58137"
         ]
     },
     {
@@ -339,8 +346,8 @@ function Rules({title,showPopup,handleRules}) {
             "●	The tournament administrator will make decisions based on regional latency"
         ],
         coordinators:[
-          "Karthikeyan V - 7010672268",
-"V.S. Kanna - 9677044486"
+          "Karthikeyan V - +91 70106 72268",
+"V.S. Kanna - +91 96770 44486"
         ]
     },
     {
@@ -354,8 +361,8 @@ function Rules({title,showPopup,handleRules}) {
             "●	The match format will be decided based on the registeres teams, either as a battle royale for more teams or clash squad for fewer teams"
         ],
         coordinators:[
-          "SARANR - 9344588695",
-"VARUNKRISHNA - 936188636"
+          "SARANR - +91 93445 88695",
+"VARUNKRISHNA -+91 93618 8636"
         ]
     },
     {
@@ -369,8 +376,8 @@ function Rules({title,showPopup,handleRules}) {
             "●	Tournament admin will make a decision based upon regional latency"
         ],
         coordinators:[
-          "Gautam K R - 8807476568",
-"V.S. Kanna - 9677044486"
+          "Gautam K R - +91 88074 76568",
+"V.S. Kanna - +91 96770 44486"
         ]
     },
     {
@@ -387,9 +394,9 @@ function Rules({title,showPopup,handleRules}) {
                     "●	Any editing platform can be used as per your convenience, but AI video-making applications are strictly prohibited."
       ],
       coordinators: [
-                    "•	Aarthi - +91 7338775537",
-                    "•	Avinash Venkatraman- +91 9043694205",
-                    "•	Gokul V- +91 8248316522"
+                    "•	Aarthi - +91 73387 75537",
+                    "•	Avinash Venkatraman- +91 90436 94205",
+                    "•	Gokul V- +91 82483 16522"
       ]
     },
     {
@@ -413,9 +420,9 @@ function Rules({title,showPopup,handleRules}) {
         "●	Decrypt the message hidden by identifying the encryption technique within the given time limit.",
       ],
       coordinators: [
-        "•	Prasath -+91 6381430314",
-        "•	Sahul Hameed N- +91 9442453107",
-        "•	Sandra Maria Princy - +91 7845860167"
+        "•	Prasath -+91 63814 30314",
+        "•	Sahul Hameed N- +91 94424 53107",
+        "•	Sandra Maria Princy - +91 78458 60167"
       ]
     },
     {
@@ -442,9 +449,9 @@ function Rules({title,showPopup,handleRules}) {
                 "●	Feedback will be given for improvement "
       ],
       coordinators: [
-                "U.K.Dhetchana- +91 8754483562",
-                "Hariharan C- +91 7845725713",
-                "Dhivakar- +91 6380372872"
+                "U.K.Dhetchana- +91 87544 83562",
+                "Hariharan C- +91 78457 25713",
+                "Dhivakar- +91 63803 72872"
       ]
     },
     {
@@ -460,9 +467,9 @@ function Rules({title,showPopup,handleRules}) {
                     "●	Prizes will be awarded to participants or teams who demonstrate the best marketing strategies and proper presentation skills."
       ],
       coordinators:[
-        "Evelyn Beatrice - +91 9500191848",
-        "Priyadharshini  - +91 8807791065",
-        "Yohalakshmi- +91 7845844529"
+        "Evelyn Beatrice - +91 95001 91848",
+        "Priyadharshini  - +91 88077 91065",
+        "Yohalakshmi- +91 78458 44529"
       ]
     },{
       name: "BRAIN A HOLIC",
@@ -486,9 +493,9 @@ function Rules({title,showPopup,handleRules}) {
                     "●	Time to answer each question will be 15 seconds"
       ],
       coordinators:[
-        "Roshika P - +91 8667518384 ",
-        "Nivendhan- +91 8248561253",
-        "Monica- +91 6374977828"
+        "Roshika P - +91 86675 18384 ",
+        "Nivendhan- +91 82485 61253",
+        "Monica- +91 63749 77828"
       ],
     },
     {
@@ -512,9 +519,9 @@ function Rules({title,showPopup,handleRules}) {
         "Design Aesthetics: 30%",
         "Design Aesthetics: 30%"
       ],coordinators:[
-        "Harshitha K - +91 9840165112",
-        "Srivatsan R - +91 7395972827",
-        "Hari Mahith M - +91 9043894881"
+        "Harshitha K - +91 98401 65112",
+        "Srivatsan R - +91 73959 72827",
+        "Hari Mahith M - +91 90438 94881"
       ]
   }
   ];

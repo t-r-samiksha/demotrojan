@@ -371,7 +371,7 @@ const Events_page = () => {
           description: "Get ready to groove and compete in our Dance Battle.",
           time: "6:00 PM - 11:00 PM",
           date: "04/02/2025",
-          fee: "149",
+          fee: "99",
           category: "Online",
           buttons: [
             { text: "REGISTER", href: "/register-dance" },
