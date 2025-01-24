@@ -382,9 +382,9 @@ function Rules({title,showPopup,handleRules}) {
     },
     {
       name: "ONE SHOT",
-      description: "This is an event where the objective is to capture the best moments of the symposium, like exciting events, guest talks, or people having fun. You can take pictures, shoot short videos. Show everyone what made the day special in your own creative way by making a reel lasting under one minute. At the end of the event, the best ones will win prizes.",
+      description: "This is an event where the objective is to capture the best moments of the symposium, like exciting events, guest talks, or people having fun. You can take pictures, shoot short videos. Show everyone what made the day special in your own creative way by making a reel lasting under one minute. At the end of the event, the best ones will win prizes",
       generalRules: [
-                    "●	Individual participation only; group participation is not allowed.",
+                    "●	Individual participation only. Group participation is not allowed.",
                     "●	All submissions must be in the form of reels.",
                     "●	All footage must be captured within the campus.",
                     "●	Participants must bring their own equipment, such as DSLR, mobile phones, or any props as per convenience.",
@@ -409,7 +409,6 @@ function Rules({title,showPopup,handleRules}) {
       ],
       round1: [
         "●	It will be a picture description round.",
-        "●	Participants will present their ideas orally within the time limit.",
       ],
       round2: [
         "●	This is a CTF Round.",
@@ -434,16 +433,17 @@ function Rules({title,showPopup,handleRules}) {
                   "●	All the 3 rounds will be timer based."
       ],
       round1: [
-                "●	The round consists of 15 MCQs.",
-                "●	Questions cover Aptitude and Logical Reasoning.",
-                "●	Participants have 20 minutes to complete the round."
+                "●	This is an Aptitude round",
+                "●	The round consists of MCQs.",
+                "●	•	Questions cover Aptitude and Logical Reasoning."
       ],
       round2: [
+                "●	This is a Coding round.",
                 "●	Solve 2 coding questions using any programming language.",
-                "●	Devices will be provided at the event.",
-                "●	Solutions must pass all test cases within 20 minutes"
+                "●	Devices will be provided at the event."
       ],
       round3: [
+                "●	This is an Interview Round.",
                 "●	Includes logical, technical puzzles, and scenario-based questions.",
                 "●	Evaluated on problem-solving, clarity, and confidence.",
                 "●	Feedback will be given for improvement "
@@ -475,22 +475,21 @@ function Rules({title,showPopup,handleRules}) {
       name: "BRAIN A HOLIC",
       Description:"Brainaholic is a thrilling and interactive competition designed to challenge participants' knowledge, problem-solving abilities, and teamwork through a series of engaging and diverse rounds. Combining elements of movie trivia and tech-based questions, this event offers a perfect blend of fun and intellect, making it an exciting experience for all participants.",
       generalRules: [
-        "•	This event will feature questions based on movies, general knowledge (GK), technology and other exciting fun topics.",
+                  "●	This event will feature questions based on movies, general knowledge (GK), technology and other exciting fun topics.",
                   "●	Each team consists of 2-3 members.",
                   "●	There will be 3 rounds in total.",
                   "●	All rounds will be timer-based."
       ],
       round1 :[
-                  "●	Rapid-fire questions will be asked, and the team that answers first within the given time will earn a point."
+                  "●  Rapid-fire questions will be asked, and the team that answers first within the given time will earn a point."
       ],
       round2 :[
                    "●	 Crossword Puzzle.",
-                   "●	Paper and pen will be provided"
+                   "●	 Paper and pen will be provided"
       ],
       round3 :[
-                    "●	Type: Multiple Choice Questions (MCQs).",
-                    "●	Questions will be based on general technical knowledge",
-                    "●	Time to answer each question will be 15 seconds"
+                    "●	Type: Multiple Choice Questions (MCQs)."
+                   
       ],
       coordinators:[
         "● Lakshanyaa Deepan - +91 98404 37631",
@@ -517,7 +516,7 @@ function Rules({title,showPopup,handleRules}) {
       judgingCriteria:[
         "Creativity: 30%",
         "Design Aesthetics: 30%",
-        "Design Aesthetics: 30%"
+        "Relevance to Theme: 40%"
       ],coordinators:[
         "Harshitha K - +91 98401 65112",
         "Srivatsan R - +91 73959 72827",
