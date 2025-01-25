@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "./RegistrationForm.scss"; // Importing the CSS file
+import "./RegistrationForm.scss";
 
 const RegistrationForm = ({
   closeModal,
   showToast,
-
   userId,
   setEventsRegistered,
   event,
@@ -17,13 +16,13 @@ const RegistrationForm = ({
     gender: "",
     collegename: "",
     mobilenumber: "",
+    referenceCode: "",
   });
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
-    
   };
 
   const validate = () => {
@@ -41,13 +40,17 @@ const RegistrationForm = ({
     } else if (!/^\d{10}$/.test(formData.mobilenumber)) {
       newErrors.mobilenumber = "Invalid mobile number.";
     }
+    if (formData.referenceCode && formData.referenceCode.trim().length < 5) {
+      newErrors.referenceCode = "Referral code must be at least 5 characters.";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const validateField = (fieldId) => {
     const newErrors = { ...errors };
-  
+
     switch (fieldId) {
       case "name":
         if (!formData.name.trim()) {
@@ -56,7 +59,7 @@ const RegistrationForm = ({
           delete newErrors.name;
         }
         break;
-  
+
       case "year":
         if (!formData.year.trim()) {
           newErrors.year = "Year is required.";
@@ -64,7 +67,7 @@ const RegistrationForm = ({
           delete newErrors.year;
         }
         break;
-  
+
       case "department":
         if (!formData.department.trim()) {
           newErrors.department = "Department is required.";
@@ -72,7 +75,7 @@ const RegistrationForm = ({
           delete newErrors.department;
         }
         break;
-  
+
       case "gender":
         if (!formData.gender.trim()) {
           newErrors.gender = "Gender is required.";
@@ -80,7 +83,7 @@ const RegistrationForm = ({
           delete newErrors.gender;
         }
         break;
-  
+
       case "collegename":
         if (!formData.collegename.trim()) {
           newErrors.collegename = "College name is required.";
@@ -88,7 +91,7 @@ const RegistrationForm = ({
           delete newErrors.collegename;
         }
         break;
-  
+
       case "mobilenumber":
         if (!formData.mobilenumber.trim()) {
           newErrors.mobilenumber = "Mobile number is required.";
@@ -98,25 +101,35 @@ const RegistrationForm = ({
           delete newErrors.mobilenumber;
         }
         break;
-  
+
+      case "referenceCode":
+        if (
+          formData.referenceCode &&
+          formData.referenceCode.trim().length < 5
+        ) {
+          newErrors.referenceCode =
+            "Referral code must be at least 5 characters.";
+        } else {
+          delete newErrors.referenceCode;
+        }
+        break;
+
       default:
         break;
     }
-  
+
     setErrors(newErrors);
-    return !newErrors[fieldId]; 
+    return !newErrors[fieldId];
   };
-  
+
   const handleNextClick = (e, fieldId, nextCheckboxId) => {
     e.preventDefault();
-    const isValid = validateField(fieldId); 
+    const isValid = validateField(fieldId);
     if (isValid) {
-      document.getElementById(nextCheckboxId).checked = true; 
+      document.getElementById(nextCheckboxId).checked = true;
     }
   };
-  
-  
-  
+
   const handleRegisterSubmit = async (eventData) => {
     try {
       const response = await fetch(
@@ -138,10 +151,9 @@ const RegistrationForm = ({
       );
 
       if (response.ok) {
-        const res= await response.json();
+        const res = await response.json();
         setIsFirstSubmissionMain(false);
         setEventsRegistered(res.user.events);
-        
       } else {
         console.error("Failed to register for events.");
       }
@@ -150,13 +162,12 @@ const RegistrationForm = ({
     }
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
       closeModal();
       handleRegisterSubmit(formData);
-      showToast("User Registeration Successfull !");
+      showToast("User Registration Successful!");
     } else {
       console.log("Validation errors", errors);
     }
@@ -170,13 +181,13 @@ const RegistrationForm = ({
       <input className="c-checkbox" type="checkbox" id="progress4" />
       <input className="c-checkbox" type="checkbox" id="progress5" />
       <input className="c-checkbox" type="checkbox" id="progress6" />
+      <input className="c-checkbox" type="checkbox" id="progress7" />
       <input className="c-checkbox" type="checkbox" id="finish" />
       <div className="c-form__progress" />
       <div className="c-formContainer">
         <div className="c-welcome">
           <div>
-            {" "}
-            Secure Your Spot Today - Complete Your Event Registration Below!{" "}
+            Secure Your Spot Today - Complete Your Event Registration Below!
           </div>
           <button className="agree-btn" onClick={handleSubmit}>
             Submit
@@ -195,15 +206,18 @@ const RegistrationForm = ({
                 value={formData.name}
                 onChange={handleChange}
               />
-              <label className="c-form__next" htmlFor="progress2" role="button" onClick={(e) => handleNextClick(e, "name", "progress2")}>
+              <label
+                className="c-form__next"
+                htmlFor="progress2"
+                role="button"
+                onClick={(e) => handleNextClick(e, "name", "progress2")}
+              >
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Enter your name</span>
               <b className="c-form__border" />
             </label>
-            {errors.name && (
-              <p className="error-message">{errors.name}</p>
-            )}
+            {errors.name && <p className="error-message">{errors.name}</p>}
           </div>
 
           <div className="c-form__group">
@@ -227,8 +241,13 @@ const RegistrationForm = ({
                 <option value="CSBS">CSBS</option>
                 {/* Add more departments as needed */}
               </select>
-              <label className="c-form__next" htmlFor="progress3" role="button" onClick={(e) => handleNextClick(e, "department", "progress3")}>
-                <span className="c-form__nextIcon"  />
+              <label
+                className="c-form__next"
+                htmlFor="progress3"
+                role="button"
+                onClick={(e) => handleNextClick(e, "department", "progress3")}
+              >
+                <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Select Department</span>
               <b className="c-form__border" />
@@ -252,15 +271,18 @@ const RegistrationForm = ({
                 <option value="Female">Female</option>
                 <option value="Other">Prefer not to say</option>
               </select>
-              <label className="c-form__next" htmlFor="progress4" role="button" onClick={(e) => handleNextClick(e, "gender", "progress4")}>
+              <label
+                className="c-form__next"
+                htmlFor="progress4"
+                role="button"
+                onClick={(e) => handleNextClick(e, "gender", "progress4")}
+              >
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Select Gender</span>
               <b className="c-form__border" />
             </label>
-            {errors.gender && (
-              <p className="error-message">{errors.gender}</p>
-            )}
+            {errors.gender && <p className="error-message">{errors.gender}</p>}
           </div>
 
           <div className="c-form__group">
@@ -278,15 +300,18 @@ const RegistrationForm = ({
                 <option value="3rd Year">3rd Year</option>
                 <option value="4th Year">4th Year</option>
               </select>
-              <label className="c-form__next" htmlFor="progress5" role="button" onClick={(e) => handleNextClick(e, "year", "progress5")}>
+              <label
+                className="c-form__next"
+                htmlFor="progress5"
+                role="button"
+                onClick={(e) => handleNextClick(e, "year", "progress5")}
+              >
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">Select Year</span>
               <b className="c-form__border" />
             </label>
-            {errors.year && (
-              <p className="error-message">{errors.year}</p>
-            )}
+            {errors.year && <p className="error-message">{errors.year}</p>}
           </div>
 
           <div className="c-form__group">
@@ -300,7 +325,12 @@ const RegistrationForm = ({
                 value={formData.collegename}
                 onChange={handleChange}
               />
-              <label className="c-form__next" htmlFor="progress6" role="button" onClick={(e) => handleNextClick(e, "collegename", "progress6")}>
+              <label
+                className="c-form__next"
+                htmlFor="progress6"
+                role="button"
+                onClick={(e) => handleNextClick(e, "collegename", "progress6")}
+              >
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">
@@ -324,7 +354,12 @@ const RegistrationForm = ({
                 value={formData.mobilenumber}
                 onChange={handleChange}
               />
-              <label className="c-form__next" htmlFor="finish" role="button" onClick={(e) => handleNextClick(e, "mobilenumber", "finish")}>
+              <label
+                className="c-form__next"
+                htmlFor="progress7"
+                role="button"
+                onClick={(e) => handleNextClick(e, "mobilenumber", "progress7")}
+              >
                 <span className="c-form__nextIcon" />
               </label>
 
@@ -337,6 +372,38 @@ const RegistrationForm = ({
               <p className="error-message">{errors.mobilenumber}</p>
             )}
           </div>
+
+          {/* Referral Code or Refference code is written below */}
+
+          <div className="c-form__group">
+            <label className="c-form__label" htmlFor="referenceCode">
+              <input
+                type="text"
+                id="referenceCode"
+                className="c-form__input"
+                placeholder=" "
+                value={formData.referenceCode || ""}
+                onChange={handleChange}
+              />
+              <label
+                className="c-form__next"
+                htmlFor="finish"
+                role="button"
+                onClick={(e) => handleNextClick(e, "referenceCode", "finish")}
+              >
+                <span className="c-form__nextIcon" />
+              </label>
+              <span className="c-form__groupLabel">
+                Enter your Referral Code OR skip it
+              </span>
+              <b className="c-form__border" />
+            </label>
+            {errors.referenceCode && (
+              <p className="error-message">{errors.referenceCode}</p>
+            )}
+          </div>
+
+          {/* End of Referral Code */}
 
           <label className="c-form__toggle" htmlFor="start">
             Register

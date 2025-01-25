@@ -50,10 +50,10 @@ $white: #ffffff;
   display: grid;
   place-items: center;
   //   background-color: rgba(0, 0, 0, 0.5);
-    // backdrop-filter: blur(5px);
+  // backdrop-filter: blur(5px);
   background: linear-gradient(135deg, #191970, #b76e79);
-//   backdrop-filter: blur(5px);
-//   background: rgba(0, 0, 0, 0.5);
+  //   backdrop-filter: blur(5px);
+  //   background: rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
 }
@@ -93,7 +93,7 @@ $white: #ffffff;
 // opens second form
 .c-checkbox:nth-of-type(2):checked ~ {
   .c-form__progress {
-    width: calc(100vw / 6);
+    width: calc(100vw / 7);
   }
 
   .c-formContainer .c-form {
@@ -111,7 +111,7 @@ $white: #ffffff;
 // opens third form
 .c-checkbox:nth-of-type(3):checked ~ {
   .c-form__progress {
-    width: calc(2 * (100vw / 6));
+    width: calc(2 * (100vw / 7));
   }
 
   .c-formContainer .c-form {
@@ -127,7 +127,7 @@ $white: #ffffff;
 }
 .c-checkbox:nth-of-type(4):checked ~ {
   .c-form__progress {
-    width: calc(3 * (100vw / 6));
+    width: calc(3 * (100vw / 7));
   }
 
   .c-formContainer .c-form {
@@ -143,7 +143,7 @@ $white: #ffffff;
 }
 .c-checkbox:nth-of-type(5):checked ~ {
   .c-form__progress {
-    width: calc(4 * (100vw / 6));
+    width: calc(4 * (100vw / 7));
   }
 
   .c-formContainer .c-form {
@@ -159,7 +159,7 @@ $white: #ffffff;
 }
 .c-checkbox:nth-of-type(6):checked ~ {
   .c-form__progress {
-    width: calc(5 * (100vw / 6));
+    width: calc(5 * (100vw / 7));
   }
 
   .c-formContainer .c-form {
@@ -173,22 +173,22 @@ $white: #ffffff;
     }
   }
 }
-// .c-checkbox:nth-of-type(7):checked ~  {
-//   .c-form__progress {
-//     width: calc(6*(100vw / 6));
-//   }
+.c-checkbox:nth-of-type(7):checked ~ {
+  .c-form__progress {
+    width: calc(6 * (100vw / 7));
+  }
 
-//   .c-formContainer .c-form {
-//     .c-form__group:nth-child(6) {
-//       @include form-group-hidden;
-//     }
+  .c-formContainer .c-form {
+    .c-form__group:nth-child(6) {
+      @include form-group-hidden;
+    }
 
-//     .c-form__group:nth-child(7) {
-//       @include form-group-visible;
-//       @include input-listener;
-//     }
-//   }
-// }
+    .c-form__group:nth-child(7) {
+      @include form-group-visible;
+      @include input-listener;
+    }
+  }
+}
 
 #finish:checked ~ {
   .c-form__progress {
@@ -449,8 +449,8 @@ $white: #ffffff;
   width: 0;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
-//   background-color: $blue-ribbon;
- // background: linear-gradient(135deg, #191970, #b76e79);
+  //   background-color: $blue-ribbon;
+  // background: linear-gradient(135deg, #191970, #b76e79);
   transition: 0.3s;
 }
 
@@ -503,18 +503,17 @@ $white: #ffffff;
   }
 }
 
-
 .error-message {
-  font-size: 14px; 
-  color: #e75247; 
-  margin-top: 12px; 
+  font-size: 14px;
+  color: #e75247;
+  margin-top: 12px;
   font-weight: bold;
   text-align: center;
   justify-content: center;
   display: flex;
   align-items: center;
   gap: 5px;
-  animation: fadeIn 0.3s ease-in; 
+  animation: fadeIn 0.3s ease-in;
 }
 
 .error-message::before {
