@@ -305,45 +305,49 @@ const Events_page = () => {
           imagen: IMGw1,
           title: "Linux Workshop",
           time: "to be Announced",
-          fee: "Free",
+          fee: "129",
           // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-graphicdesign" },
             { text: "DETAILS", href: "/details-graphicdesign" },
           ],
+          link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
         {
           imagen: IMGw2,
           title: "Networking and CyberSecurity",
           time: "TO BE ANNOUNCED",
-          fee: "Free",
+          fee: "129",
           // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-webdev" },
             { text: "DETAILS", href: "/details-webdev" },
           ],
+          link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
         {
           imagen: IMGw3,
           title: "Video Editing Workshop",
           time: "TO BE ANNOUNCED",
-          fee: "Free",
+          fee: "129",
           // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-datascience" },
             { text: "DETAILS", href: "/details-datascience" },
           ],
+          link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
         {
           imagen: IMGw4,
           title: "Web Development Workshop",
           time: "TO BE ANNOUNCED",
-          fee: "Free",
+          fee: "129",
           // category: "Workshop",
           buttons: [
             { text: "REGISTER", href: "/register-datascience" },
             { text: "DETAILS", href: "/details-datascience" },
           ],
+          link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
       ],
     },
