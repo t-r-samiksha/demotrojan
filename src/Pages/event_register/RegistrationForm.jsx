@@ -389,7 +389,7 @@ const RegistrationForm = ({
                 className="c-form__next"
                 htmlFor="finish"
                 role="button"
-                onClick={(e) => handleNextClick(e, "referenceCode", "finish")}
+              //  onClick={(e) => handleNextClick(e, "referenceCode", "finish")}
               >
                 <span className="c-form__nextIcon" />
               </label>
