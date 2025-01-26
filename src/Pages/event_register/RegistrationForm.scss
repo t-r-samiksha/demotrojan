@@ -9,7 +9,6 @@ $white: #ffffff;
 @mixin form-group-visible {
   visibility: visible;
   opacity: 1;
-
   .c-form__border {
     width: 100%;
   }

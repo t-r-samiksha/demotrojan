@@ -102,17 +102,17 @@ const RegistrationForm = ({
         }
         break;
 
-      case "referenceCode":
-        if (
-          formData.referenceCode &&
-          formData.referenceCode.trim().length < 5
-        ) {
-          newErrors.referenceCode =
-            "Referral code must be at least 5 characters.";
-        } else {
-          delete newErrors.referenceCode;
-        }
-        break;
+      // case "referenceCode":
+      //   if (
+      //     formData.referenceCode &&
+      //     formData.referenceCode.trim().length < 5
+      //   ) {
+      //     newErrors.referenceCode =
+      //       "Referral code must be at least 5 characters.";
+      //   } else {
+      //     delete newErrors.referenceCode;
+      //   }
+      //   break;
 
       default:
         break;
@@ -382,6 +382,7 @@ const RegistrationForm = ({
                 id="referenceCode"
                 className="c-form__input"
                 placeholder=" "
+                required
                 value={formData.referenceCode || ""}
                 onChange={handleChange}
               />
@@ -389,12 +390,12 @@ const RegistrationForm = ({
                 className="c-form__next"
                 htmlFor="finish"
                 role="button"
-              //  onClick={(e) => handleNextClick(e, "referenceCode", "finish")}
+              // onClick={(e) => handleNextClick(e, "referenceCode", "finish")}
               >
                 <span className="c-form__nextIcon" />
               </label>
               <span className="c-form__groupLabel">
-                Enter your Referral Code OR skip it
+                Enter your Referral Code (Or) Enter none
               </span>
               <b className="c-form__border" />
             </label>

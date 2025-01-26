@@ -428,7 +428,7 @@ function Rules({title,showPopup,handleRules}) {
       name: "GRILL & SKILL",
       description: "The Grill & Skill event is a fun and challenging competition designed to test your aptitude, coding skills, and personal strengths. With three exciting rounds, it offers a great opportunity to showcase your talents and improve through expert feedback",
       generalRules: [ 
-                  "●	Each team consists of 2-3 members",
+                  "●	Each team consists of 2 members",
                   "●	The event will consist of 3 rounds.",
                   "●	All the 3 rounds will be timer based."
       ],
