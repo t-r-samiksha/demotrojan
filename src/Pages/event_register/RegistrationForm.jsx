@@ -40,9 +40,9 @@ const RegistrationForm = ({
     } else if (!/^\d{10}$/.test(formData.mobilenumber)) {
       newErrors.mobilenumber = "Invalid mobile number.";
     }
-    if (formData.referenceCode && formData.referenceCode.trim().length < 5) {
-      newErrors.referenceCode = "Referral code must be at least 5 characters.";
-    }
+    // if (formData.referenceCode && formData.referenceCode.trim().length < 5) {
+    //   newErrors.referenceCode = "Referral code must be at least 5 characters.";
+    // }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -146,6 +146,7 @@ const RegistrationForm = ({
             year: formData.year,
             department: formData.department,
             phone_number: formData.mobilenumber,
+            referral: formData.referenceCode,
           }),
         }
       );
