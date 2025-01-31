@@ -36,7 +36,7 @@ import { useLocation } from 'react-router-dom';
 
 const Events_page = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
-  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(true);
+  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(false);
   const [eventsRegistered, setEventsRegistered] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [userId, setUserId] = useState("");
@@ -87,7 +87,7 @@ const Events_page = () => {
           if (response.ok) {
             const data = await response.json();
             if (data.events.length === 0) {
-              setIsFirstSubmissionMain(true);
+              setIsFirstSubmissionMain(false);
               setEventsRegistered([]);
             } else {
               setIsFirstSubmissionMain(false);
@@ -113,7 +113,7 @@ const Events_page = () => {
     }
 
     if (isFirstSubmissionMain) {
-      setShowModal(true); // Show registration modal
+      setShowModal(false); // Show registration modal
     }
   };
 
@@ -151,7 +151,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech1" },
             { text: "RULES", href: "/rules-tech1" },
           ],
-          isMax:true,
+          isMax:false,
         },
         {
           imagen: IMG2,
@@ -163,7 +163,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech2" },
             { text: "RULES", href: "/rules-tech2" },
           ],
-          isMax:true,
+          isMax:false,
         },
         {
           imagen: IMG3,
@@ -200,7 +200,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
-          isMax:true,
+          isMax:false,
         },
         {
           imagen: IMG6,
@@ -244,7 +244,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-art" },
             { text: "RULES", href: "/rules-art" },
           ],
-          isMax:true,
+          isMax:false,
         },
         {
           imagen: IMGn2,
@@ -454,7 +454,7 @@ const Events_page = () => {
                 />
               ),
             }))}
-            showArrows={true}
+            showArrows={false}
             height="500px"
           />
         </div>
