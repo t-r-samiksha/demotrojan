@@ -67,7 +67,7 @@ const buttonStyles = {
 
 Modal.setAppElement("#root");
 
-export function Card({ imagen, title,link,date, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered ,bgcolor}) {
+export function Card({ imagen, title,link,date, time,category,fee,isFirstSubmissionMain,handleIsFirstSubmission,setIsFirstSubmissionMain ,userId, eventsRegistered, setEventsRegistered ,bgcolor,isMax}) {
   const [show, setShown] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false); //Rules page setupp...
@@ -104,6 +104,10 @@ export function Card({ imagen, title,link,date, time,category,fee,isFirstSubmiss
 
     function openModal({ title }) {
      console.log(userId);
+     if(isMax){
+      toast.error("Registration Limit Reached");
+      return;
+     }
     if(userId === " " || userId === null || userId===""){
       toast.error("Please login to register for the event.");
       return;

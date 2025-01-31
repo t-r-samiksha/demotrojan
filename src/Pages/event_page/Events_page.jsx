@@ -151,6 +151,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech1" },
             { text: "RULES", href: "/rules-tech1" },
           ],
+          isMax:true,
         },
         {
           imagen: IMG2,
@@ -162,6 +163,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech2" },
             { text: "RULES", href: "/rules-tech2" },
           ],
+          isMax:true,
         },
         {
           imagen: IMG3,
@@ -173,6 +175,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
+          isMax:false,
           link:"https://forms.gle/YcA1uzebGcUyLCNbA"
         },
         {
@@ -185,6 +188,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
+          isMax:false,
         },
         {
           imagen: IMG5,
@@ -196,6 +200,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
+          isMax:true,
         },
         {
           imagen: IMG6,
@@ -207,6 +212,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
+          isMax:false,
         },
         {
           imagen: IMG7,
@@ -218,6 +224,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-tech3" },
             { text: "RULES", href: "/rules-tech3" },
           ],
+          isMax:false,
         },
         
       ],
@@ -237,6 +244,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-art" },
             { text: "RULES", href: "/rules-art" },
           ],
+          isMax:true,
         },
         {
           imagen: IMGn2,
@@ -250,6 +258,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-dance" },
             { text: "RULES", href: "/rules-dance" },
           ],
+          isMax:false,
         },
         {
           imagen: IMGn3,
@@ -261,6 +270,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
           ],
+          isMax:false,
         },
         {
           imagen: IMGn4,
@@ -272,6 +282,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
           ],
+          isMax:false,
         },
         {
           imagen: IMGn5,
@@ -283,6 +294,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
           ],
+          isMax:false,
         },
         {
           imagen: IMGn6,
@@ -294,6 +306,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
           ],
+          isMax:false,
         },
       ],
     },
@@ -311,6 +324,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-graphicdesign" },
             { text: "DETAILS", href: "/details-graphicdesign" },
           ],
+          isMax:false,
           link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
         {
@@ -323,6 +337,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-webdev" },
             { text: "DETAILS", href: "/details-webdev" },
           ],
+          isMax:false,
           link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
         {
@@ -335,6 +350,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-datascience" },
             { text: "DETAILS", href: "/details-datascience" },
           ],
+          isMax:false,
           link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
         {
@@ -347,6 +363,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-datascience" },
             { text: "DETAILS", href: "/details-datascience" },
           ],
+          isMax:false,
           link:"https://forms.gle/h8NAP9frUfR7uW7E9"
         },
       ],
@@ -367,6 +384,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-art" },
             { text: "RULES", href: "/rules-art" },
           ],
+          isMax:false,
           link:"https://forms.gle/hJj9BqtF92FbRRp59"
         },
         {
@@ -381,6 +399,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-dance" },
             { text: "RULES", href: "/rules-dance" },
           ],
+          isMax:false,
           link:"https://forms.gle/fKoPQ4MLwCUGeaj48"
         },
         {
@@ -395,6 +414,7 @@ const Events_page = () => {
             { text: "REGISTER", href: "/register-quiz" },
             { text: "RULES", href: "/rules-quiz" },
           ],
+          isMax:false,
           link:"https://forms.gle/Ab8bWHUTws4rb2ft7"
         },
       ],
@@ -422,7 +442,7 @@ const Events_page = () => {
                   time={card.time}
                   fee={card.fee}
                   link={card.link}
-                  
+                  isMax={card.isMax}
                   category={card.category}
                   buttons={card.buttons}
                   isFirstSubmissionMain={isFirstSubmissionMain}
