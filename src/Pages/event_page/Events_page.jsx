@@ -454,7 +454,7 @@ const Events_page = () => {
                 />
               ),
             }))}
-            showArrows={false}
+            showArrows={true}
             height="500px"
           />
         </div>
