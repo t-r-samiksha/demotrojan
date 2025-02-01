@@ -6,6 +6,8 @@ import Ctcl from '../../assets/cpcl1.png';
 import Green from '../../assets/green.jpg';
 import Nat from '../../assets/naturals.jpg';
 import Poo from '../../assets/poorvika.jpg';
+import malaifi from "../../assets/malaifi.jpeg";
+
 export default function SponcerPage() {
   useEffect(() => {
     Aos.init();
@@ -57,7 +59,17 @@ export default function SponcerPage() {
     aosEffect: "fade-left"
     }
   ];
-
+  const sponcers = [
+    {
+      name: "Malaifi",
+      // description:
+      // "We are excited to welcome Naturals, India's No. 1 salon chain, as our coupon sponsor. Their commitment to beauty and self-care resonates with the vibrant energy of our symposium.",
+      imgSrc: malaifi,
+      // link: "https://naturals.in/",
+      aosEffect: "fade-right"
+    },
+    
+  ];
   return (
     <div className="sponcers">
         <div className="titleMain">
@@ -141,6 +153,36 @@ export default function SponcerPage() {
           </div>
         ))}
       </div>
+
+      <div className="cosponcers malaifi1">
+        {sponcers.map((sponcer, index) => (
+          <div
+            key={index}
+            className={` ${sponcer.name.toLowerCase()}`}
+            data-aos={sponcer.aosEffect}
+            data-aos-duration="500"
+          >
+            <img
+              src={sponcer.imgSrc}
+              className="img"
+              alt={`${sponcer.name} Sponsor Logo`}
+            />
+            
+            <div className="content">
+            <h2>{sponcer.name}</h2>
+            {sponcer.description && (
+              <p>{sponcer.description}</p>
+            )}
+            {sponcer.link && (
+              <a href={sponcer.link} target="_blank" rel="noreferrer">
+              DISCOVER MORE
+            </a>
+            )}
+            </div>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }

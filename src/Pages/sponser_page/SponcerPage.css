@@ -197,7 +197,22 @@
 }
 
 
+.malaifi1 img {
+  height: 400px; 
+  margin-top:30px !important;
+  width: 70% !important;
+  height: 70% !important;
+   
+}
+.malaifi1>div{
+  min-height: 300px !important;
+  width:500px;
+}
 
+.malaifi1 h2{
+  font-size: 40px !important;
+  padding:0 !important;
+}
 
 /* .cosponcers>div::before{
   content: "";
@@ -228,6 +243,8 @@
 .sponcers h2{
   font-size: 25px;
 }
+
+
 
 @media (max-width:768px) {
 
