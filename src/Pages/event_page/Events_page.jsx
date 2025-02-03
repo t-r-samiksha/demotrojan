@@ -87,7 +87,7 @@ const Events_page = () => {
           if (response.ok) {
             const data = await response.json();
             if (data.events.length === 0) {
-              setIsFirstSubmissionMain(false);
+              setIsFirstSubmissionMain(true);
               setEventsRegistered([]);
             } else {
               setIsFirstSubmissionMain(false);
