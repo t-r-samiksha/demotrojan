@@ -307,7 +307,7 @@ function Rules({title,showPopup,handleRules}) {
         ],
         coordinators:[
 
-          "Shalini Shrnivasan- +91 63817 03623"
+          "Shalini Srinivasan - +91 63817 03623"
         ]
     },
     {

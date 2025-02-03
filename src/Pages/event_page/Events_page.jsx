@@ -36,7 +36,7 @@ import { useLocation } from 'react-router-dom';
 
 const Events_page = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
-  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(false);
+  const [isFirstSubmissionMain, setIsFirstSubmissionMain] = useState(true);
   const [eventsRegistered, setEventsRegistered] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [userId, setUserId] = useState("");
