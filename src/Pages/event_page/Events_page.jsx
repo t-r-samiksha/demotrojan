@@ -113,7 +113,7 @@ const Events_page = () => {
     }
 
     if (isFirstSubmissionMain) {
-      setShowModal(false); // Show registration modal
+      setShowModal(true); // Show registration modal
     }
   };
 
