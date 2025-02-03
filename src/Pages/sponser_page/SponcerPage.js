@@ -7,6 +7,7 @@ import Green from '../../assets/green.jpg';
 import Nat from '../../assets/naturals.jpg';
 import Poo from '../../assets/poorvika.jpg';
 import malaifi from "../../assets/malaifi.jpeg";
+import Ajan from "../../assets/ajantha.png"
 
 export default function SponcerPage() {
   useEffect(() => {
@@ -61,12 +62,20 @@ export default function SponcerPage() {
   ];
   const sponcers = [
     {
+      name: "Ajantha",
+      // description:
+      // "We are excited to welcome Naturals, India's No. 1 salon chain, as our coupon sponsor. Their commitment to beauty and self-care resonates with the vibrant energy of our symposium.",
+      imgSrc: Ajan,
+      // link: "https://naturals.in/",
+      aosEffect: "fade-right"
+    },
+    {
       name: "Malaifi",
       // description:
       // "We are excited to welcome Naturals, India's No. 1 salon chain, as our coupon sponsor. Their commitment to beauty and self-care resonates with the vibrant energy of our symposium.",
       imgSrc: malaifi,
       // link: "https://naturals.in/",
-      aosEffect: "fade-right"
+      aosEffect: "fade-left"
     },
     
   ];
