@@ -8,6 +8,7 @@ import Nat from '../../assets/naturals.jpg';
 import Poo from '../../assets/poorvika.jpg';
 import malaifi from "../../assets/malaifi.jpeg";
 import Ajan from "../../assets/ajantha.png"
+import kadhar_briyani from '../../assets/kadhar_briyani.jpeg'
 
 export default function SponcerPage() {
   useEffect(() => {
@@ -77,6 +78,11 @@ export default function SponcerPage() {
       // link: "https://naturals.in/",
       aosEffect: "fade-left"
     },
+    {
+      name:"Kadhar Briyani",
+      imgSrc:kadhar_briyani,
+      aosEffect:"fade-left"
+    }
     
   ];
   return (
