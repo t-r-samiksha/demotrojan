@@ -9,6 +9,9 @@ import Poo from '../../assets/poorvika.jpg';
 import malaifi from "../../assets/malaifi.jpeg";
 import Ajan from "../../assets/ajantha.png"
 import kadhar_briyani from '../../assets/kadhar_briyani.jpeg'
+import waffleLuv from "../../assets/waffleLuv.jpeg";
+import slam from "../../assets/slam.png";
+import makerscafe from "../../assets/makerscafe.png";
 
 export default function SponcerPage() {
   useEffect(() => {
@@ -23,6 +26,14 @@ export default function SponcerPage() {
     link: "https://cpcl.co.in/",
   };
 
+  const hospitality=[{
+    name: "MAKER'S CAFE",
+    description:
+    "We are delighted to have Makers Cafe as our hospitality sponsor, keeping our symposium refreshed with beverages and drinks. Their support ensures a vibrant and energized experience for all attendees.",
+    imgSrc:makerscafe,
+    // link: "https://cpcl.co.in/",
+  }
+  ]
   const cosponsors = [
     {
       name: "poorvika",
@@ -61,6 +72,16 @@ export default function SponcerPage() {
     aosEffect: "fade-left"
     }
   ];
+  const eventsponsors=[
+    {
+      name: "SLAM",
+      description:
+      "We are thrilled to have SLAM as our event sponsor, bringing energy and excitement to our symposium. Their dedication to sports and fitness perfectly aligns with our spirit of enthusiasm and collaboration.",
+      imgSrc: slam,
+      link: "https://slamfitnessstudio.in/about-us/",
+      aosEffect: "fade-right"
+      }
+  ]
   const sponcers = [
     {
       name: "Ajantha",
@@ -76,13 +97,22 @@ export default function SponcerPage() {
       // "We are excited to welcome Naturals, India's No. 1 salon chain, as our coupon sponsor. Their commitment to beauty and self-care resonates with the vibrant energy of our symposium.",
       imgSrc: malaifi,
       // link: "https://naturals.in/",
-      aosEffect: "fade-left"
+      aosEffect: "fade-right"
     },
     {
       name:"Kadhar Briyani",
       imgSrc:kadhar_briyani,
       aosEffect:"fade-left"
-    }
+    },
+    {
+      name: "Waffle Luv",
+      // description:
+      // "We are excited to welcome Naturals, India's No. 1 salon chain, as our coupon sponsor. Their commitment to beauty and self-care resonates with the vibrant energy of our symposium.",
+      imgSrc: waffleLuv,
+      // link: "https://naturals.in/",
+      aosEffect: "fade-left"
+    },
+   
     
   ];
   return (
@@ -168,6 +198,35 @@ export default function SponcerPage() {
           </div>
         ))}
       </div>
+      <div>
+      <div className="titleSponcer">
+        <h1 >EVENT SPONSORS</h1>
+      </div>
+      <div className="cosponcers">
+        {eventsponsors.map((eventsponsor, index) => (
+          <div
+            key={index}
+            className={` ${eventsponsor.name.toLowerCase()}`}
+            data-aos={eventsponsor.aosEffect}
+            data-aos-duration="500"
+          >
+            <img
+              src={eventsponsor.imgSrc}
+              className="img"
+              alt={`${eventsponsor.name} Sponsor Logo`}
+            />
+            <div className="content">
+              <p>{eventsponsor.description}</p>
+            {eventsponsor.link && (
+              <a href={eventsponsor.link} target="_blank" rel="noreferrer">
+              DISCOVER MORE
+            </a>
+            )}
+            </div>
+          </div>
+        ))}
+      </div>
+      </div>
 
       <div className="cosponcers malaifi1">
         {sponcers.map((sponcer, index) => (
@@ -198,6 +257,36 @@ export default function SponcerPage() {
         ))}
       </div>
 
+      <div>
+      <div className="titleSponcer">
+        <h1 >HOSPITALITY SPONSORS</h1>
+      </div>
+      <div className="cosponcers">
+        {hospitality.map((eventsponsor, index) => (
+          <div
+            key={index}
+            className={` ${eventsponsor.name.toLowerCase()}`}
+            data-aos={eventsponsor.aosEffect}
+            data-aos-duration="500"
+          >
+            <img
+              src={eventsponsor.imgSrc}
+              className="img"
+              alt={`${eventsponsor.name} Sponsor Logo`}
+            />
+            <div className="content">
+              <p>{eventsponsor.description}</p>
+            {eventsponsor.link && (
+              <a href={eventsponsor.link} target="_blank" rel="noreferrer">
+              DISCOVER MORE
+            </a>
+            )}
+            </div>
+          </div>
+        ))}
+      </div>
+      </div>
+     
     </div>
   );
 }
