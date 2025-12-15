@@ -40,7 +40,7 @@ const Navbar = () => {
     }
   }, [isAuthenticated, user]);
 
-  const navtitle = "TROJANS ` 25";
+  const navtitle = "TROJANS ` 26";
   const navLinks = [
     { name: "Home", link: "/" },
     { name: "Events", link: "/events-page" },

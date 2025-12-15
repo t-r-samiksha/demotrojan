@@ -1,79 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
 
-.home{
-    width: 100%;
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: transparent;
-    justify-content: center;
+.home {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  /* gap:10px; */
+  justify-content: center;
 }
-.logoText{
+/* .logoText{
     font-family: 'Metal Mania';
-    font-size: 200px;
-    /* width: 40%; */
+    font-size: 100px;
     letter-spacing: 20px;
     gap:10px;
     display: flex;
     flex-direction: row;
     align-items: center;
+} */
+
+.logoText {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* gap: 1.2rem; */
+  /* margin:0; */
+
+  font-family: "Orbitron", sans-serif;
+  /* font-family: "Metal Mania"; */
+  font-weight: 800;
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding-bottom: 45px;
+
+  color: #f8fafc; /* near-white, not pure white */
+
+  /* depth + crispness */
+  text-shadow:
+    0 0 6px rgba(56, 189, 248, 0.35),
+    0 0 14px rgba(56, 189, 248, 0.25);
+
+  z-index: 10;
 }
-.sympoDesc{
-    font-size: 20px;
+
+/* ===== LOGO IMAGE (CENTER HELMET) ===== */
+.logoText img.logo {
+  width: clamp(64px, 8vw, 96px);
+  height: auto;
+
+  margin-right: 25px;
+
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.45))
+    drop-shadow(0 0 30px rgba(56, 189, 248, 0.25));
+
+  transform: translateY(-2px);
+}
+
+/* ===== SUBTLE CYBER LINE UNDER LOGO ===== */
+.logoText::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 62%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(56, 189, 248, 0.8),
+    transparent
+  );
+
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+.sympoDesc {
+  font-size: 20px;
 }
 .logo {
-    width: 181px;
-    height: 196px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; /* Circular shape */
-    overflow: hidden;
-    position: relative;
-    /* background: black; Optional: fallback background */
-  }
-  
-  .logo video {
-    width: 100%; /* Ensures video fully fills the width */
-    height: 100%; /* Ensures video fully fills the height */
-    object-fit: cover; /* Maintain aspect ratio while filling the container */
-    position: absolute; /* Ensures it stays inside the container */
-     /* Align to top */
-    left: 0; /* Align to left */
-  }
-@media screen and (max-width:720px) {
-    .logoText{
-        font-size: 100px;
-    }
-    .logo{
-        height:99px;
-        width: 92px;
-
-    }
-}
-@media screen and (max-width:480px) {
-    .logoText{
-        font-size: 50px;
-    }
-    .logo{
-        height:52px;
-        width: 49px;
-        margin-left: -10px;
-
-    }
-    .sympoDesc{
-        font-size: 16px;
-    }
+  width: 181px;
+  height: 196px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Circular shape */
+  overflow: hidden;
+  position: relative;
+  /* background: black; Optional: fallback background */
 }
 
+.logo video {
+  width: 100%; /* Ensures video fully fills the width */
+  height: 100%; /* Ensures video fully fills the height */
+  object-fit: cover; /* Maintain aspect ratio while filling the container */
+  position: absolute; /* Ensures it stays inside the container */
+  /* Align to top */
+  left: 0; /* Align to left */
+}
+@media screen and (max-width: 720px) {
+  .logoText {
+    font-size: 100px;
+  }
+  .logo {
+    height: 99px;
+    width: 92px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logoText {
+    font-size: 50px;
+  }
+  .logo {
+    height: 52px;
+    width: 49px;
+    margin-left: -10px;
+  }
+  .sympoDesc {
+    font-size: 16px;
+  }
+}
 
 /* $prime: #FF6E48;
 $second: #1b2431; */
 
 @font-face {
   font-family: "Liberty";
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf');
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
 }
 /* 
 body, html {
@@ -96,6 +153,7 @@ body {
   align-items: center;
 } */
 
+/* 
 .nexus {
   display: flex;
   flex-flow: row;
@@ -116,27 +174,247 @@ body {
       animation: flicker 2s ease-in-out infinite alternate;
     }
   }
+} */
+
+/* ================= NEXUS CYBER BUTTON ================= */
+.nexus-wrapper {
+  position: relative;
+  margin-top: 2.5rem;
+  padding: 20px 56px;
+
+  border: 1.5px solid rgba(0, 200, 255, 0.9);
+  background: rgba(0, 40, 80, 0.15);
+
+  clip-path: polygon(
+    8% 0%,
+    92% 0%,
+    100% 22%,
+    100% 78%,
+    92% 100%,
+    8% 100%,
+    0% 78%,
+    0% 22%
+  );
+
+  box-shadow:
+    inset 0 0 25px rgba(0, 200, 255, 0.15),
+    0 0 30px rgba(0, 200, 255, 0.12);
+
+  backdrop-filter: blur(6px);
+}
+
+/* ================= TEXT ================= */
+.nexus-text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.35em;
+  color: #7dd3fc;
+
+  text-shadow:
+    0 0 10px rgba(0, 200, 255, 0.5),
+    0 0 25px rgba(0, 200, 255, 0.25);
+}
+
+/* ================= HOVER (OPTIONAL) ================= */
+.nexus-wrapper:hover {
+  box-shadow:
+    inset 0 0 35px rgba(0, 200, 255, 0.25),
+    0 0 45px rgba(0, 200, 255, 0.35);
+}
+
+.nexus-wrapper:hover .nexus-text {
+  color: #e0f7ff;
 }
 
 @keyframes flicker {
-  0%, 5%, 6%, 8%, 50%, 100% {
+  0%,
+  5%,
+  6%,
+  8%,
+  50%,
+  100% {
     opacity: 1;
     transform: translate(-0.2rem, 1rem) rotate(10deg);
   }
-  5.5%, 7% {
+  5.5%,
+  7% {
     opacity: 0;
     transform: translate(-0.2rem, 1rem) rotate(10deg);
   }
 }
 
 @media screen and (max-width: 768px) {
-    .nexus {
-      font-size: 4rem; /* Reduce font size for smaller screens */
-      gap: 8px; /* Adjust spacing */
-      margin-top: 2%; /* Adjust top margin */
-  
-      .letter {
-        text-shadow: 0 0 1rem #00f0ff; /* Reduce shadow intensity */
-      }
+  .nexus {
+    font-size: 4rem; /* Reduce font size for smaller screens */
+    gap: 8px; /* Adjust spacing */
+    margin-top: 2%; /* Adjust top margin */
+
+    .letter {
+      text-shadow: 0 0 1rem #00f0ff; /* Reduce shadow intensity */
     }
   }
+}
+
+/* ================= PROMINENT SPACE GRID ================= */
+.space-grid {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(rgba(112, 112, 112, 0.222) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(106, 108, 109, 0.215) 1px, transparent 1px);
+
+  background-size: 26px 26px; /* tight grid */
+  background-position: center;
+
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0.6) 65%,
+    transparent 85%
+  );
+
+  animation: gridFloat 120s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridFloat {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -500px -500px;
+  }
+}
+
+/* ================= SYSTEM BREACH BADGE ================= */
+.system-badge {
+  margin: 0 auto 1.5rem auto;
+  /* margin-top: 120px; */
+
+  position: relative;
+  top: 70px;
+  margin-bottom: 1.5rem;
+
+  padding: 10px 28px;
+
+  width: 30%;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  color: #38bdf8;
+
+  background: rgba(2, 20, 40, 0.55);
+  backdrop-filter: blur(8px);
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(56, 189, 248, 0.45);
+
+  box-shadow:
+    inset 0 0 18px rgba(56, 189, 248, 0.15),
+    0 0 25px rgba(56, 189, 248, 0.25);
+
+  animation: badgePulse 3.5s ease-in-out infinite;
+}
+
+/* Outer glow ring */
+.system-badge::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+
+  pointer-events: none;
+}
+
+/* Subtle breathing animation */
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 18px rgba(56, 189, 248, 0.15),
+      0 0 25px rgba(56, 189, 248, 0.25);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 25px rgba(56, 189, 248, 0.3),
+      0 0 40px rgba(56, 189, 248, 0.45);
+  }
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  /* ---- HOME SECTION ---- */
+  #home {
+    min-height: 100vh;
+    padding-top: 5.5rem; /* space for navbar */
+    padding-bottom: 3rem;
+  }
+
+  /* ---- SYSTEM BADGE ---- */
+  .system-badge {
+    position: relative;
+    top: 0;
+    margin: 0 auto 1rem auto;
+
+    width: fit-content;
+    max-width: 90%;
+
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    padding: 6px 16px;
+  }
+
+  /* ---- LOGO TEXT ---- */
+  .logoText {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+    letter-spacing: 0.22em;
+    padding-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .logoText img.logo {
+    width: clamp(42px, 12vw, 64px);
+    transform: translateY(-1px);
+    margin-right: 0;
+    margin-left: 0.8px;
+
+  }
+
+  /* underline */
+  .logoText::after {
+    width: 75%;
+    bottom: -10px;
+  }
+
+  /* ---- NEXUS BUTTON ---- */
+  .nexus-wrapper {
+    margin-top: 1.5rem;
+    padding: 12px 26px;
+  }
+
+  .nexus-text {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    letter-spacing: 0.22em;
+  }
+
+  /* ---- HELMET (reduce dominance) ---- */
+  canvas {
+    transform: scale(0.9);
+  }
+
+  /* ---- GRID SO IT DOESN’T OVERPOWER ---- */
+  .space-grid {
+    background-size: 32px 32px;
+    opacity: 0.35;
+  }
+}

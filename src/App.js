@@ -19,6 +19,8 @@ import { ToastContainer } from "react-toastify";
 //import BG from './Components/ui/SparklesPreview';
 import Nexus from './Components/Nexus/nexusAbout';
 import ScrollToTop from "./Components/ScorllToTop"  
+import CursorFX from "./Components/cursor.jsx";
+
 
 function App() {
   const[showLandingPage,setShowLandingPage]=useState(true);
@@ -29,6 +31,7 @@ function App() {
   })
   return (
     <Router>
+       <CursorFX />
        {/* <ScrollToTop /> */}
       <div className="App">
         {/* {Landing Page} */}
