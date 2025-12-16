@@ -19,8 +19,9 @@ const StyledHeading = styled.div`
     right: 0;
     width: 100%;
     height: 4px; /* Thickness of the line */
-    background: linear-gradient(90deg, #FF073A, #007BFF); /* Neon colors */
-    animation: neon 2s infinite alternate; /* Animation for moving colors */
+    background: linear-gradient(90deg, #E5C568, #8B0000); /* Gold/Red */
+    background-size: 200% 100%; /* Important for animation */
+    animation: neon 3s infinite alternate; /* Animation for moving colors */
   }
 
   @keyframes neon {
@@ -28,14 +29,14 @@ const StyledHeading = styled.div`
       background-position: 0 0;
     }
     100% {
-      background-position: 100% 100%;
+      background-position: 100% 0;
     }
   }
 `;
-export const Heading=({title})=>{
-    return(
-        <StyledHeading>{title}</StyledHeading>
-    )
+export const Heading = ({ title }) => {
+  return (
+    <StyledHeading>{title}</StyledHeading>
+  )
 }
 
 const StyledHeading1 = styled.div`
@@ -55,8 +56,9 @@ const StyledHeading1 = styled.div`
     right: 0;
     width: 100%;
     height: 4px; /* Thickness of the line */
-    background: linear-gradient(90deg, #FF073A, #007BFF); /* Neon colors */
-    animation: neon 2s infinite alternate; /* Animation for moving colors */
+    background: linear-gradient(90deg, #E5C568, #8B0000); /* Gold/Red */
+    background-size: 200% 100%;
+    animation: neon 3s infinite alternate; /* Animation for moving colors */
   }
 
   @keyframes neon {
@@ -64,14 +66,14 @@ const StyledHeading1 = styled.div`
       background-position: 0 0;
     }
     100% {
-      background-position: 100% 100%;
+      background-position: 100% 0;
     }
   }
 `;
-export const Heading1=({title})=>{
-    return(
-        <StyledHeading1>{title}</StyledHeading1>
-    )
+export const Heading1 = ({ title }) => {
+  return (
+    <StyledHeading1>{title}</StyledHeading1>
+  )
 }
 
 const SMButton = styled.div`
@@ -91,7 +93,7 @@ const SMButton = styled.div`
 
   &:hover {
     background: transparent; /* Keeps the background white on hover */
-  box-shadow: 0px 4px 20px 0px  #FF073A, 0px -4px 20px 0px #007BFF; /* Gradient neon shadow */
+  box-shadow: 0px 4px 20px 0px  #E5C568, 0px -4px 20px 0px #8B0000; /* Gold/Red shadow */
   transform: scale(1.1) translate(-5px, -5px);
     transition: transform 0.3s ease;
   }
@@ -100,13 +102,13 @@ const SMButton = styled.div`
     transition: transform 0.3s ease;
   }
 `;
-export const SeeMoreButton = ({ text,link }) => {
+export const SeeMoreButton = ({ text, link }) => {
   return (
     <a href={link} >
-    <SMButton>
-      {text}
-      <ArrowForwardIcon sx={{fill:"white"}}/>
-    </SMButton>
+      <SMButton>
+        {text}
+        <ArrowForwardIcon sx={{ fill: "white" }} />
+      </SMButton>
     </a>
   );
 };

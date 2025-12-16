@@ -132,10 +132,10 @@ const Home = () => {
 
       {/* CONTENT */}
       {/* SYSTEM BADGE */}
-      <div className="system-badge">SYSTEM BREACH DETECTED // 2K26</div>
+      <div className="system-badge">A TROJAN OF IDEAS // LIVE</div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
-      {/* <div className="relative z-10 flex flex-col items-center h-full pt-24"> */}
+        {/* <div className="relative z-10 flex flex-col items-center h-full pt-24"> */}
         <div className="logoText">
           TR
           <img src={logo} alt="Logo" className="logo" />

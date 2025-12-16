@@ -55,15 +55,18 @@ p {
 
 @keyframes roll {
     0% {
-        box-shadow: 0px 4px 20px 0px #FF073A, 0px -4px 20px 0px #007BFF;
+        box-shadow: 0px 4px 20px 0px #E5C568, 0px -4px 20px 0px #8B0000;
+        /* Gold top, Red bottom */
     }
 
     50% {
-        box-shadow: 0px 4px 20px 0px #007BFF, 0px -4px 20px 0px #FF073A;
+        box-shadow: 0px 4px 20px 0px #8B0000, 0px -4px 20px 0px #E5C568;
+        /* Red top, Gold bottom */
     }
 
     100% {
-        box-shadow: 0px 4px 20px 0px #FF073A, 0px -4px 20px 0px #007BFF;
+        box-shadow: 0px 4px 20px 0px #E5C568, 0px -4px 20px 0px #8B0000;
+        /* Back to start */
     }
 }
 

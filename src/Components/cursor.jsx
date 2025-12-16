@@ -305,14 +305,14 @@ export default function CursorFX() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      /* 🟢 IDLE RETICLE */
-      ctx.strokeStyle = "rgba(0,200,255,0.9)";
+      /* 🟢 IDLE RETICLE - Gold Core, Red Halo */
+      ctx.strokeStyle = "rgba(229, 197, 104, 0.9)"; // Gold
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.arc(mouse.current.x, mouse.current.y, 10, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.strokeStyle = "rgba(0,200,255,0.4)";
+      ctx.strokeStyle = "rgba(139, 0, 0, 0.5)"; // Deep Red
       ctx.beginPath();
       ctx.arc(mouse.current.x, mouse.current.y, 16, 0, Math.PI * 2);
       ctx.stroke();
@@ -329,7 +329,7 @@ export default function CursorFX() {
         p.y += p.vy;
         p.life--;
 
-        ctx.fillStyle = `rgba(0,200,255,${p.life / 40})`;
+        ctx.fillStyle = `rgba(229, 197, 104, ${p.life / 40})`; // Gold Particles
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -338,7 +338,7 @@ export default function CursorFX() {
           const q = particles.current[j];
           const d = Math.hypot(p.x - q.x, p.y - q.y);
           if (d < 90) {
-            ctx.strokeStyle = `rgba(0,200,255,${(1 - d / 90) * (p.life / 40)})`;
+            ctx.strokeStyle = `rgba(229, 197, 104, ${(1 - d / 90) * (p.life / 40)})`; // Gold Lines
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);

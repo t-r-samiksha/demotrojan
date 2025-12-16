@@ -207,8 +207,11 @@ body {
   padding: 10px 28px;
   /* Reduced padding by 2x (was 20px 56px) */
 
-  border: 1.5px solid rgba(0, 200, 255, 0.9);
-  background: rgba(0, 40, 80, 0.15);
+  /* Gold Border */
+  border: 1.5px solid rgba(229, 197, 104, 0.9);
+
+  /* Dark Red Tint Background */
+  background: rgba(40, 0, 0, 0.25);
 
   clip-path: polygon(8% 0%,
       92% 0%,
@@ -219,12 +222,13 @@ body {
       0% 78%,
       0% 22%);
 
+  /* Gold/Red Glow */
   box-shadow:
-    inset 0 0 12px rgba(0, 200, 255, 0.15),
-    0 0 15px rgba(0, 200, 255, 0.12);
-  /* Reduced shadow spread */
+    inset 0 0 12px rgba(139, 0, 0, 0.3),
+    0 0 15px rgba(229, 197, 104, 0.2);
 
   backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
 }
 
 /* ================= TEXT ================= */
@@ -233,23 +237,34 @@ body {
   font-size: 1.4rem;
   /* Reduced font size by 2x (was 2.8rem) */
   letter-spacing: 0.35em;
-  color: #7dd3fc;
 
+  /* Antique Gold Text */
+  color: #E5C568;
+  font-weight: 700;
+
+  /* Red/Gold Glow */
   text-shadow:
-    0 0 5px rgba(0, 200, 255, 0.5),
-    0 0 12px rgba(0, 200, 255, 0.25);
-  /* Reduced glow */
+    0 0 5px rgba(229, 197, 104, 0.6),
+    0 0 12px rgba(139, 0, 0, 0.5);
+
+  transition: all 0.3s ease;
 }
 
 /* ================= HOVER (OPTIONAL) ================= */
 .nexus-wrapper:hover {
+  /* Brighter Red/Gold Pulse */
   box-shadow:
-    inset 0 0 35px rgba(0, 200, 255, 0.25),
-    0 0 45px rgba(0, 200, 255, 0.35);
+    inset 0 0 20px rgba(229, 197, 104, 0.4),
+    0 0 35px rgba(139, 0, 0, 0.6);
+  background: rgba(40, 0, 0, 0.4);
 }
 
 .nexus-wrapper:hover .nexus-text {
-  color: #e0f7ff;
+  /* White-Gold Highlight */
+  color: #F9E79F;
+  text-shadow:
+    0 0 10px rgba(229, 197, 104, 0.8),
+    0 0 25px rgba(139, 0, 0, 0.8);
 }
 
 @keyframes flicker {
@@ -337,18 +352,23 @@ body {
   letter-spacing: 0.25em;
   text-transform: uppercase;
 
-  color: #38bdf8;
+  /* Antique Gold Text */
+  color: #E5C568;
+  font-weight: 700;
 
-  background: rgba(2, 20, 40, 0.55);
+  /* Dark Red Background with Blur */
+  background: rgba(40, 0, 0, 0.55);
   backdrop-filter: blur(8px);
 
   border-radius: 999px;
 
-  border: 1px solid rgba(56, 189, 248, 0.45);
+  /* Gold Border */
+  border: 1px solid rgba(229, 197, 104, 0.45);
 
+  /* Red Glow */
   box-shadow:
-    inset 0 0 18px rgba(56, 189, 248, 0.15),
-    0 0 25px rgba(56, 189, 248, 0.25);
+    inset 0 0 18px rgba(139, 0, 0, 0.3),
+    0 0 25px rgba(139, 0, 0, 0.4);
 
   animation: badgePulse 3.5s ease-in-out infinite;
 }
@@ -360,8 +380,9 @@ body {
   inset: -2px;
   border-radius: 999px;
 
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+  /* Red Outer Border */
+  border: 1px solid rgba(139, 0, 0, 0.4);
+  box-shadow: 0 0 35px rgba(139, 0, 0, 0.35);
 
   pointer-events: none;
 }
@@ -372,14 +393,17 @@ body {
   0%,
   100% {
     box-shadow:
-      inset 0 0 18px rgba(56, 189, 248, 0.15),
-      0 0 25px rgba(56, 189, 248, 0.25);
+      inset 0 0 18px rgba(139, 0, 0, 0.3),
+      0 0 25px rgba(139, 0, 0, 0.4);
+    color: #E5C568;
   }
 
   50% {
     box-shadow:
-      inset 0 0 25px rgba(56, 189, 248, 0.3),
-      0 0 40px rgba(56, 189, 248, 0.45);
+      inset 0 0 25px rgba(139, 0, 0, 0.5),
+      0 0 40px rgba(139, 0, 0, 0.6);
+    color: #F9E79F;
+    /* Brighter gold pulse */
   }
 }
 
