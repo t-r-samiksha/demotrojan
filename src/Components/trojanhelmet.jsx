@@ -1,395 +1,124 @@
-// // import { useRef } from "react";
-// // import { Canvas, useFrame, useThree } from "@react-three/fiber";
-// // import {
-// //   Float,
-// //   MeshDistortMaterial,
-// //   Stars,
-// //   PerspectiveCamera,
-// // } from "@react-three/drei";
-
-// // const InitialHelmet = () => {
-// //   const groupRef = useRef();
-// //   const { mouse } = useThree();
-
-// //   useFrame((state) => {
-// //     const t = state.clock.getElapsedTime();
-
-// //     if (!groupRef.current) return;
-
-// //     /* 🔁 Slow orbital drift */
-// //     groupRef.current.position.x = Math.sin(t * 0.15) * 1.2;
-// //     groupRef.current.position.y = Math.cos(t * 0.1) * 0.6;
-
-// //     /* 🧠 Mouse parallax (VERY subtle) */
-// //     groupRef.current.rotation.y =
-// //       t * 0.15 + mouse.x * 0.4;
-// //     groupRef.current.rotation.x =
-// //       Math.sin(t * 0.3) * 0.15 + mouse.y * 0.3;
-// //   });
-
-// //   return (
-// //     <group ref={groupRef} scale={1.8} position={[0, 0, -1]}>
-// //       {/* Core Helmet */}
-// //       <mesh>
-// //         <icosahedronGeometry args={[1, 1]} />
-// //         <MeshDistortMaterial
-// //           color="#18A0FF"
-// //           distort={0.35}
-// //           speed={1.8}
-// //           roughness={0}
-// //           metalness={0.8}
-// //           wireframe
-// //         />
-// //       </mesh>
-
-// //       {/* Inner Glow */}
-// //       <mesh scale={0.75}>
-// //         <dodecahedronGeometry args={[1, 0]} />
-// //         <meshBasicMaterial
-// //           color="#2563EB"
-// //           wireframe
-// //           transparent
-// //           opacity={0.25}
-// //         />
-// //       </mesh>
-
-// //       {/* Energy Field */}
-// //       <mesh scale={2.3}>
-// //         <sphereGeometry args={[1, 32, 32]} />
-// //         <meshStandardMaterial
-// //           color="#00F0FF"
-// //           transparent
-// //           opacity={0.04}
-// //           wireframe
-// //         />
-// //       </mesh>
-// //     </group>
-// //   );
-// // };
-
-// // const TrojanHelmet = () => {
-// //   return (
-// //     <div className="absolute inset-0 -z-10 pointer-events-none">
-// //       <Canvas>
-// //         <PerspectiveCamera makeDefault position={[0, 0, 6]} />
-
-// //         <ambientLight intensity={0.35} />
-// //         <pointLight position={[8, 8, 8]} intensity={1.5} color="#18A0FF" />
-// //         <pointLight position={[-8, -8, -8]} intensity={0.8} color="#FF3BAC" />
-
-// //         <Stars
-// //           radius={120}
-// //           depth={60}
-// //           count={4000}
-// //           factor={4}
-// //           fade
-// //           speed={0.5}
-// //         />
-
-// //         <Float
-// //           speed={1}
-// //           rotationIntensity={0.2}
-// //           floatIntensity={0.6}
-// //         >
-// //           <InitialHelmet />
-// //         </Float>
-// //       </Canvas>
-// //     </div>
-// //   );
-// // };
-
-// // export default TrojanHelmet;
-
-// "use client";
-
-// import { useRef } from "react";
-// import { Canvas, useFrame, useThree } from "@react-three/fiber";
-// import {
-//   Float,
-//   MeshDistortMaterial,
-//   Stars,
-//   PerspectiveCamera,
-// } from "@react-three/drei";
-
-// /* ================= SMALL INNER HELMET ================= */
-// const InnerHelmet = () => {
-//   const ref = useRef();
-//   const { mouse } = useThree();
-
-//   useFrame((state) => {
-//     const t = state.clock.getElapsedTime();
-//     if (!ref.current) return;
-
-//     /* subtle floating */
-//     ref.current.position.x = Math.sin(t * 0.2) * 0.4;
-//     ref.current.position.y = Math.cos(t * 0.25) * 0.3;
-
-//     /* neural mouse response */
-//     ref.current.rotation.y = t * 0.4 + mouse.x * 0.6;
-//     ref.current.rotation.x = Math.sin(t * 0.3) * 0.2 + mouse.y * 0.4;
-//   });
-
-//   return (
-//     <group ref={ref} scale={1.2}>
-//       {/* Core */}
-//       <mesh>
-//         <icosahedronGeometry args={[1, 1]} />
-//         <MeshDistortMaterial
-//           color="#18A0FF"
-//           distort={0.35}
-//           speed={2}
-//           roughness={0}
-//           metalness={0.9}
-//           wireframe
-//         />
-//       </mesh>
-
-//       {/* Inner glow */}
-//       <mesh scale={0.75}>
-//         <dodecahedronGeometry args={[1, 0]} />
-//         <meshBasicMaterial
-//           color="#00F0FF"
-//           wireframe
-//           transparent
-//           opacity={0.25}
-//         />
-//       </mesh>
-//     </group>
-//   );
-// };
-
-// /* ================= BIG OUTER HELMET ================= */
-// const OuterHelmet = () => {
-//   const ref = useRef();
-
-//   useFrame((state) => {
-//     const t = state.clock.getElapsedTime();
-//     if (!ref.current) return;
-
-//     /* slow cinematic rotation */
-//     ref.current.rotation.y = t * 0.08;
-//     ref.current.rotation.x = Math.sin(t * 0.15) * 0.1;
-//   });
-
-//   return (
-//     <group ref={ref} scale={3.8} position={[0, 0, -2]}>
-//       {/* Shell */}
-//       <mesh>
-//         <icosahedronGeometry args={[1, 2]} />
-//         <meshStandardMaterial
-//           color="#020617"        // deep black-blue
-//           roughness={0.9}
-//           metalness={0.2}
-//           wireframe
-//           transparent
-//           opacity={0.15}
-//         />
-//       </mesh>
-
-//       {/* faint energy outline */}
-//       <mesh scale={1.05}>
-//         <sphereGeometry args={[1, 32, 32]} />
-//         <meshBasicMaterial
-//           color="#0EA5E9"
-//           wireframe
-//           transparent
-//           opacity={0.05}
-//         />
-//       </mesh>
-//     </group>
-//   );
-// };
-
-// /* ================= MAIN EXPORT ================= */
-// const TrojanHelmet = () => {
-//   return (
-//     <div className="absolute inset-0 pointer-events-none">
-//       <Canvas>
-//         <PerspectiveCamera makeDefault position={[0, 0, 7]} />
-
-//         {/* Lights */}
-//         <ambientLight intensity={0.35} />
-//         <pointLight position={[10, 10, 10]} intensity={1.2} color="#18A0FF" />
-//         <pointLight position={[-10, -10, -10]} intensity={0.6} color="#0EA5E9" />
-
-//         {/* Stars */}
-//         <Stars
-//           radius={150}
-//           depth={60}
-//           count={5000}
-//           factor={4}
-//           fade
-//           speed={0.4}
-//         />
-
-//         {/* Big shell */}
-//         <OuterHelmet />
-
-//         {/* Inner floating helmet */}
-//         <Float speed={1} rotationIntensity={0.2} floatIntensity={0.6}>
-//           <InnerHelmet />
-//         </Float>
-//       </Canvas>
-//     </div>
-//   );
-// };
-
-// export default TrojanHelmet;
-
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, MeshDistortMaterial, PerspectiveCamera } from "@react-three/drei";
+import { useTexture, Center, Float } from "@react-three/drei";
+import * as THREE from "three";
+import trojanLogo from "../assets/trojan_3d_embossed.png";
 
-/* ================= INNER SMALL HELMET (BRIGHT) ================= */
-// function InnerHelmet() {
-//   const ref = useRef();
-//   const { mouse } = useThree();
+// Custom Material to handle Black Background Transparency on the fly
+const TextureMaterial = ({ texture, opacity = 1 }) => {
+  const materialRef = useRef();
 
-//   useFrame((state) => {
-//     const t = state.clock.getElapsedTime();
-//     if (!ref.current) return;
-
-//     ref.current.rotation.y = t * 0.6 + mouse.x * 0.7;
-//     ref.current.rotation.x = Math.sin(t * 0.4) * 0.25 + mouse.y * 0.5;
-
-//     ref.current.position.y = Math.sin(t * 0.6) * 0.2;
-//   });
-
-//   return (
-//     <mesh ref={ref} scale={1.2}>
-//       <icosahedronGeometry args={[1, 1]} />
-//       <MeshDistortMaterial
-//         color="#38BDF8"
-//         distort={0.35}
-//         speed={2}
-//         wireframe
-//         emissive="#38BDF8"
-//         emissiveIntensity={0.8}
-//         metalness={0.9}
-//         roughness={0}
-//       />
-//     </mesh>
-//   );
-// }
-
-function InnerHelmet() {
-  const ref = useRef();
-  const { mouse } = useThree();
-
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime();
-    if (!ref.current) return;
-
-    // 🔁 SCALE PULSE (small → big → small)
-    const pulse = 1 + Math.sin(t * 1.8) * 0.08; // speed & strength
-    ref.current.scale.set(pulse, pulse, pulse);
-
-    // rotation + mouse
-    ref.current.rotation.y = t * 0.6 + mouse.x * 0.7;
-    ref.current.rotation.x = Math.sin(t * 0.4) * 0.25 + mouse.y * 0.5;
-
-    // subtle float
-    ref.current.position.y = Math.sin(t * 0.6) * 0.2;
-  });
+  const onBeforeCompile = (shader) => {
+    shader.fragmentShader = `
+      uniform float uCutoff;
+      ${shader.fragmentShader}
+    `.replace(
+      "#include <map_fragment>",
+      `
+      #include <map_fragment>
+      // 3D Logo Logic: Discard black/very dark pixels to create transparency
+      // Calculate luminance of the texture at this pixel
+      float luminance = dot(diffuseColor.rgb, vec3(0.299, 0.587, 0.114));
+      
+      // If it's effectively black, discard it to make it transparent
+      if (luminance < 0.05) discard;
+      
+      // Optional: Boost saturation for defined Red & Gold
+      vec3 luma = vec3(0.299, 0.587, 0.114);
+      float gray = dot(diffuseColor.rgb, luma);
+      diffuseColor.rgb = mix(vec3(gray), diffuseColor.rgb, 1.3); // 1.3x Saturation
+      diffuseColor.rgb *= 1.1; // Slight brightness boost
+      `
+    );
+  };
 
   return (
-    <mesh ref={ref}>
-      <icosahedronGeometry args={[1, 1]} />
-      <MeshDistortMaterial
-        color="#38BDF8"
-        wireframe
-        distort={0.35}
-        speed={2}
-        emissive="#38BDF8"
-        emissiveIntensity={0.1}
-        metalness={0.9}
-        roughness={0}
-      />
-    </mesh>
+    <meshStandardMaterial
+      ref={materialRef}
+      map={texture}
+      transparent={true}
+      side={THREE.DoubleSide}
+      roughness={0.3}     // Shiny but has texture
+      metalness={0.8}     // Gold-like metallic feel
+      onBeforeCompile={onBeforeCompile}
+      envMapIntensity={1.5}
+      opacity={opacity}
+    />
+  );
+};
+
+function LayeredLogo({ layers = 15, depth = 0.2 }) {
+  const texture = useTexture(trojanLogo);
+  const group = useRef();
+
+  // Gentle Rotation
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    if (group.current) {
+      // Y-axis rotation (continuous, slow, elegant)
+      group.current.rotation.y = Math.sin(t * 0.5) * 0.3; // Swing back and forth or continuous?
+      // User asked for "continuous smooth rotation". 
+      // Let's do a full continuous rotation.
+      group.current.rotation.y = t * 0.3;
+
+      // Slight X-axis tilt for 3D feel
+      group.current.rotation.x = Math.sin(t * 0.3) * 0.1;
+    }
+  });
+
+  // Create multiple layers to simulate extrusion/thickness
+
+
+  return (
+    <group ref={group}>
+      <Center>
+        {Array.from({ length: layers }).map((_, i) => (
+          <mesh
+            key={i}
+            position={[0, 0, (i - layers / 2) * (depth / layers)]}
+          >
+            <planeGeometry args={[7, 7]} /> {/* Increased size 3x */}
+            <TextureMaterial texture={texture} opacity={2.0} />
+          </mesh>
+        ))}
+        {/* Add a rim/side mesh if we could, but stacked planes work well for "holographic" 3D objects */}
+      </Center>
+    </group>
   );
 }
 
-
-/* ================= OUTER BIG HELMET (DARK SHELL) ================= */
-// function OuterHelmet() {
-//   const ref = useRef();
-
-//   useFrame((state) => {
-//     const t = state.clock.getElapsedTime();
-//     if (!ref.current) return;
-
-//     ref.current.rotation.y = t * 0.08;
-//     ref.current.rotation.x = Math.sin(t * 0.2) * 0.08;
-//   });
-
-//   return (
-//     <mesh ref={ref} scale={4} position={[0, 0, -2]}>
-//       <icosahedronGeometry args={[1, 3]} />
-//       <meshStandardMaterial
-//         color="#0B1220"              // dark blue-black
-//         wireframe
-//         transparent
-//         opacity={0.22}
-//         emissive="#0EA5E9"           // cyan glow
-//         emissiveIntensity={0.35}
-//       />
-//     </mesh>
-//   );
-// }
-
-function OuterHelmet() {
-  const ref = useRef();
-
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime();
-    if (!ref.current) return;
-
-    // 🔁 SLOW SCALE BREATHING
-    const pulse = 3.7 + Math.sin(t * 0.8) * 0.15;
-    ref.current.scale.set(pulse, pulse, pulse);
-
-    // cinematic rotation
-    ref.current.rotation.y = t * 0.08;
-    ref.current.rotation.x = Math.sin(t * 0.2) * 0.08;
-  });
-
+function Scene() {
   return (
-    <mesh ref={ref} position={[0, 0, -2]}>
-      <icosahedronGeometry args={[1, 1]} />
-      <meshStandardMaterial
-        color="#0B1220"
-        wireframe
-        transparent
-        opacity={0.17}
-        emissive="#0EA5E9"
-        emissiveIntensity={0.35}
+    <>
+      <ambientLight intensity={1.2} />
+      {/* Premium Studio Lighting - Neutral to show true colors */}
+      <spotLight
+        position={[10, 10, 10]}
+        angle={0.15}
+        penumbra={1}
+        intensity={1.5}
+        color="#ffffff" // White light for clarity
       />
-    </mesh>
+      <pointLight position={[-10, -10, -10]} intensity={1} color="#ffffff" />
+
+      <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+        <LayeredLogo layers={12} depth={0.15} />
+      </Float>
+    </>
   );
 }
 
-
-/* ================= MAIN ================= */
 export default function TrojanHelmet() {
   return (
-    <div className="absolute inset-0 z-[2] pointer-events-none">
-      <Canvas gl={{ alpha: true }}>
-        <PerspectiveCamera makeDefault position={[0, 0, 7]} />
-
-        {/* Lights */}
-        <ambientLight intensity={0.6} />
-        <pointLight position={[6, 6, 6]} intensity={1.5} color="#38BDF8" />
-        <pointLight position={[-6, -6, -6]} intensity={0.6} color="#0EA5E9" />
-
-        {/* Big shell */}
-        <OuterHelmet />
-
-        {/* Small core */}
-        <Float speed={1} rotationIntensity={0.2} floatIntensity={0.6}>
-          <InnerHelmet />
-        </Float>
+    <div className="absolute inset-0 z-[1] w-full h-full pointer-events-none flex items-center justify-center">
+      <Canvas
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 8], fov: 45 }}
+        gl={{ alpha: true, antialias: true }}
+      >
+        <Scene />
       </Canvas>
     </div>
   );

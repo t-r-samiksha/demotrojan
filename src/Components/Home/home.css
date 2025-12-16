@@ -10,6 +10,7 @@
   /* gap:10px; */
   justify-content: center;
 }
+
 /* .logoText{
     font-family: 'Metal Mania';
     font-size: 100px;
@@ -35,12 +36,16 @@
   text-transform: uppercase;
   padding-bottom: 45px;
 
-  color: #f8fafc; /* near-white, not pure white */
+  /* Exact Match: 3D Logo Antique Gold Gradient */
+  background: linear-gradient(to bottom, #F9E79F 0%, #E5C568 40%, #C49F30 60%, #8B6B18 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #C49F30;
+  /* Fallback */
 
-  /* depth + crispness */
-  text-shadow:
-    0 0 6px rgba(56, 189, 248, 0.35),
-    0 0 14px rgba(56, 189, 248, 0.25);
+  /* Exact Match: Deep Cardinal Red Shadow */
+  filter: drop-shadow(0 2px 0px rgba(80, 0, 0, 1)) drop-shadow(0 0 18px rgba(139, 0, 0, 0.7));
 
   z-index: 10;
 }
@@ -52,8 +57,8 @@
 
   margin-right: 25px;
 
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.45))
-    drop-shadow(0 0 30px rgba(56, 189, 248, 0.25));
+  /* Enhanced separation with Deep Red & Gold */
+  filter: drop-shadow(0 0 8px rgba(229, 197, 104, 0.6)) drop-shadow(0 0 25px rgba(139, 0, 0, 0.5));
 
   transform: translateY(-2px);
 }
@@ -67,59 +72,75 @@
   transform: translateX(-50%);
 
   width: 62%;
-  height: 1px;
+  height: 2px;
 
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(56, 189, 248, 0.8),
-    transparent
-  );
+  /* Matching Gradient Line */
+  background: linear-gradient(to right,
+      transparent,
+      rgba(229, 197, 104, 1) 20%,
+      /* Antique Gold */
+      rgba(139, 0, 0, 0.9) 50%,
+      /* Deep Cardinal Red */
+      rgba(229, 197, 104, 1) 80%,
+      /* Antique Gold */
+      transparent);
 
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
 }
 
 .sympoDesc {
   font-size: 20px;
 }
+
 .logo {
   width: 181px;
   height: 196px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Circular shape */
+  border-radius: 50%;
+  /* Circular shape */
   overflow: hidden;
   position: relative;
   /* background: black; Optional: fallback background */
 }
 
 .logo video {
-  width: 100%; /* Ensures video fully fills the width */
-  height: 100%; /* Ensures video fully fills the height */
-  object-fit: cover; /* Maintain aspect ratio while filling the container */
-  position: absolute; /* Ensures it stays inside the container */
+  width: 100%;
+  /* Ensures video fully fills the width */
+  height: 100%;
+  /* Ensures video fully fills the height */
+  object-fit: cover;
+  /* Maintain aspect ratio while filling the container */
+  position: absolute;
+  /* Ensures it stays inside the container */
   /* Align to top */
-  left: 0; /* Align to left */
+  left: 0;
+  /* Align to left */
 }
+
 @media screen and (max-width: 720px) {
   .logoText {
     font-size: 100px;
   }
+
   .logo {
     height: 99px;
     width: 92px;
   }
 }
+
 @media screen and (max-width: 480px) {
   .logoText {
     font-size: 50px;
   }
+
   .logo {
     height: 52px;
     width: 49px;
     margin-left: -10px;
   }
+
   .sympoDesc {
     font-size: 16px;
   }
@@ -132,6 +153,7 @@ $second: #1b2431; */
   font-family: "Liberty";
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
 }
+
 /* 
 body, html {
   margin: 0;
@@ -179,26 +201,28 @@ body {
 /* ================= NEXUS CYBER BUTTON ================= */
 .nexus-wrapper {
   position: relative;
-  margin-top: 2.5rem;
-  padding: 20px 56px;
+  /* margin-top: 2.5rem; */
+  /* Reduced margins to fit tighter layout if needed, or keep original */
+  margin-top: 2rem;
+  padding: 10px 28px;
+  /* Reduced padding by 2x (was 20px 56px) */
 
   border: 1.5px solid rgba(0, 200, 255, 0.9);
   background: rgba(0, 40, 80, 0.15);
 
-  clip-path: polygon(
-    8% 0%,
-    92% 0%,
-    100% 22%,
-    100% 78%,
-    92% 100%,
-    8% 100%,
-    0% 78%,
-    0% 22%
-  );
+  clip-path: polygon(8% 0%,
+      92% 0%,
+      100% 22%,
+      100% 78%,
+      92% 100%,
+      8% 100%,
+      0% 78%,
+      0% 22%);
 
   box-shadow:
-    inset 0 0 25px rgba(0, 200, 255, 0.15),
-    0 0 30px rgba(0, 200, 255, 0.12);
+    inset 0 0 12px rgba(0, 200, 255, 0.15),
+    0 0 15px rgba(0, 200, 255, 0.12);
+  /* Reduced shadow spread */
 
   backdrop-filter: blur(6px);
 }
@@ -206,13 +230,15 @@ body {
 /* ================= TEXT ================= */
 .nexus-text {
   font-family: "Orbitron", sans-serif;
-  font-size: 2.8rem;
+  font-size: 1.4rem;
+  /* Reduced font size by 2x (was 2.8rem) */
   letter-spacing: 0.35em;
   color: #7dd3fc;
 
   text-shadow:
-    0 0 10px rgba(0, 200, 255, 0.5),
-    0 0 25px rgba(0, 200, 255, 0.25);
+    0 0 5px rgba(0, 200, 255, 0.5),
+    0 0 12px rgba(0, 200, 255, 0.25);
+  /* Reduced glow */
 }
 
 /* ================= HOVER (OPTIONAL) ================= */
@@ -227,6 +253,7 @@ body {
 }
 
 @keyframes flicker {
+
   0%,
   5%,
   6%,
@@ -236,6 +263,7 @@ body {
     opacity: 1;
     transform: translate(-0.2rem, 1rem) rotate(10deg);
   }
+
   5.5%,
   7% {
     opacity: 0;
@@ -245,12 +273,16 @@ body {
 
 @media screen and (max-width: 768px) {
   .nexus {
-    font-size: 4rem; /* Reduce font size for smaller screens */
-    gap: 8px; /* Adjust spacing */
-    margin-top: 2%; /* Adjust top margin */
+    font-size: 4rem;
+    /* Reduce font size for smaller screens */
+    gap: 8px;
+    /* Adjust spacing */
+    margin-top: 2%;
+    /* Adjust top margin */
 
     .letter {
-      text-shadow: 0 0 1rem #00f0ff; /* Reduce shadow intensity */
+      text-shadow: 0 0 1rem #00f0ff;
+      /* Reduce shadow intensity */
     }
   }
 }
@@ -263,15 +295,14 @@ body {
   background: linear-gradient(rgba(112, 112, 112, 0.222) 1px, transparent 1px),
     linear-gradient(90deg, rgba(106, 108, 109, 0.215) 1px, transparent 1px);
 
-  background-size: 26px 26px; /* tight grid */
+  background-size: 26px 26px;
+  /* tight grid */
   background-position: center;
 
-  mask-image: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(0, 0, 0, 0.6) 65%,
-    transparent 85%
-  );
+  mask-image: radial-gradient(circle at center,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 0.6) 65%,
+      transparent 85%);
 
   animation: gridFloat 120s linear infinite;
   pointer-events: none;
@@ -282,6 +313,7 @@ body {
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: -500px -500px;
   }
@@ -336,12 +368,14 @@ body {
 
 /* Subtle breathing animation */
 @keyframes badgePulse {
+
   0%,
   100% {
     box-shadow:
       inset 0 0 18px rgba(56, 189, 248, 0.15),
       0 0 25px rgba(56, 189, 248, 0.25);
   }
+
   50% {
     box-shadow:
       inset 0 0 25px rgba(56, 189, 248, 0.3),
@@ -355,7 +389,8 @@ body {
   /* ---- HOME SECTION ---- */
   #home {
     min-height: 100vh;
-    padding-top: 5.5rem; /* space for navbar */
+    padding-top: 5.5rem;
+    /* space for navbar */
     padding-bottom: 3rem;
   }
 
