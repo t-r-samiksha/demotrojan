@@ -131,8 +131,8 @@ const Home = () => {
       />
 
       {/* CONTENT */}
-      {/* SYSTEM BADGE */}
-      <div className="system-badge">A TROJAN OF IDEAS // LIVE</div>
+      {/* SYSTEM BADGE REMOVED */}
+      {/* <div className="system-badge">A TROJAN OF IDEAS // LIVE</div> */}
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         {/* <div className="relative z-10 flex flex-col items-center h-full pt-24"> */}
