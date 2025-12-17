@@ -968,71 +968,151 @@ const Events = () => {
   //   };
   // }, []);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const mm = gsap.matchMedia();
+
+  //   mm.add("(min-width: 769px)", () => {
+  //     const cards = gsap.utils.toArray(".event-item-wrapper");
+
+  //     gsap.set(cards, {
+  //       opacity: 0,
+  //       y: 60,
+  //       scale: 0.96,
+  //     });
+
+  //     cards.forEach((card) => {
+  //       gsap.to(card, {
+  //         opacity: 1,
+  //         y: 0,
+  //         scale: 1,
+  //         duration: 1,
+  //         ease: "power3.out",
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //           end: "bottom 20%",
+  //           toggleActions: "play none play reverse",
+  //           invalidateOnRefresh: true,
+  //         },
+  //       });
+  //     });
+  //   });
+
+  //   mm.add("(max-width: 768px)", () => {
+  //     const cards = gsap.utils.toArray(".event-item-wrapper");
+
+  //     gsap.fromTo(
+  //       cards,
+  //       { opacity: 0, y: 40 },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         stagger: 0.15,
+  //         scrollTrigger: {
+  //           trigger: ".unified-view",
+  //           start: "top 80%",
+  //         },
+  //       }
+  //     );
+  //   });
+
+  //   mm.add("(max-width: 768px)", () => {
+  //     const container = document.querySelector(".events-container");
+  //     const cards = gsap.utils.toArray(".event-item-wrapper");
+
+  //     if (!container || cards.length === 0) return;
+
+  //     gsap.set(cards, {
+  //       scale: 0.92,
+  //       opacity: 0.6,
+  //     });
+
+  //     cards.forEach((card) => {
+  //       gsap.to(card, {
+  //         scale: 1,
+  //         opacity: 1,
+  //         ease: "power3.out",
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           scroller: container,
+  //           horizontal: true,
+
+  //           start: "left 60%",
+  //           end: "right 40%",
+
+  //           scrub: 0.5,
+  //           invalidateOnRefresh: true,
+  //         },
+  //       });
+  //     });
+  //   });
+
+  //   return () => mm.revert();
+  // }, []);
+
+useEffect(() => {
   const mm = gsap.matchMedia();
+  const cards = gsap.utils.toArray(".event-item-wrapper");
 
-  /* ================= DESKTOP: Vertical Reveal ================= */
-  mm.add("(min-width: 769px)", () => {
-    const cards = gsap.utils.toArray(".event-item-wrapper");
+  /* ================= VERTICAL REVEAL (ALL DEVICES) ================= */
+  gsap.set(cards, {
+    opacity: 0,
+    y: 60,
+    scale: 0.96,
+  });
 
-    gsap.set(cards, {
-      opacity: 0,
-      y: 60,
-      scale: 0.96,
-    });
-
-    cards.forEach((card) => {
-      gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          end: "bottom 20%",
-          toggleActions: "play none play reverse",
-          invalidateOnRefresh: true,
-        },
-      });
+  cards.forEach((card) => {
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: card,
+        scroller: window,              // ✅ explicit
+        start: "top 85%",
+        end: "bottom 20%",
+        toggleActions: "play none play reverse",
+        invalidateOnRefresh: true,
+      },
     });
   });
 
-  /* ================= MOBILE: Horizontal Focus ================= */
+  /* ================= MOBILE: HORIZONTAL FOCUS ================= */
   mm.add("(max-width: 768px)", () => {
     const container = document.querySelector(".events-container");
-    const cards = gsap.utils.toArray(".event-item-wrapper");
-
-    if (!container || cards.length === 0) return;
-
-    gsap.set(cards, {
-      scale: 0.92,
-      opacity: 0.6,
-    });
+    if (!container) return;
 
     cards.forEach((card) => {
-      gsap.to(card, {
-        scale: 1,
-        opacity: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          scroller: container,
-          horizontal: true,
-
-          // 🎯 PRECISE focus zone
-          start: "left 60%",
-          end: "right 40%",
-
-          scrub: 0.5,
-          invalidateOnRefresh: true,
+      gsap.fromTo(
+        card,
+        {
+          scale: 0.92,
+          opacity: 0.6,
         },
-      });
+        {
+          scale: 1,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            scroller: container,       // ✅ horizontal scroller
+            horizontal: true,
+            start: "left 65%",
+            end: "right 35%",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
     });
   });
 
-  return () => mm.revert();
+  return () => {
+    mm.revert();
+    ScrollTrigger.getAll().forEach(t => t.kill());
+  };
 }, []);
 
 
