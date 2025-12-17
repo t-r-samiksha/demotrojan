@@ -23,6 +23,7 @@
 .trojans-about {
     border-radius: 100px;
     animation: roll 5s ease-in-out infinite;
+    margin-right: 50px;
 }
 
 .College-about {
@@ -30,6 +31,7 @@
     border-radius: 100px;
     /* box-shadow: 0px 4px 20px 0px  #FF073A, 0px -4px 20px 0px #007BFF;   */
     animation: roll 5s ease-in-out infinite;
+    margin-right: 50px;
 }
 
 .about_logos {
@@ -39,14 +41,20 @@
 
 }
 
-p {
-
-    font-size: 16px;
+.about_para p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #e5e7eb;
     display: block;
-    text-align: center;
+    text-align: justify;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+}
 
-    letter-spacing: 1px;
-    line-height: 30px;
+@media (min-width: 768px) {
+    .about_para p {
+        font-size: 1.25rem;
+    }
 }
 
 .about_para {
@@ -95,7 +103,7 @@ p {
 
 @media screen and (max-width:480px) {
     .about {
-        padding: 0.2rem;
+        padding: 1rem;
     }
 
     .trojans-about,

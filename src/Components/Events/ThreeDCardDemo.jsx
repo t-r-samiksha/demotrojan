@@ -8,6 +8,7 @@ import workshop from "../../assets/workshop_final.jpg";
 import tech from "../../assets/technical_final.png";
 import nont from "../../assets/non_tech_final_v2.jpg";
 import game from "../../assets/gaming_final.jpg";
+import hackathon from "../../assets/hackathon_new.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -30,13 +31,17 @@ export function ThreeDCardDemo() {
             opacity: 0,
             x: xOffset,
             scale: 0.6, // Zoom start size
+            rotationY: index % 2 === 0 ? -15 : 15, // Slight 3D tilt
+            rotationX: 10, // Initial tilt
           },
           {
             opacity: 1,
             x: 0,
             scale: 1,
-            duration: 1, // Fast but smooth
-            ease: "expo.out",
+            rotationY: 0,
+            rotationX: 0,
+            duration: 1.2, // Smoother pace
+            ease: "power3.out", // Natural smooth deceleration
             scrollTrigger: {
               trigger: card,
               start: "top 85%", // Trigger just as it comes into view
@@ -83,6 +88,14 @@ export function ThreeDCardDemo() {
       Image: game,
       Navigate: "Attend Gaming",
     },
+    {
+      id: "hackathon",
+      Title: "Hackathon",
+      Description:
+        "Join the ultimate coding battle. Collaborate, innovate, and build solutions to real-world problems in a high-energy 24-hour showdown.",
+      Image: hackathon,
+      Navigate: "Register for Hackathon",
+    },
   ];
 
   return (
@@ -98,7 +111,7 @@ export function ThreeDCardDemo() {
             className="w-auto"
           >
             <CardContainer className="inter-var">
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[30rem] h-auto sm:h-[36rem] rounded-xl p-6 border flex flex-col">
                 <CardItem
                   translateZ="50"
                   className="events-card-title-trojan leading-tight"
@@ -121,22 +134,21 @@ export function ThreeDCardDemo() {
                     alt={event.Title}
                   />
                 </CardItem>
-                <div className="flex justify-between items-center mt-10">
+                <div className="flex justify-between items-center mt-auto pt-6 px-2">
                   <CardItem
                     translateZ={20}
-                    as="a"
-                    className="flex items-center px-4 py-2 rounded-xl text-xs font-normal dark:text-white text-black"
+                    as="div"
+                    className=""
                   >
-                    <Link to={`/events-page#${event.id}`} className="w-full">
-                      {event.Navigate} <ArrowRightAltIcon className="ml-1" />
+                    <Link to={`/events-page#${event.id}`} className="events-btn-explore">
+                      {event.Navigate} <ArrowRightAltIcon className="ml-1" style={{ fontSize: '1.2rem' }} />
                     </Link>
                   </CardItem>
                   <CardItem
                     translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                    as="div"
+                    className="events-btn-more"
                   >
-                    {" "}
                     <Link to={`/events-page#${event.id}`}>More Info</Link>
                   </CardItem>
                 </div>

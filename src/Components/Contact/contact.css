@@ -1,80 +1,133 @@
-.contact{
+.contact {
     display: flex;
     flex-direction: column;
-    height: fit-content;
     width: 100%;
+    min-height: 80vh;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 2rem;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
 
+.contact-down {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 3rem;
 }
-.contact-down{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.contact-per-role-full {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     width: 100%;
 }
-.contact-img{
-   
-    background-repeat: no-repeat;
-    
-    height: 400px;
-    width: 50%;
-}
-.inner-contact-name-number{
-    font-size: 20px;
-}
-.inner-contact-name-number>a{
-    color: white;
-}
-.inner-contact-name-number>a:hover{
-    color: #007BFF;
-}
-.contact-per-role{
+
+.contact-each {
+    background: rgba(20, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 197, 104, 0.15);
+    border-radius: 20px;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap:10px;
-    
-}
-.contact-per-role-full{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: first baseline;
-   width: 100%;
-    
-    gap: 10px;
-}
-.contact-each{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: fit-content;
     align-items: center;
-    justify-content: center;
+    gap: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
-.contact-per-role-full > div {
-    flex-basis: calc(50% - 10px); /* Adjust width of each item */
-    box-sizing: border-box; /* Ensure padding and margins are included in the width */
+
+.contact-each::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
 }
-@media screen and (max-width:720px) {
-    .contact-down{
-        flex-direction: column;
-        align-items: center;
+
+.contact-each:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(229, 197, 104, 0.1);
+    border-color: rgba(229, 197, 104, 0.3);
+}
+
+.contact-per-role {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.inner-contact-name-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: #e5e7eb;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.contact-name {
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.contact-phone {
+    font-family: 'Fira Code', monospace;
+    /* Tech feel for numbers */
+    font-size: 1rem;
+    color: #E5C568;
+    /* Gold color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    opacity: 0.9;
+}
+
+.contact-phone:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Specific adjustments for headings handled in styled components, but we can override alignment here */
+.contact-each>div:first-child h1 {
+    /* Assuming Heading1 renders an h1, targeting specifically inside the card */
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 900px) {
+    .contact-per-role-full {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
-    .contact-img,.contact-per-role-full{
-        width: 100%;
-    }
-    .contact-per-role-full{
-        flex-direction: column;
-        align-items: center;
+
+    .contact-each {
+        padding: 2rem;
     }
 }
-@media screen and (max-width:480px) {
-  
-    .contact-img{
-        display: none;
+
+@media screen and (max-width: 480px) {
+    .contact {
+        padding: 2rem 1rem;
     }
-   
+
+    .contact-name {
+        font-size: 1.1rem;
+    }
+
+    .contact-phone {
+        font-size: 0.95rem;
+    }
 }

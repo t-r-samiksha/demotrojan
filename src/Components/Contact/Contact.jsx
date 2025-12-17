@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./contact.css";
-import ContactUs from "../../assets/contact-us.webp";
+
 import { Heading, Heading1 } from "../../StyledComponents/styledcomponents";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -107,6 +107,7 @@ const Contact = () => {
       <div className="contact-down">
 
         <div className="contact-per-role-full">
+          {/* HOD Card */}
           <div className="contact-each">
             <div>
               <Heading1 title="HOD" />
@@ -114,11 +115,14 @@ const Contact = () => {
             {hod.map((item, index) => (
               <div key={index} className="contact-per-role">
                 <div className="inner-contact-name-number">
-                  {item.name}
+                  <span className="contact-name">{item.name}</span>
+                  {item.phone && <a className="contact-phone" href={`tel:${item.phone}`}>{item.phone}</a>}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Registration & Help Desk Card */}
           <div className="contact-each">
             <div>
               <Heading1 title="Registration & Help Desk" />
@@ -126,11 +130,14 @@ const Contact = () => {
             {president.map((item, index) => (
               <div key={index} className="contact-per-role">
                 <div className="inner-contact-name-number">
-                  {item.name} : <a href={`tel:${item.phone}`}>{item.phone}</a>
+                  <span className="contact-name">{item.name}</span>
+                  <a className="contact-phone" href={`tel:${item.phone}`}>{item.phone}</a>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Student Co-ordinator Card */}
           <div className="contact-each">
             <div>
               <Heading1 title="Student Co-ordinator" />
@@ -138,11 +145,14 @@ const Contact = () => {
             {vice_president.map((item, index) => (
               <div key={index} className="contact-per-role">
                 <div className="inner-contact-name-number">
-                  {item.name} : <a href={`tel:${item.phone}`}>{item.phone}</a>
+                  <span className="contact-name">{item.name}</span>
+                  <a className="contact-phone" href={`tel:${item.phone}`}>{item.phone}</a>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Staff Co-ordinator Card */}
           <div className="contact-each">
             <div>
               <Heading1 title="Staff Co-ordinator" />
@@ -150,12 +160,12 @@ const Contact = () => {
             {Staff_coordinator.map((item, index) => (
               <div key={index} className="contact-per-role">
                 <div className="inner-contact-name-number">
-                  {item.name}
+                  <span className="contact-name">{item.name}</span>
+                  {item.phone && <a className="contact-phone" href={`tel:${item.phone}`}>{item.phone}</a>}
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </div>

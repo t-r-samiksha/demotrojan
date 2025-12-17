@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Heading } from '../../StyledComponents/styledcomponents';
-import SympoLogo from '../../assets/trojans.png';
+import SympoLogo from '../../assets/trojan_about.png';
 import CollegeLogo from '../../assets/College_white_logo.webp';
 import './about.css';
 import gsap from "gsap";
