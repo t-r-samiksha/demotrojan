@@ -22,9 +22,7 @@ const Background = () => {
 
   return (
     <div className="background-app">
-      <div>
-        <img src={trojansLogo} className="logologo" alt="Trojans Logo" />
-      </div>
+      {/* Background logo removed as per request */}
     </div>
   );
 };

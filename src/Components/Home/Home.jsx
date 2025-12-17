@@ -117,7 +117,7 @@ const Home = () => {
       <div className="space-grid z-0" />
 
       {/* 3D HELMET (MIDDLE) */}
-      <div className="absolute inset-0 z-[2] pointer-events-none">
+      <div className="fixed inset-0 z-0 pointer-events-none">
         <TrojanHelmet />
       </div>
 
