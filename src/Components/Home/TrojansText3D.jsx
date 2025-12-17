@@ -4,8 +4,8 @@ import { Text3D, Center, Float, Environment, Sparkles, useTexture } from "@react
 import * as THREE from "three";
 import goldTextureImg from "../../assets/trojan_gold.jpg";
 
-// Using a standard font hosted on GitHub for reliability
-const FONT_URL = "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_bold.typeface.json";
+// Using Droid Serif for a more "Trojan/Collegiate" look
+const FONT_URL = "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/droid/droid_serif_bold.typeface.json";
 
 function InteractiveText() {
     const meshRef = useRef();

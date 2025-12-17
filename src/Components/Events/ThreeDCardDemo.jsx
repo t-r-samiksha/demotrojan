@@ -4,7 +4,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Heading } from "../../StyledComponents/styledcomponents";
 import "./events.css";
 import { Link } from "react-router-dom";
-import workshop from "../../assets/workshop.jpg";
+import workshop from "../../assets/workshop_final.jpg";
 import tech from "../../assets/technical_final.png";
 import nont from "../../assets/non_tech_final_v2.jpg";
 import game from "../../assets/gaming_final.jpg";
