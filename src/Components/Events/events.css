@@ -1,5 +1,5 @@
-.events{
-    
+.events {
+
     height: fit-content;
     padding: 2rem;
     background: transparent;
@@ -11,17 +11,18 @@
 
 }
 
-.events-container{
+.events-container {
     width: 70%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap:30px;
-    
+    gap: 30px;
+
 }
-.events-card{
+
+.events-card {
     background: rgb(143, 40, 40);
     width: 325px;
     height: 400px;
@@ -29,7 +30,8 @@
     flex-direction: column;
     gap: 10px;
 }
-.events-card-img{
+
+.events-card-img {
     width: 325px;
     height: 294px;
     background: whitesmoke;
@@ -37,12 +39,33 @@
     margin-top: -10px;
     object-fit: cover;
 }
-.events-card-title{
+
+.events-card-title {
     color: red;
 
 }
+
 @media screen and (max-width:480px) {
-    .events{
+    .events {
         padding: 0.2em;
     }
+}
+
+.events-card-title-trojan {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8rem;
+
+    /* Exact Match: 3D Logo Antique Gold Gradient */
+    background: linear-gradient(to bottom, #F9E79F 0%, #E5C568 40%, #C49F30 60%, #8B6B18 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #C49F30;
+
+    /* Deep Cardinal Red Shadow */
+    filter: drop-shadow(0 2px 0px rgba(80, 0, 0, 1)) drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
 }

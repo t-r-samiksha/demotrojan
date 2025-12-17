@@ -4,9 +4,10 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Heading } from "../../StyledComponents/styledcomponents";
 import "./events.css";
 import { Link } from "react-router-dom";
-import tech from "../../assets/technical_new.jpg";
-import nont from "../../assets/non_tech_final.png";
-import game from "../../assets/gaming.jpeg";
+import workshop from "../../assets/workshop.jpg";
+import tech from "../../assets/technical_final.png";
+import nont from "../../assets/non_tech_final_v2.jpg";
+import game from "../../assets/gaming_final.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -71,8 +72,7 @@ export function ThreeDCardDemo() {
       Title: "Workshops",
       Description:
         "Expand your knowledge and learn from industry experts. Hands-on sessions to master new skills and stay ahead.",
-      Image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      Image: workshop,
       Navigate: "Attend Workshops",
     },
     {
@@ -101,7 +101,7 @@ export function ThreeDCardDemo() {
               <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                 <CardItem
                   translateZ="50"
-                  className="text-3xl font-extrabold text-center text-neutral-700 dark:text-white leading-tight tracking-wide"
+                  className="events-card-title-trojan leading-tight"
                 >
                   {event.Title}
                 </CardItem>

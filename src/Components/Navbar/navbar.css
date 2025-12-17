@@ -2,559 +2,413 @@
    GLOBAL RESET (SAFE)
 ========================= */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* =========================
    NAVBAR WRAPPER
 ========================= */
 .navbar {
-  width: 85%;
-  max-width: 1400px;
-  height: 70px;
-  padding: 0 3rem;
+    width: 90%;
+    max-width: 1400px;
+    height: 72px;
+    padding: 0 3rem;
 
-  position: sticky;
-  top: 25px;
-  margin: 0 auto;
-  /* Center horizontally */
-  z-index: 1000;
+    position: sticky;
+    top: 20px;
+    margin: 0 auto;
+    z-index: 1000;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  border-radius: 50px;
-  /* Pill Shape */
+    border-radius: 20px;
+    /* Slight rounding for sleekness, NOT full pill */
 
-  /* High Level Glass Morphism */
-  background: rgba(10, 5, 5, 0.45);
-  /* Slightly darker tint for visibility */
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
+    /* Deep Glassmorphism (Not overly frosted) */
+    background: rgba(5, 5, 5, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-  /* Gold Border Ring */
-  border: 1px solid rgba(229, 197, 104, 0.3);
-  box-shadow:
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  /* Inner rim */
+    /* Subtle Gold Tinted Edges */
+    border: 1px solid rgba(229, 197, 104, 0.15);
+    border-top: 1px solid rgba(229, 197, 104, 0.25);
+    /* Top light catch */
+    border-bottom: 1px solid rgba(229, 197, 104, 0.05);
+    /* Fade out bottom */
+
+    /* Metallic Glow + Depth */
+    box-shadow:
+        0 10px 40px -10px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    /* Inner Top Highlight */
+
+    transition: all 0.4s ease;
 }
 
 /* =========================
    LOGO
 ========================= */
 .nav-logo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .nav-logo-text {
-  font-family: "Orbitron", sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.35em;
-  color: #E5C568;
-  /* Antique Gold */
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+    font-weight: 700;
 
-  text-shadow:
-    0 0 10px rgba(229, 197, 104, 0.6);
+    color: #E5C568;
+    /* Antique Gold */
+    text-shadow: 0 0 15px rgba(229, 197, 104, 0.3);
+
+    transition: text-shadow 0.3s ease;
 }
 
 /* =========================
    LINKS CONTAINER
 ========================= */
 .navlinks {
-  display: flex;
-  align-items: center;
-  gap: 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
 }
 
 /* =========================
    NAV LINKS
 ========================= */
 .navlink {
-  position: relative;
-  font-family: "Orbitron", sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  padding: 6px 2px;
-
-  transition: color 0.3s ease;
+    position: relative;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 8px 0;
+    transition: all 0.3s ease;
 }
 
 .navlink:hover {
-  color: #E5C568;
-  /* Gold Hover */
+    color: #E5C568;
+    text-shadow: 0 0 12px rgba(229, 197, 104, 0.5);
 }
 
-/* HUD underline */
+/* Subtle Gold Underline (Center Out) */
 .navlink::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  /* Slight bold */
-
-  /* Gold -> Red -> Gold Gradient */
-  background: linear-gradient(90deg,
-      transparent,
-      #E5C568,
-      #8B0000,
-      #E5C568,
-      transparent);
-
-  opacity: 0;
-  transform: scaleX(0.6);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E5C568, transparent);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 0.8;
 }
 
 .navlink:hover::after {
-  opacity: 1;
-  transform: scaleX(1);
+    transform: translateX(-50%) scaleX(1);
 }
 
 /* =========================
-   LOGIN BUTTON
+   LOGIN BUTTON (Glass Capsule)
 ========================= */
 .login-btn {
-  font-family: "Orbitron", sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.2em;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    font-weight: 600;
 
-  padding: 10px 24px;
-  /* Slightly wider for pill shape */
+    padding: 10px 28px;
 
-  color: #E5C568;
-  /* Gold Text */
-  background: transparent;
+    color: #E5C568;
+    background: rgba(229, 197, 104, 0.05);
 
-  border: 1px solid rgba(229, 197, 104, 0.6);
-  border-radius: 30px;
-  /* MATCH NAVBAR PILL SHAPE */
+    border: 1px solid rgba(229, 197, 104, 0.3);
+    border-radius: 9999px;
+    /* Capsule */
 
-  box-shadow:
-    inset 0 0 10px rgba(229, 197, 104, 0.25),
-    0 0 18px rgba(139, 0, 0, 0.25);
-  /* Red Glow */
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 0 10px rgba(229, 197, 104, 0.05);
 
-  cursor: pointer;
-  transition: all 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine effect on hover */
+.login-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transform: skewX(-20deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.login-btn:hover::before {
+    left: 150%;
+    transition: 0.5s;
 }
 
 .login-btn:hover {
-  background: rgba(229, 197, 104, 0.12);
-  box-shadow:
-    inset 0 0 18px rgba(229, 197, 104, 0.45),
-    0 0 35px rgba(139, 0, 0, 0.6);
-  /* Strong Red Glow */
+    border-color: rgba(229, 197, 104, 0.8);
+    box-shadow:
+        0 0 20px rgba(229, 197, 104, 0.15),
+        inset 0 0 15px rgba(229, 197, 104, 0.1);
+    color: #fff;
+    text-shadow: 0 0 8px rgba(229, 197, 104, 0.6);
 }
 
 /* =========================
    PROFILE IMAGE
 ========================= */
 .profile-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .profile-img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(229, 197, 104, 0.4);
+    transition: border-color 0.3s ease;
+}
 
-  border: 1px solid rgba(229, 197, 104, 0.6);
-  box-shadow: 0 0 12px rgba(139, 0, 0, 0.6);
+.profile-btn:hover .profile-img {
+    border-color: #E5C568;
+    box-shadow: 0 0 10px rgba(229, 197, 104, 0.3);
 }
 
 /* =========================
    DROPDOWN
 ========================= */
 .dropdown {
-  display: none;
-  position: absolute;
-  top: 55px;
-  right: 0;
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
 
-  width: 220px;
-  padding: 12px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(229, 197, 104, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 
-  background: rgba(2, 6, 23, 0.95);
-  backdrop-filter: blur(20px);
-
-  border-radius: 10px;
-  border: 1px solid rgba(229, 197, 104, 0.25);
-
-  box-shadow: 0 0 35px rgba(139, 0, 0, 0.3);
-
-  text-align: center;
+    text-align: center;
+    animation: fadeIn 0.2s ease-out;
 }
 
 .dropdown.show {
-  display: block;
+    display: block;
 }
 
 .dropdown p {
-  margin: 6px 0;
-  font-size: 13px;
-  color: #E5C568;
+    margin: 5px 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* =========================
    LOGOUT BUTTON
 ========================= */
 .logout-btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-
-  font-family: "Orbitron", sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.15em;
-
-  color: #fff;
-  background: rgba(139, 0, 0, 0.4);
-
-  border: 1px solid rgba(229, 197, 104, 0.4);
-  border-radius: 6px;
-
-  cursor: pointer;
-  transition: all 0.3s ease;
+    margin-top: 10px;
+    padding: 6px 16px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 100, 100, 0.9);
+    background: rgba(50, 0, 0, 0.3);
+    border: 1px solid rgba(100, 0, 0, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  background: rgba(139, 0, 0, 0.6);
-  box-shadow: 0 0 25px rgba(229, 197, 104, 0.6);
+    background: rgba(139, 0, 0, 0.5);
+    border-color: rgba(255, 50, 50, 0.5);
+    color: #fff;
 }
 
 /* =========================
    HAMBURGER (MOBILE)
 ========================= */
 .menu-wrap {
-  display: none;
+    display: none;
 }
 
-/* .menu-wrap .menu {
-  z-index: 3000;
-} */
-
-
 /* =========================
-   MOBILE NAV FIX
+   MOBILE MEDIA QUERY
 ========================= */
-/* @media (max-width: 768px) {
-
-  .navbar {
-    height: 64px;
-    padding: 0 1rem;
-  }
-
-  .navlinks {
-    display: none;
-  }
-
-  .menu-wrap {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 2000;
-  }
-
-  .menu-wrap .toggler {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    z-index: 3000;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .menu-wrap .hamburger {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    z-index: 2500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .menu-wrap .hamburger > div {
-    width: 26px;
-    height: 2px;
-    background: #38bdf8;
-    position: relative;
-    transition: all 0.4s ease;
-  }
-
-  .menu-wrap .hamburger > div::before,
-  .menu-wrap .hamburger > div::after {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 2px;
-    background: #38bdf8;
-    transition: all 0.4s ease;
-  }
-
-  .menu-wrap .hamburger > div::before {
-    top: -8px;
-  }
-
-  .menu-wrap .hamburger > div::after {
-    top: 8px;
-  }
-
-  .menu-wrap .toggler:checked + .hamburger > div {
-    transform: rotate(135deg);
-  }
-
-  .menu-wrap .toggler:checked + .hamburger > div::before,
-  .menu-wrap .toggler:checked + .hamburger > div::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-
-  .menu-wrap .menu {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(30px);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  .menu-wrap .toggler:checked ~ .menu {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .menu-wrap .menu ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    background: #000;
-    margin-top: 620px;
-    height: 100vh;
-    width: 100vh;
-  }
-
-  .menu-wrap .menu ul li {
-    margin: 1.4rem 0;
-    border-bottom: #1d4b6e;
-  }
-
-  .menu-wrap .menu .navlink {
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-    color: #e5f7ff;
-  }
-} */
-
 @media (max-width: 768px) {
 
-  /* =========================
-     NAVBAR
-  ========================= */
-  .navbar {
-    height: 64px;
-    padding: 0 1rem;
-  }
+    .navbar {
+        height: 60px;
+        padding: 0 1.5rem;
+        border-radius: 0;
+        /* Full width on mobile often looks better, or small radius */
+        width: 95%;
+        /* Adjust width */
+    }
 
-  .navlinks {
-    display: none;
-  }
+    .navlinks {
+        display: none;
+    }
 
-  /* =========================
-     HAMBURGER WRAPPER
-  ========================= */
-  .menu-wrap {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 3000;
-  }
+    /* Hamburger Wrapper */
+    .menu-wrap {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 3000;
+    }
 
-  /* =========================
-     TOGGLER (CHECKBOX)
-  ========================= */
-  .menu-wrap .toggler {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 44px;
-    height: 44px;
-    z-index: 4000;
-    opacity: 0;
-    cursor: pointer;
-  }
+    /* Toggler */
+    .menu-wrap .toggler {
+        position: absolute;
+        top: 18px;
+        /* Adjusted alignment */
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        z-index: 4000;
+        opacity: 0;
+        cursor: pointer;
+    }
 
-  /* =========================
-     HAMBURGER ICON
-  ========================= */
-  .menu-wrap .hamburger {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 44px;
-    height: 44px;
-    z-index: 3500;
+    /* Hamburger Icon */
+    .menu-wrap .hamburger {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        z-index: 3500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    /* Gold Hamburger Lines */
+    .menu-wrap .hamburger>div {
+        width: 24px;
+        height: 2px;
+        background: #E5C568;
+        position: relative;
+        transition: all 0.4s ease;
+    }
 
-  .menu-wrap .hamburger>div {
-    width: 26px;
-    height: 2px;
-    background: #38bdf8;
-    position: relative;
-    transition: all 0.4s ease;
-  }
+    .menu-wrap .hamburger>div::before,
+    .menu-wrap .hamburger>div::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: #E5C568;
+        transition: all 0.4s ease;
+    }
 
-  .menu-wrap .hamburger>div::before,
-  .menu-wrap .hamburger>div::after {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 2px;
-    background: #38bdf8;
-    transition: all 0.4s ease;
-  }
+    .menu-wrap .hamburger>div::before {
+        top: -8px;
+    }
 
-  .menu-wrap .hamburger>div::before {
-    top: -8px;
-  }
+    .menu-wrap .hamburger>div::after {
+        top: 8px;
+    }
 
-  .menu-wrap .hamburger>div::after {
-    top: 8px;
-  }
+    /* Animation */
+    .menu-wrap .toggler:checked+.hamburger>div {
+        transform: rotate(135deg);
+        background: transparent;
+        /* Hide center line */
+    }
 
-  /* =========================
-     X ANIMATION
-  ========================= */
-  .menu-wrap .toggler:checked+.hamburger>div {
-    transform: rotate(135deg);
-  }
+    .menu-wrap .toggler:checked+.hamburger>div::before,
+    .menu-wrap .toggler:checked+.hamburger>div::after {
+        background: #E5C568;
+        /* Ensure visible on rotation */
+    }
 
-  .menu-wrap .toggler:checked+.hamburger>div::before,
-  .menu-wrap .toggler:checked+.hamburger>div::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
+    .menu-wrap .toggler:checked+.hamburger>div::before {
+        top: 0;
+        transform: rotate(90deg);
+    }
 
-  /* =========================
-     FULLSCREEN MENU OVERLAY
-  ========================= */
-  .menu-wrap .menu {
-    position: fixed;
-    inset: 0;
+    .menu-wrap .toggler:checked+.hamburger>div::after {
+        top: 0;
+        transform: rotate(0deg);
+        /* Standard X formation is 135 and 135+90 */
+    }
 
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(28px);
+    /* Fullscreen Menu */
+    .menu-wrap .menu {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.96);
+        backdrop-filter: blur(20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .menu-wrap .toggler:checked~.menu {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
+    .menu-wrap .menu ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
 
-  .menu-wrap .toggler:checked~.menu {
-    opacity: 1;
-    pointer-events: auto;
-  }
+    .menu-wrap .menu .navlink {
+        font-size: 1.2rem;
+        color: #fff;
+        padding: 1rem;
+        display: block;
+        transition: color 0.3s;
+    }
 
-  /* =========================
-     MENU LIST
-  ========================= */
-  .menu-wrap .menu ul {
-    list-style: none;
-    padding-left: 45px;
-    padding-right: 45px;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.3rem;
-
-    /* width: 140%; */
-
-    background: #000;
-    margin-top: 620px;
-    height: 100vh;
-    /* width: 100vh; */
-  }
-
-  /* =========================
-     MENU ITEMS (CYBER STYLE)
-  ========================= */
-  .menu-wrap .menu ul li {
-    width: 110%;
-    padding: 14px 0;
-    text-align: center;
-
-    background: rgba(5, 15, 30, 0.55);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-
-    clip-path: polygon(6% 0%,
-        94% 0%,
-        100% 25%,
-        100% 75%,
-        94% 100%,
-        6% 100%,
-        0% 75%,
-        0% 25%);
-
-    box-shadow:
-      inset 0 0 18px rgba(56, 189, 248, 0.18),
-      0 0 30px rgba(56, 189, 248, 0.25);
-
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-  }
-
-  .menu-wrap .menu ul li:hover {
-    transform: scale(1.05);
-    box-shadow:
-      inset 0 0 28px rgba(56, 189, 248, 0.4),
-      0 0 45px rgba(56, 189, 248, 0.6);
-  }
-
-  /* =========================
-     MENU LINKS
-  ========================= */
-  .menu-wrap .menu .navlink {
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-
-    color: #e5f7ff;
-
-    text-shadow:
-      0 0 10px rgba(56, 189, 248, 0.6),
-      0 0 22px rgba(56, 189, 248, 0.35);
-  }
+    .menu-wrap .menu .navlink:hover {
+        color: #E5C568;
+    }
 }

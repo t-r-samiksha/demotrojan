@@ -6,6 +6,7 @@ import "./home.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import TrojanHelmet from "../../Components/trojanhelmet.jsx";
+import TrojansText3D from "./TrojansText3D.jsx";
 
 const Home = () => {
   useEffect(() => {
@@ -106,7 +107,7 @@ const Home = () => {
     // </div>
 
     <div
-      className="relative h-[40rem] w-full bg-black overflow-hidden"
+      className="relative h-screen w-full bg-black overflow-hidden"
       id="home"
     >
       {/* GRID */}
@@ -136,11 +137,7 @@ const Home = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         {/* <div className="relative z-10 flex flex-col items-center h-full pt-24"> */}
-        <div className="logoText">
-          TR
-          <img src={logo} alt="Logo" className="logo" />
-          JANS
-        </div>
+        <TrojansText3D />
 
         {/* <div className="nexus mt-8">
       <span className="letter">N</span>
