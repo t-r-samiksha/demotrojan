@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Heading } from '../../StyledComponents/styledcomponents';
 import SympoLogo from '../../assets/trojan_about.png';
 import CollegeLogo from '../../assets/College_white_logo.webp';
@@ -22,6 +22,9 @@ const About = () => {
     const Sympo_About = "TROJANS is the flagship national-level symposium organized by the Department of Information Technology at Chennai Institute of Technology, Tamil Nadu's third-ranked college. A vibrant confluence of technical and non-technical events, TROJANS has been a platform for innovation, creativity, and collaboration for the past 5 years. Each year, the symposium brings together students from across the country, showcasing their talents and ideas in an electrifying atmosphere. Last year, TROJANS reached a milestone with 1700 participants, making it one of the most anticipated events on campus. With its legacy of excellence, TROJANS continues to set new benchmarks, fostering growth and learning among budding technocrats.";
     const College_logo = CollegeLogo;
     const College_about = "Starting from humble beginnings, Chennai Institute of Technology  has rapidly grown to become Tamil Nadu's third-ranked college, building a legacy of excellence in just 12 years. CIT’s name is synonymous with success, offering students a broad spectrum of exposure that fosters 360-degree holistic development. With its motto, 'Transforming Lives,' the institution delivers on its promise by providing unparalleled guidance, mentorship, and instilling confidence in its students. Supporting both placement training and diverse career pathways, CIT stands as an open book of opportunities, empowering students to shape their futures effectively."
+
+    const [isSympoExpanded, setIsSympoExpanded] = useState(false);
+    const [isCollegeExpanded, setIsCollegeExpanded] = useState(false);
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -119,6 +122,10 @@ const About = () => {
         return () => ctx.revert();
     }, []);
 
+    useEffect(() => {
+        ScrollTrigger.refresh();
+    }, [isSympoExpanded, isCollegeExpanded]);
+
     return (
         <div className='about' id='about' ref={sectionRef}>
             <div className='' ref={headingRef}>
@@ -130,7 +137,17 @@ const About = () => {
                     backgroundPosition: 'center', backgroundRepeat: 'no-repeat'
                 }} />
                 <div className='about_para' ref={sympoTextRef}>
-                    <p>{Sympo_About}</p>
+                    <p className={!isSympoExpanded ? 'clamp-text' : ''}>{Sympo_About}</p>
+                    <button
+                        className="read-more-btn"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setIsSympoExpanded(!isSympoExpanded);
+                        }}
+                    >
+                        {isSympoExpanded ? 'Read Less' : 'Read More'}
+                    </button>
                 </div>
             </div>
             <div className='College-about' ref={collegeRef}>
@@ -139,7 +156,17 @@ const About = () => {
                     backgroundPosition: 'center', backgroundRepeat: 'no-repeat'
                 }} />
                 <div className='about_para' ref={collegeTextRef}>
-                    <p>{College_about}</p>
+                    <p className={!isCollegeExpanded ? 'clamp-text' : ''}>{College_about}</p>
+                    <button
+                        className="read-more-btn"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setIsCollegeExpanded(!isCollegeExpanded);
+                        }}
+                    >
+                        {isCollegeExpanded ? 'Read Less' : 'Read More'}
+                    </button>
                 </div>
             </div>
         </div>

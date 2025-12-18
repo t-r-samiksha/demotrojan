@@ -7,7 +7,7 @@ import { Link as ScrollLink } from "react-scroll";
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  
+
   useEffect(() => {
     const sendUserDataToBackend = async () => {
       if (user) {
@@ -44,6 +44,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", link: "/" },
     { name: "Events", link: "/events-page" },
+    { name: "Gallery", link: "/gallery" },
     { name: "Sponsors", link: "/sponser-page" },
     { name: "About", link: "#about" },
     { name: "Contact", link: "#contact" },
@@ -52,7 +53,7 @@ const Navbar = () => {
 
   const handleNavClick = (item) => {
     const toggler = document.querySelector(".menu-wrap .toggler");
-  
+
     if (item.link.startsWith("#")) {
       if (window.location.pathname === "/") {
         const targetId = item.link.slice(1);
@@ -60,17 +61,17 @@ const Navbar = () => {
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });
         }
-        if (toggler) toggler.checked = false; 
+        if (toggler) toggler.checked = false;
       } else {
         navigate(`/${item.link}`);
       }
     } else {
       navigate(item.link);
-      if (toggler) toggler.checked = false; 
+      if (toggler) toggler.checked = false;
     }
   };
-  
-  
+
+
 
   return (
     <div className="navbar">
